@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+ }
+ body {
+    direction: rtl;
+ }
+.container {
+    margin: auto;
+    height: 100vh;
+    width:100%;  
+    background-color: var(--bg-color-2);
+    color:var(--font-color-2);
+    
+ }
+ button {
+   width:10rem;
+   height: 3rem;
+   padding: 0.6rem;
+   border-radius: 0.4rem;
+   font-size:1.3rem;
+   background-color: var(--bg-color-3);
+   color: var(--font-color-1);
+   border: 2px outset var(--font-color-1);
+}
+
+button:hover {
+   background-color: var(--bg-color-4);  
+   /* color: var(--font-color-3); */
+   font-weight: bold;
+   box-shadow: 11px 13px 36px 1px var(--bg-color-shadow);
+   -webkit-box-shadow: 11px 13px 36px 1px var(--bg-color-shadow);
+   -moz-box-shadow: 11px 13px 36px 1px var(--bg-color-shadow);
+}
+
+
+ .demo {
+   padding-top: 10rem;
+   text-align: center;
+   
+ }
+ .demo p {
+    margin-top: 2rem;
+ }
+
+ .demo button {
+    
+    width:18rem;
+    
+    
+ } 
+
+
+
+div.scroll-container {
+    background-color: var(--bg-color-3);
+    overflow: auto;
+    white-space: nowrap;
+    padding: 10px;
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+  
+  div.scroll-container img {
+    padding: 10px;
+  }

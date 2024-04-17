@@ -5,7 +5,7 @@ let dictionary = {
         "ar": "كلاسمت"
     },
     'txt_slogan': {
-        'en': "School students for school students",
+        'en': "Students for students",
         'he': "תלמידים למען תלמידים",
         "ar": "الطلاب للطلاب"
     }

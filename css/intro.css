@@ -1,0 +1,23 @@
+
+
+#intro {
+    /* background-image: url(../img/Logo_I.jpg); */
+    background-image: url(http://127.0.0.1:5500/img/Logo_I.jpg);
+    background-position: center center;
+    background-size: 90% 90%;
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 600px;
+    text-align: center;
+    position: relative;
+    margin: auto;
+    border:1px  var(--bg-color-2) dashed; 
+}
+#index_intro_h1{
+    margin-top: 60%;
+}
+.slogan {
+    margin-bottom: 4rem;
+    font-size: larger;
+}
+
