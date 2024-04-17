@@ -1,0 +1,92 @@
+/* https://colorhunt.co/palette/40a2e3fff6e9bbe2ec0d9276 */
+/* 
+#40A2E3
+#FFF6E9
+#BBE2EC
+#0D9276
+
+ */
+ /* https://colorhunt.co/palette/f9f7f7dbe2ef3f72af112d4e
+ expert pallette
+ #F9F7F7
+ #DBE2EF
+ #3F72AF
+ #112D4E */
+
+ /* https://colorhunt.co/palette/eef5ffb4d4ff86b6f6176b87 
+ student pallette:
+ #EEF5FF
+#B4D4FF
+#86B6F6
+#176B87
+ */
+
+ * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+ }
+ :root {
+    /* --teacher-background-color: #F9F7F7;
+    --teacher-second-bg-color:  #DBE2EF; 
+    --teacher-button-color:#3F72AF;
+    --teacher-fonts-color: #112D4E;
+
+    --student-background-color: #EEF5FF;
+    --student-second-bg-color: #B4D4FF; 
+    --student-button-color: #86B6F6;
+    --student-fonts-color:#176B87;
+
+    --teacher-background-color: #F9F7F7;
+    --teacher-second-bg-color:  #DBE2EF; 
+    --teacher-button-color:#3F72AF;
+    --teacher-fonts-color: #112D4E; */
+
+  }
+  
+ body {
+    background-color: #FFF6E9;
+    color:#0D9276;
+ }
+
+ .container {
+    margin: auto;
+    max-width: 800px;
+    text-align: center;
+    padding-top: 30px;
+    
+ }
+
+ .logo {
+    width: 3rem;
+    height: 3rem;
+ }
+ navbar>ul {
+    
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+ }
+ navbar>ul>li{
+    marker: none;
+    
+ }
+ main {
+    border: 2px  dashed #269e2e;
+ }
+ img {
+   width:100%;
+ }
+ .row {
+   width:100%;
+   background-color: rgb(122, 236, 140);
+   text-align: center;
+   font-size: 2rem;
+ }
+ a {
+   color:#0D9276;
+ }
