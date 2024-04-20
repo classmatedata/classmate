@@ -10,8 +10,8 @@
     margin: auto;
     height: 100vh;
     width:100%;  
-    background-color: var(--bg-color-2);
-    color:var(--font-color-2);
+    background-color: var(--bg-color-1);
+    color:var(--font-color-1);
     
  }
  button {
@@ -65,3 +65,11 @@ div.scroll-container {
   div.scroll-container img {
     padding: 10px;
   }
+
+  footer {
+   background-color: var(--bg-color-2);
+   height: 3rem;
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+ }

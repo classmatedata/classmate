@@ -2,20 +2,32 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
- :root {
+:root {
     
-   --bg-color-1: white;
+   --bg-color-1: rgb(246,243,234);
+   --bg-color-1-active: rgb(255, 255, 255);
    --bg-color-2:  rgb(63,176,114);
    --bg-color-3:  #bdf3d5;
    --bg-color-4:  #e4f6ec;
-   --bg-color-shadow:  rgba(15, 40, 26, 0.61); /* rgba(0,0,0,0.61); */
-   --font-color-1:rgb(44,120,78);
+   --bg-color-shadow:  rgba(15, 40, 26, 0.61); 
+
+   --font-color-0:rgb(49,49,49);
+   --font-color-1:rgb(70,189,133);
+   --font-color-1a:rgb(44,120,78);
    --font-color-2: white;
    --font-color-3: rgb(17, 244, 119);
+
+
+   
+}
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   direction: rtl;
 
    font-family: "Rubik", sans-serif;
    font-optical-sizing: auto;
    font-weight: 300;
    font-style: normal;
-  }
-  
+}  

@@ -1,0 +1,113 @@
+
+header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+header>navbar {
+    display: flex;
+    justify-content: space-between;
+    gap:1rem; 
+}
+header .lang-container {
+    color: var(--font-color-0);
+}
+header .current-lang-container {
+    font-size: x-large;
+    font-weight: bolder;
+    color: var(--font-color-0);
+    gap:2rem;
+}
+.logo>img {
+    height: 3rem;
+}
+.container {
+    margin: auto;
+    height: 100vh;
+    width:100%;  
+    background-color: var(--bg-color-1);
+    color:var(--font-color-1);
+}
+
+main {
+    padding-top: 5%;
+    margin: auto ;
+    display: flex;
+    flex-direction: column;
+    height:80%;
+}
+main .middle {
+    position: relative;
+    top: 20%;
+    text-align: center;    
+    width: 100%;
+}
+
+h1 , h1  *{
+    color: var(--font-color-0);
+    font-weight: 800;
+    font-size:4rem;
+}
+.green {
+    color:var(--font-color-1);
+}
+
+button {  
+    border-radius: 1rem;
+    border: 1px solid var(--font-color-0);
+    padding: 0.5rem 1.5rem;
+    font-size: xxx-large;
+    font-weight: 900;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
+}
+button:hover {
+    cursor: pointer;
+}
+main button {
+    background-color: var(--bg-color-2);
+    color:var(--font-color-2);
+    font-size: xx-large;
+}
+main button:hover {
+    background-color: var(--bg-color-3);
+    color:var(--font-color-1a);
+    font-size: xx-large;
+}
+.show_bg {
+    display: flex;
+    justify-content: space-between;
+    width:80%;
+    margin: auto;
+}
+main div.center {
+    margin: auto ;
+    width:50%;
+    height: 20rem;
+    border-radius: 10rem;
+    background-color: #cccccc;
+    background-image: url("../img/index_intro_bg.jpg"); 
+}
+footer {padding-left: 2rem;
+    height: 7rem;
+    position: fixed;
+    bottom: 0;
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+.footerItem:last-child() {
+    
+    text-align: end;
+}
+footer button {
+   
+    padding: 0.5rem 1.5rem;
+    font-size: xxx-large;
+    font-weight: 900;
+}
+footer button:hover {
+    background-color: var(--bg-color-1-active);
+}
