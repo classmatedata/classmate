@@ -107,9 +107,6 @@ function translate_to_ru() {
 }
 
 
-
-
-
 function to_teacher_view() {
     document.querySelector("#to-teacher-view").removeAttribute('hidden');
     document.querySelector("#to-student-view").setAttribute('hidden', '');
@@ -122,6 +119,10 @@ function to_student_view() {
 
 }
 
+function nextPage() {
+
+    location.href = './sign.html';
+}
 
 document.querySelector('#lang_he').addEventListener('click', translate_to_he);
 document.querySelector('#lang_en').addEventListener('click', translate_to_en);
@@ -130,5 +131,7 @@ document.querySelector('#lang_ru').addEventListener('click', translate_to_ru);
 
 document.querySelector('#to-teacher-view').addEventListener('click', to_teacher_view);
 document.querySelector('#to-student-view').addEventListener('click', to_student_view);
+
+document.querySelector('#next-btn').addEventListener('click', nextPage);
 
 translate_to_he();
