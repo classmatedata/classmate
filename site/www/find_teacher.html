@@ -1,36 +1,44 @@
 <!DOCTYPE html>
-<html lang="he">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كلاسمت ClassMate קלאסמיייט </title>
+    <title>Document</title>
     <link rel="stylesheet" href="./css/colors.css">
     <link rel="stylesheet" href="./css/general.css">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-    <header>
-        <div class="logo"></div>
-        <navbar>
-            <nav></nav>
-            <nav></nav>
-            <nav></nav>
-        </navbar>
-        
-    </header>
     <div class="container">
-        <div class="demo">
-            <h1>find teacher </h1>
-            <div class="scroll-container">
-                <img src="img/demo_find_teacher_propose.JPG" alt="">
-                <img src="img/demo_find_teacher_propose_queries.JPG" alt="">
-            </div>
-            <button onclick="location.href='./notification_for_lesson.html'" type="button">קבע שיעור</button>
-            <button onclick="location.href='./index.html'" type="button">עבור למסך הקודם</button>
-        </div>
+        <header>
+            <navbar class="up-menu">
+                <!-- <nav><a href="" class="text-home"></a></nav>
+                <nav><a href="" class="text-about"></a></nav> -->
+                
+                <nav id="to-teacher-view"><a href="" class="to-teacher-view"></a></nav>
+                <nav id="to-student-view" hidden><a href="" class="to-student-view"></a></nav>
+            </navbar>
+            
+            <ul class="lang-container" id="navList_LangMenu" >
+                <li><a id="lang_he" class="lang_Hebrew selected">עברית</a></li>
+                <li><a id="lang_en" class="lang_English">English</a></li>
+                <li><a id="lang_ar" class="lang_Arab">ערבית</a></li>
+                <li><a id="lang_ru" class="lang_Russian">Russian</a></li> 
+                
+            </ul>
+            <div class="logo"><img src="./img/logo_smaller.png" alt=""></div>
+        </header>
+        <main>
 
+        </main>
+        <footer>
+            <a href="./find_teacher_req.html" target="req">find teacher reference</a>
+        </footer>
+        <form action="" name="data_config">
+            <input id="role_type"  hidden value="teacher">
+            <input id="lang" value="he" hidden>
+        </form>
     </div>
-    <footer>
-
-    </footer>
+    <script scr="find_teacher.js"></script>
 </body>
 </html>

@@ -40,6 +40,9 @@ button:hover {
    text-align: center;
    
  }
+ .demo img {
+   max-width: 100%;
+ }
  .demo p {
     margin-top: 2rem;
  }
@@ -69,7 +72,7 @@ div.scroll-container {
   footer {
    background-color: var(--bg-color-2);
    height: 3rem;
-   position: absolute;
+   position: fixed;
    bottom: 0;
    width: 100%;
  }

@@ -11,11 +11,7 @@ const texts_json_en = {
     ".text-about": "About",
     ".to-teacher-view": "Switch to teaching",
     ".to-student-view": "Switch to studying",
-    ".text_intro_title-0": "Free ",
-    ".text_intro_title": "Online",
-    ".text_intro_title_cont1": "Tutoring",
-    ".text_intro_title_cont2": "",
-    ".btn_sign_in_with_edu": "Eye-Level Lesson "
+
 };
 const texts_json_he = {
     "#lang": "he",
@@ -28,13 +24,15 @@ const texts_json_he = {
     ".text-about": "אודות",
     ".to-teacher-view": "עבור למצב מלמד",
     ".to-student-view": "עבור למצב לומד",
-    ".text_intro_title-0": " ",
-    ".text_intro_title": "שיעורי עזר",
-    ".text_intro_title_cont1": "בלימודים",
-    ".text_intro_title_cont2": "בחינם",
-    ".btn_sign_in_with_edu": "לשיעור בגובה עיניים "
+
 };
 
+const page_data = {
+    "user_name": "ברק",
+    "user_GUI_lang": "he",
+    "user_langs": { "he", "en"}
+
+}
 function translate_to(lang_file) {
 
     for (let [quilifier, data] of Object.entries(lang_file)) {
@@ -116,12 +114,7 @@ function to_student_view() {
 }
 
 function nextPage() {
-    const role = document.querySelector("#role_type").value;
-    const lang = document.querySelector("#lang").value;
-    localStorage.setItem("data_config_role", role);
-    localStorage.setItem("data_config_lang", lang);
-    // localStorage.getItem("data_config_lang");
-    location.href = './sign.html';
+    console.log("next page is:");
 }
 function updateGUI() {
     const gui_role = document.querySelector("#role_type").value;

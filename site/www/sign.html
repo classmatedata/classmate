@@ -20,8 +20,11 @@
     <div class="container">
         <div class="demo">
             <h1>Sign </h1>
+            <img src="./img/demo_signIn_login.JPG">
             <p>מימוש של טופס מקושר לרישום דרך משרד החינוך</p>
-            <button   onclick="location.href='./start.html'" type="button">עבור למסך הבא</button>
+            <button   onclick="nextPage()" type="button">עבור למסך הבא</button>
+            <button   onclick="location.href='./start_teacher.html'" type="button">עבור למסך מורה</button>
+            <button   onclick="location.href='./start.html'" type="button">עבור למסך תלמיד</button>
             <button   onclick="location.href='./index.html'" type="button">עבור למסך הקודם</button>
         </div>
 
@@ -29,5 +32,19 @@
     <footer>
 
     </footer>
+    <script>
+        function nextPage() {
+            const lang = localStorage.getItem("data_config_lang");
+            const role = localStorage.getItem("data_config_role");
+            if(role == "teacher" ) {
+                location.href = './sign_teacher.html';
+            }
+            else {
+                location.href = './sign.html';
+            }
+
+            location.href='./start.html'
+        }
+    </script>
 </body>
 </html>
