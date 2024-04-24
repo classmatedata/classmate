@@ -1,7 +1,7 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 :root {
     
    --bg-color-1: rgb(246,243,234);
@@ -12,6 +12,7 @@
    --bg-color-shadow:  rgba(15, 40, 26, 0.61); 
 
    --font-color-0:rgb(49,49,49);
+   --font-color-0-active:rgb(0, 0, 0);
    --font-color-1:rgb(70,189,133);
    --font-color-1a:rgb(44,120,78);
    --font-color-2: white;

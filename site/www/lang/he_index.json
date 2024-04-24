@@ -1,7 +1,16 @@
-{
-    ".lang-container":{".lang_English":"English",".lang_Arab":"العربية",".lang_Russian":"Русский"},
+{   "#lang":"he",
+    ".lang_English":"English",
+    
+    ".lang_Arab":"العربية",
+     ".lang_Russian":"Русский",
+    
+    ".text-home":"בית",
+    ".text-about":"אודות",
+    ".to-teacher-view":"עבור למצב מלמד",
+    ".to-student-view":"עבור למצב לומד",
+    ".text_intro_title-0":" ",
     ".text_intro_title":"שיעורי עזר",
     ".text_intro_title_cont1":"בלימודים",
     ".text_intro_title_cont2":"בחינם",
-    ".btn_sign_in_with_edu":"הזדהות משרד החינוך"
+    ".btn_sign_in_with_edu":"לשיעור בגובה עיניים "
 }

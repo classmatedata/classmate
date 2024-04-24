@@ -4,19 +4,35 @@ header {
     display: flex;
     justify-content: space-between;
 }
-header>navbar {
+header>navbar,
+.lang-container {
     display: flex;
     justify-content: space-between;
     gap:1rem; 
 }
+ul.lang-container {
+    list-style-type: none;
+}
 header .lang-container {
     color: var(--font-color-0);
 }
-header .current-lang-container {
+header .up-menu * {
     font-size: x-large;
     font-weight: bolder;
     color: var(--font-color-0);
     gap:2rem;
+}
+header a {
+    text-decoration: none;
+    color:var(--font-color-0);
+}
+header a.selected {
+    font-weight: bold;
+}
+header a:hover {
+    color:var(--font-color-0-active);
+    text-decoration:underline ;
+    cursor: pointer;
 }
 .logo>img {
     height: 3rem;
@@ -53,6 +69,7 @@ h1 , h1  *{
 }
 
 button {  
+    width: fit-content;
     border-radius: 1rem;
     border: 1px solid var(--font-color-0);
     padding: 0.5rem 1.5rem;
@@ -62,10 +79,14 @@ button {
     -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.75);
 }
+.hidden {
+    display: none;
+}
 button:hover {
     cursor: pointer;
 }
 main button {
+ 
     background-color: var(--bg-color-2);
     color:var(--font-color-2);
     font-size: xx-large;
@@ -98,6 +119,7 @@ footer {padding-left: 2rem;
     justify-content: space-between;
 
 }
+
 .footerItem:last-child() {
     
     text-align: end;

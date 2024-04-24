@@ -11,18 +11,23 @@
 </head>
 <body>
     <div class="container">
+
         <header>
-            <navbar class="current-lang-container">
-                <nav>בית</nav>
-                <nav>אודות</nav>
-                <nav>עבור למצב מלמד</nav>
+            <navbar class="up-menu">
+                <!-- <nav><a href="" class="text-home"></a></nav>
+                <nav><a href="" class="text-about"></a></nav> -->
+                
+                <nav id="to-teacher-view"><a href="" class="to-teacher-view"></a></nav>
+                <nav id="to-student-view" hidden><a href="" class="to-student-view"></a></nav>
             </navbar>
-           
-            <navbar class="lang-container">
-                <nav class="lang_English">English</nav>
-                <nav class="lang_Arab">ערבית</nav>
-                <nav class="lang_Russian">Russian</nav>
-            </navbar>
+            
+            <ul class="lang-container" id="navList_LangMenu" >
+                <li><a id="lang_he" class="lang_Hebrew selected">עברית</a></li>
+                <li><a id="lang_en" class="lang_English">English</a></li>
+                <li><a id="lang_ar" class="lang_Arab">ערבית</a></li>
+                <li><a id="lang_ru" class="lang_Russian">Russian</a></li> 
+                
+            </ul>
             <div class="logo"><img src="./img/logo_smaller.png" alt=""></div>
         </header>
         <main id="intro">
@@ -32,9 +37,9 @@
             </div>
             <div class="center">
                 <div class="middle">
-                <h1 class="middle text_intro_title">Aaaaa</h1>
-                <h1><span class="text_intro_title_cont1 ">BBB</span><wbr>&nbsp;<span class="text_intro_title_cont2 green">ccc</span></h1>
-                <button id="sign_btn" class="btn_sign_in_with_edu" onclick="location.href='./sign.html'" type="button">הזדהות</button>
+                <h1 class="middle"><span class=" text_intro_title-0 green"></span><wbr>&nbsp;<span class="text_intro_title"></span></h1>
+                <h1><span class="text_intro_title_cont1"></span><wbr>&nbsp;<span class="text_intro_title_cont2 green">טקסק הירוק</span></h1>
+                <button id="sign_btn"  onclick="location.href='./sign.html'" type="button"><i class="fa fa-arrow-right lang_ltr hidden"></i><span class="btn_sign_in_with_edu"></span><i class="fa fa-arrow-left lang_rtl hidden" ></i></button>
             </div>
             </div>
             <div class="show_bg">
@@ -44,6 +49,10 @@
         </main>
         <footer><div class="footerItem">&nbsp</div><div class="footerItem"><button id="help">?</button></div></footer>
     </div>
-    <script src="index.js" type="module"></script>
+    <form action="" name="page_config">
+        <input id="role_type"  hidden>
+        <input id="lang" value="he" hidden>
+    </form>
+    <script src="index.js" ></script>
 </body>
 </html>
