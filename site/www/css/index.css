@@ -35,6 +35,9 @@ header .lang-container {
 header .up-menu .selected * {
     font-weight: bold;  
 }
+.up-menu nav:not(.selected) {
+    visibility: hidden;
+}
 header .up-menu  {
     font-size: x-large;
     font-weight: normal;
