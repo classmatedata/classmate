@@ -14,11 +14,10 @@
 
         <header>
             <navbar class="up-menu">
-                <!-- <nav><a href="" class="text-home"></a></nav>
-                <nav><a href="" class="text-about"></a></nav> -->
-                
-                <nav id="to-teacher-view"><a href="" class="to-teacher-view"></a></nav>
-                <nav id="to-student-view" hidden><a href="" class="to-student-view"></a></nav>
+               
+                <nav id="to-teacher-view"><span class="text_i_am_a_student small"></span>&nbsp;<a class="text_to-teacher-view"></a></nav>
+                <br>
+                <nav id="to-student-view" class="selected"><a class="text_to-student-view"></a>&nbsp;<span class="text_i_am_a_teacher small"></span></nav>
             </navbar>
             
             <ul class="lang-container" id="navList_LangMenu" >
@@ -50,9 +49,10 @@
         <footer><div class="footerItem">&nbsp</div><div class="footerItem"><button id="help">?</button></div></footer>
     </div>
     <form action="" name="data_config">
-        <input id="role_type"  hidden value="teacher">
-        <input id="lang" value="he" hidden>
+        <input id="role_type"  value="teacher">
+        <input id="lang" value="he" >
     </form>
+    <button type="button" onclick="updateGUI();">update Gui</button>
     <script src="index.js" ></script>
 </body>
 </html>

@@ -119,11 +119,11 @@ function nextPage() {
 function updateGUI() {
     const gui_role = document.querySelector("#role_type").value;
     if (gui_role == "student") {
-        document.querySelector("#to-teacher-view").setAttribute('hidden', '');
+        document.querySelector("#to-teacher-view").setAttribute('hidden', true);
         document.querySelector("#to-student-view").removeAttribute('hidden');
     } else {
         document.querySelector("#to-teacher-view").removeAttribute('hidden');
-        document.querySelector("#to-student-view").setAttribute('hidden', '');
+        document.querySelector("#to-student-view").setAttribute('hidden', true);
     }
 
     translate_to_he();

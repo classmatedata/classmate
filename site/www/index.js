@@ -7,10 +7,10 @@ const texts_json_en = {
     ".lang_Arab": "العربية",
     ".lang_Russian": "Русский",
     ".lang_Hebrew": "עברית",
-    ".text-home": "Home",
-    ".text-about": "About",
-    ".to-teacher-view": "Switch to teaching",
-    ".to-student-view": "Switch to studying",
+    ".text_i_am_a_teacher": "I am a teacher",
+    ".text_i_am_a_student": "I am a student",
+    ".text_to-teacher-view": "Switch to teaching",
+    ".text_to-student-view": "Switch to studying",
     ".text_intro_title-0": "Free ",
     ".text_intro_title": "Online",
     ".text_intro_title_cont1": "Tutoring",
@@ -24,18 +24,18 @@ const texts_json_he = {
     ".lang_Arab": "العربية",
     ".lang_Russian": "Русский",
 
-    ".text-home": "בית",
-    ".text-about": "אודות",
-    ".to-teacher-view": "עבור למצב מלמד",
-    ".to-student-view": "עבור למצב לומד",
+    ".text_i_am_a_teacher": "מלמד",
+    ".text_i_am_a_student": "לומד",
+    ".text_to-teacher-view": "עבור למצב מלמד",
+    ".text_to-student-view": "עבור למצב לומד",
     ".text_intro_title-0": " ",
     ".text_intro_title": "שיעורי עזר",
     ".text_intro_title_cont1": "בלימודים",
     ".text_intro_title_cont2": "בחינם",
     ".btn_sign_in_with_edu": "לשיעור בגובה עיניים "
 };
-
-function translate_to(lang_file) {
+const dictionaries = { "he": { dir: "rtl", "texts": texts_json_he }, "en": { dir: "ltr", "texts": texts_json_en } };
+function fill_texts(lang_file) {
 
     for (let [quilifier, data] of Object.entries(lang_file)) {
         if (typeof (data) === "string") {
@@ -52,16 +52,6 @@ function translate_to(lang_file) {
     }
 }
 
-
-function update_lang_slector(lang) {
-    document.querySelector("#lang").value = lang;
-    let lang_select_nodes = document.querySelectorAll("#navList_LangMenu>li>a");
-    for (let [_, elem] of Object.entries(lang_select_nodes)) {
-        console.log(elem.classList, elem)
-        elem.classList.remove('selected');
-    }
-    document.querySelector(`#lang_${lang}`).classList.add('selected');
-}
 function update_page_direction(dir) {
     let rtl_elements = document.querySelectorAll(".lang_rtl");
     for (let [_, elem] of Object.entries(rtl_elements)) {
@@ -83,36 +73,33 @@ function update_page_direction(dir) {
     }
 }
 function translate_to_he() {
-    update_lang_slector('he');
-    update_page_direction('rtl');
-    translate_to(texts_json_he);
+    document.querySelector("#lang").value = 'he';
+    updateGUI();
 }
 function translate_to_ar() {
     console.log("AR lang dictionary is not defined for this page");
-    // update_lang_slector('ar');
-    // update_page_direction('ltr');
-    // translate_to(texts_json_ar);
+
 }
 
 function translate_to_en() {
-    update_lang_slector('en');
-    update_page_direction('ltr');
-    translate_to(texts_json_en)
+    document.querySelector("#lang").value = 'en';
+    updateGUI();
 }
+
 function translate_to_ru() {
     console.log("RU lang dictionary is not defined for this page");
-    // update_lang_slector('ru');
-    // update_page_direction('ltr');
-    // translate_to(texts_json_ru)
+
 }
 
 
 function to_teacher_view() {
     document.querySelector("#role_type").value = "teacher";
+    updateGUI();
 }
 
 function to_student_view() {
     document.querySelector("#role_type").value = "student";
+    updateGUI();
 }
 
 function nextPage() {
@@ -124,17 +111,27 @@ function nextPage() {
     location.href = './sign.html';
 }
 function updateGUI() {
+    const lang = document.querySelector("#lang").value
+    let lang_select_nodes = document.querySelectorAll("#navList_LangMenu>li>a");
+    for (let [_, elem] of Object.entries(lang_select_nodes)) {
+        elem.classList.remove('selected');
+    }
+    document.querySelector(`#lang_${lang}`).classList.add('selected');
+    update_page_direction(dictionaries[lang]["dir"]);
+    fill_texts(dictionaries[lang]['texts']);
+
     const gui_role = document.querySelector("#role_type").value;
-    if (gui_role == "student") {
-        document.querySelector("#to-teacher-view").setAttribute('hidden', '');
-        document.querySelector("#to-student-view").removeAttribute('hidden');
+    if (gui_role === "student") {
+        document.querySelector("#to-teacher-view").classList.add('selected');
+        document.querySelector("#to-student-view").classList.remove('selected');
     } else {
-        document.querySelector("#to-teacher-view").removeAttribute('hidden');
-        document.querySelector("#to-student-view").setAttribute('hidden', '');
+        document.querySelector("#to-teacher-view").classList.remove('selected');
+        document.querySelector("#to-student-view").classList.add('selected');
     }
 
-    translate_to_he();
+
 }
+
 updateGUI();
 document.querySelector('#lang_he').addEventListener('click', translate_to_he);
 document.querySelector('#lang_en').addEventListener('click', translate_to_en);

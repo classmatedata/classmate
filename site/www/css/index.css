@@ -32,15 +32,25 @@ ul.lang-container {
 header .lang-container {
     color: var(--font-color-0);
 }
-header .up-menu * {
+header .up-menu .selected * {
+    font-weight: bold;  
+}
+header .up-menu  {
     font-size: x-large;
-    font-weight: bolder;
+    font-weight: normal;
     color: var(--font-color-0);
     gap:2rem;
 }
+.small {
+    font-size: small;
+}
+
 header a {
     text-decoration: none;
     color:var(--font-color-0);
+}
+.hidden{
+    visibility:hidden;
 }
 header a.selected {
     font-weight: bold;
