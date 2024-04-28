@@ -7,11 +7,10 @@
    
     <link rel="stylesheet" href="./css/colors.css">
     <link rel="stylesheet" href="./css/index.css">
-
+   
 </head>
 <body>
     <div class="container">
-
         <header>
             <navbar class="up-menu">
                
@@ -28,7 +27,13 @@
                 
             </ul>
             <div class="logo"><img src="./img/logo_smaller.png" alt=""></div>
+            <form action="" name="data_config" hidden>
+                <input id="role_type"  value="student">
+                <input id="lang" value="he" >
+                <button type="button" onclick="updateGUI();">update Gui</button>
+            </form>
         </header>
+
         <main id="intro">
             <div class="show_bg">
                 <img src="./img/index_img2.png" alt="">
@@ -48,12 +53,9 @@
         </main>
         <footer><div class="footerItem">&nbsp</div><div class="footerItem"><button id="help">?</button></div></footer>
     </div>
-    <form action="" name="data_config" hidden>
-        <input id="role_type"  value="student">
-        <input id="lang" value="he" >
-        <button type="button" onclick="updateGUI();">update Gui</button>
-    </form>
-    
+   
+  
     <script src="index.js" ></script>
+   
 </body>
 </html>

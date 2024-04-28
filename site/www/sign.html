@@ -1,50 +1,40 @@
 <!DOCTYPE html>
-<html lang="he">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كلاسمت ClassMate קלאסמיייט </title>
+    <title>>كلاسمت ClassMate קלאסמיייט </title>
     <link rel="stylesheet" href="./css/colors.css">
-    <link rel="stylesheet" href="./css/general.css">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
+    <div class="container">
     <header>
-        <div class="logo"></div>
-        <navbar>
-            <nav></nav>
-            <nav></nav>
-            <nav></nav>
+        <navbar class="up-menu">
+           
+            <nav id="to-teacher-view"><span class="text_i_am_a_student small"></span>&nbsp;<a class="text_to-teacher-view"></a></nav>
+            <br>
+            <nav id="to-student-view" class="selected"><a class="text_to-student-view"></a>&nbsp;<span class="text_i_am_a_teacher small"></span></nav>
         </navbar>
         
+        <ul class="lang-container" id="navList_LangMenu" >
+            <li><a id="lang_he" class="lang_Hebrew selected">עברית</a></li>
+            <li><a id="lang_en" class="lang_English">English</a></li>
+            <li><a id="lang_ar" class="lang_Arab">ערבית</a></li>
+            <li><a id="lang_ru" class="lang_Russian">Russian</a></li> 
+            
+        </ul>
+        <div class="logo"><img src="./img/logo_smaller.png" alt=""></div>
+        <form action="" name="data_config" hidden>
+            <input id="role_type"  value="student">
+            <input id="lang" value="he" >
+            <button type="button" onclick="updateGUI();">update Gui</button>
+        </form>
     </header>
-    <div class="container">
-        <div class="demo">
-            <h1>Sign </h1>
-            <img src="./img/demo_signIn_login.JPG">
-            <p>מימוש של טופס מקושר לרישום דרך משרד החינוך</p>
-            <button   onclick="nextPage()" type="button">עבור למסך הבא</button>
-            <button   onclick="location.href='./start_teacher.html'" type="button">עבור למסך מורה</button>
-            <button   onclick="location.href='./start.html'" type="button">עבור למסך תלמיד</button>
-            <button   onclick="location.href='./index.html'" type="button">עבור למסך הקודם</button>
-        </div>
-
-    </div>
     <footer>
-
+        <a href="sign_req.html" target="req">אפיון המסך</a>
     </footer>
-    <script>
-        function nextPage() {
-            const lang = localStorage.getItem("data_config_lang");
-            const role = localStorage.getItem("data_config_role");
-            if(role == "teacher" ) {
-                location.href = './sign_teacher.html';
-            }
-            else {
-                location.href = './sign.html';
-            }
-
-            location.href='./start.html'
-        }
-    </script>
+</div>
+<script src="index.js" ></script>
 </body>
 </html>

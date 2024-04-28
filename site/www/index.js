@@ -1,6 +1,5 @@
 // import texts_json_he from './lang/he_index.json' with { type: 'json' };
 // import texts_json_en from './lang/en_index.json' with { type: 'json' };
-
 const texts_json_en = {
     "#lang": "en",
     ".lang_English": "English",
@@ -73,7 +72,9 @@ function update_page_direction(dir) {
     }
 }
 function translate_to_he() {
-    document.querySelector("#lang").value = 'he';
+    const lang = "he";
+    localStorage.setItem("data_config_lang", lang);
+    document.querySelector("#lang").value = lang;
     updateGUI();
 }
 function translate_to_ar() {
@@ -82,7 +83,9 @@ function translate_to_ar() {
 }
 
 function translate_to_en() {
-    document.querySelector("#lang").value = 'en';
+    const lang = "en";
+    localStorage.setItem("data_config_lang", lang);
+    document.querySelector("#lang").value = lang;
     updateGUI();
 }
 
@@ -93,25 +96,26 @@ function translate_to_ru() {
 
 
 function to_teacher_view() {
-    document.querySelector("#role_type").value = "teacher";
+    const role = "teacher";
+    document.querySelector("#role_type").value = role;
+    localStorage.setItem("data_config_role", role);
     updateGUI();
 }
 
 function to_student_view() {
-    document.querySelector("#role_type").value = "student";
+    role = "student";
+    document.querySelector("#role_type").value = role;
+    localStorage.setItem("data_config_role", role);
     updateGUI();
 }
 
 function nextPage() {
-    const role = document.querySelector("#role_type").value;
-    const lang = document.querySelector("#lang").value;
-    localStorage.setItem("data_config_role", role);
-    localStorage.setItem("data_config_lang", lang);
-    // localStorage.getItem("data_config_lang");
     location.href = './sign.html';
 }
+
 function updateGUI() {
-    const lang = document.querySelector("#lang").value
+    const lang = localStorage.getItem("data_config_lang");
+
     let lang_select_nodes = document.querySelectorAll("#navList_LangMenu>li>a");
     for (let [_, elem] of Object.entries(lang_select_nodes)) {
         elem.classList.remove('selected');
@@ -120,7 +124,8 @@ function updateGUI() {
     update_page_direction(dictionaries[lang]["dir"]);
     fill_texts(dictionaries[lang]['texts']);
 
-    const gui_role = document.querySelector("#role_type").value;
+    const gui_role = localStorage.getItem("data_config_role");
+
     if (gui_role === "student") {
         document.querySelector("#to-teacher-view").classList.add('selected');
         document.querySelector("#to-student-view").classList.remove('selected');
