@@ -14,7 +14,8 @@ const texts_json_en = {
     ".text_intro_title": "Online",
     ".text_intro_title_cont1": "Tutoring",
     ".text_intro_title_cont2": "",
-    ".btn_sign_in_with_edu": "Eye-Level Lesson "
+    ".btn_sign_in_with_edu": "Eye-Level Lesson ",
+    ".text_username_id": "User Id"
 };
 const texts_json_he = {
     "#lang": "he",
@@ -31,7 +32,8 @@ const texts_json_he = {
     ".text_intro_title": "שיעורי עזר",
     ".text_intro_title_cont1": "בלימודים",
     ".text_intro_title_cont2": "בחינם",
-    ".btn_sign_in_with_edu": "לשיעור בגובה עיניים "
+    ".btn_sign_in_with_edu": "לשיעור בגובה עיניים ",
+    ".text_username_id": "קוד משתמש"
 };
 const dictionaries = { "he": { dir: "rtl", "texts": texts_json_he }, "en": { dir: "ltr", "texts": texts_json_en } };
 function fill_texts(lang_file) {

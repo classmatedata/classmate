@@ -83,3 +83,13 @@ div.scroll-container {
    bottom: 0;
    width: 100%;
  }
+
+ .user_input * {
+  font-size: larger;
+  margin: 0.5rem;
+  padding: 0.5rem;
+ }
+ .user_input label {
+  font-style: oblique;
+  color:var(--font-color-0);
+ }

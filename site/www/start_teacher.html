@@ -14,7 +14,7 @@
            
             <nav id="to-teacher-view"><span class="text_i_am_a_student small"></span>&nbsp;<a class="text_to-teacher-view"></a></nav>
             <br>
-            <nav id="to-student-view" class="selected"><a class="text_to-student-view"></a>&nbsp;<span class="text_i_am_a_teacher small"></span></nav>
+            <nav id="to-student-view" class="selected"><a class="text_to-student-view" ></a>&nbsp;<span class="text_i_am_a_teacher small"></span></nav>
         </navbar>
         
         <ul class="lang-container" id="navList_LangMenu" >
@@ -45,5 +45,12 @@
 
     </div>
     <script src="index.js" ></script>
+    <script>
+        document.querySelector('#role_type').addEventListener('change',(event)=>{
+            if(document.querySelector('#role_type').value === "student") {
+                window.location="./find_teacher.html";   
+            }
+        } );
+    </script>
 </body>
 </html>

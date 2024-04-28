@@ -3,12 +3,53 @@
         "name":"רוני",
         "lang":"he",
         "roles":["student"],
-        "last-login":"28-04-2024"
-    },
+        "last-login":"28-04-2024",
+        "taken_lessons":{
+            "1":{"datetime":"24-04-2024 17:00","course":"מתימטיקה","course_topic":"מעגלים", "teacher_id":"234", "feedback": {"stars":"5","about":"היה מצוין!!! תודה רבה"}},
+            "3":{"datetime":"24-04-2024 15:00","course":"מתימטיקה","course_topic":"מעגלים", "teacher_id":"234", "feedback": {"stars":"4","about":"לא הבנתי הכל"}},
+            "4":{"datetime":"23-04-2024 18:00","course":"מתימטיקה","course_topic":"מעגלים", "teacher_id":"234", "feedback": {"stars":"5","about":""}}
+        },
+        "future_lessons":
+        {
+            "1":{"datetime":"28-04-2024 17:00","course":"מתימטיקה","course_topic":"מעגלים", "teacher_id":"234"},
+            "3":{"datetime":"29-04-2024 15:00","course":"מתימטיקה","course_topic":"מעגלים", "teacher_id":"234"},
+            "4":{"datetime":"30-04-2024 18:00","course":"מתימטיקה","course_topic":"מעגלים", "teacher_id":"234"}
+        }
+     },
     "234" : {
         "name": "Irina",
         "lang":"en",
         "roles":["student","teacher"],
-        "s_lang":["he","ru"]
+        "s_lang":["he","ru"],
+        "hours_volunteered":"20",
+        "hour_volunteer_needed":"60",
+        "courses_teaching": 
+        {   "מתמטיקה": ["אנליטית - פרבלות","מעגלים"],
+            "פיסיקה":["תנועה קוית" ,"יחידות מדידה","מעבר חום"],
+            "אנגלית":["topic 1", "topic 2", "topic 3"]
+        },
+        "can_teach_time" : {
+            "ראשון": ["8:00","20:00"],
+            "שני":["17:00","20:00"],
+            "רביעי":["17:00","18:00","20:00"],
+            "שישי":["14:00"]
+        },
+        "given_lessons":{
+            "1":{"datetime":"24-04-2024 17:00","course":"מתימטיקה","course_topic":"מעגלים", "student_id":"123"},
+            "3":{"datetime":"24-04-2024 15:00","course":"מתימטיקה","course_topic":"מעגלים", "student_id":"123"},
+            "4":{"datetime":"23-04-2024 18:00","course":"מתימטיקה","course_topic":"מעגלים", "student_id":"123"}
+        },
+        "future_lessons":
+        {
+            "1":{"datetime":"28-04-2024 17:00","course":"מתימטיקה","course_topic":"מעגלים", "student_id":"123"},
+            "3":{"datetime":"29-04-2024 15:00","course":"מתימטיקה","course_topic":"מעגלים", "student_id":"123"},
+            "4":{"datetime":"30-04-2024 18:00","course":"מתימטיקה","course_topic":"מעגלים", "student_id":"123"}
+        }
+    },
+    "345": {
+        "name":"דני",
+        "lang":"he",
+        "roles":["student"],
+        "last-login":"27-04-2024"
     }
 }

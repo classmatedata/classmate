@@ -36,7 +36,7 @@
     </header>
     <main>
         <div class="demo">
-            <h1>Sign </h1>
+            
           
             <picture>
                 <source srcset="./img/req/sign_in_edu_mobile.JPG" media="(max-width: 600px)">
@@ -44,7 +44,14 @@
                 <img src="./img/req/sign_in_edu_site.JPG" alt="edu gov site sign in">
             </picture>
             <p>מימוש של טופס מקושר לרישום דרך משרד החינוך</p>
-            <button   onclick="location.href='./start_config.html'"  type="button">עבור למסך הבא</button>
+            <div class="user_input">
+                <label for="user_id" class="text_username_id">קוד משתמש</label>
+                <input type="text" id="user_id" name="user_id" list="user_id_list" oninput="validateUserID()">
+                <datalist id="user_id_list"></datalist>
+            </div>
+
+
+            <button id="btn_next_page" disabled  onclick="location.href='./start_config.html'"  type="button">עבור למסך הבא</button>
             <button   onclick="location.href='./index.html'" type="button">עבור למסך הקודם</button>
         </div>
 
@@ -54,6 +61,36 @@
     </footer>
 </div>
 <script src="index.js" ></script>
-
+<script>
+let users_json = {};
+function load_user_list() {
+    fetch('./database/users.json')
+    .then((response) => response.json())
+    .then((json) => update_demo_users_list(json));
+}    
+function update_demo_users_list(json) {
+    users_json = json;
+    let dataHTML="";
+    for(let key of Object.keys(json))
+    {
+        dataHTML += `<option value="${key}">${json[key]["name"]}</option>`;
+    }
+    document.querySelector("#user_id_list").innerHTML = dataHTML;
+    localStorage.setItem("users_data",JSON.stringify(users_json) );
+    
+}
+load_user_list() ;
+function validateUserID() {
+    const typed_user_id = document.querySelector("#user_id").value;
+    if(users_json[typed_user_id] !== undefined) {
+        document.querySelector("#btn_next_page").removeAttribute("disabled");
+        localStorage.setItem("user_id", typed_user_id);
+        localStorage.setItem("user_data",JSON.stringify(users_json[typed_user_id]) );
+    }
+    else {
+        document.querySelector("#btn_next_page").setAttribute("disabled",true);
+    }
+}
+</script>
 </body>
 </html>

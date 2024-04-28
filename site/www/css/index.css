@@ -123,7 +123,13 @@ main button {
 main button:hover {
     background-color: var(--bg-color-3);
     color:var(--font-color-1a);
-  
+}
+main button:hover:disabled, main button:disabled {
+    background-color: var(--bg-color-1-disabled);
+    color:var(--font-color-2);
+    font-size: xx-large;
+    box-shadow: none;
+    font-weight: normal;
 }
 .show_bg {
     display: flex;
