@@ -37,12 +37,13 @@ button:hover {
 
 
  .demo {
-   padding-top: 10rem;
+   padding-top: 2rem;
    text-align: center;
    
  }
  .demo img {
    max-width: 100%;
+   max-height: 300px;
  }
  .demo p {
     margin-top: 2rem;
