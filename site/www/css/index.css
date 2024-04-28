@@ -131,6 +131,9 @@ main button:hover {
     width:80%;
     margin: auto;
 }
+.show_bg img{
+    width: 125px;
+}
 main div.center {
     margin: auto ;
     width:50%;
@@ -163,4 +166,16 @@ footer button {
 }
 footer button:hover {
     background-color: var(--bg-color-1-active);
+}
+
+@media screen and (max-width:500px) {
+    h1 , h1  *{
+        font-size: 2rem;
+    }
+    main button { 
+        font-size: large;
+    }
+    .show_bg img{
+        width: 60px;
+    }
 }
