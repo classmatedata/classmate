@@ -114,8 +114,11 @@ function nextPage() {
 }
 
 function updateGUI() {
-    const lang = localStorage.getItem("data_config_lang");
-
+    let lang = localStorage.getItem("data_config_lang");
+    if (lang === null) {
+        lang = document.querySelector("#lang").value;
+        localStorage.setItem("data_config_lang", lang);
+    }
     let lang_select_nodes = document.querySelectorAll("#navList_LangMenu>li>a");
     for (let [_, elem] of Object.entries(lang_select_nodes)) {
         elem.classList.remove('selected');
@@ -124,8 +127,11 @@ function updateGUI() {
     update_page_direction(dictionaries[lang]["dir"]);
     fill_texts(dictionaries[lang]['texts']);
 
-    const gui_role = localStorage.getItem("data_config_role");
-
+    let gui_role = localStorage.getItem("data_config_role");
+    if (gui_role === null) {
+        gui_role = document.querySelector("#role_type").value;
+        localStorage.setItem("data_config_role", gui_role);
+    }
     if (gui_role === "student") {
         document.querySelector("#to-teacher-view").classList.add('selected');
         document.querySelector("#to-student-view").classList.remove('selected');
