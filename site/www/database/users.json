@@ -1,0 +1,14 @@
+{
+    "123": {
+        "name":"רוני",
+        "lang":"he",
+        "roles":["student"],
+        "last-login":"28-04-2024"
+    },
+    "234" : {
+        "name": "Irina",
+        "lang":"en",
+        "roles":["student","teacher"],
+        "s_lang":["he","ru"]
+    }
+}
