@@ -52,6 +52,9 @@ button:hover {
  }
  .demo p {
     margin-top: 2rem;
+    color: var(--font-color-0);
+    font-size: larger;
+    font-weight: bolder;
  }
 
  .demo button {

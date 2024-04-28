@@ -33,8 +33,18 @@
     </header>
 
     <div class="container">
+       
         <div class="demo">
-            <h1>demo teacher start page</h1>
+            <h2><span class="text_Hello"></span>&nbsp<span id="text_name"></span><span>,</span></h2>
+            <p class="text_a_number_short_questions"></p>
+            <div class="question">
+                 <p class="text_question_s_langs">באילו שפות תרצו ללמוד וללמד?</p>
+                 <ul id="config_question_s_langs"></ul>
+            </div>
+            <div class="question">
+                <p class="text_question_call">איך לפנות אליך?</p>
+                <ul id="config_question_calls"></ul>
+           </div>
             <img src="img/req/start_qeustion_Card1-selection.JPG" alt="">
             <img src="img/req/start_qeustion_Card2.JPG" alt="">
             <br>
@@ -57,6 +67,12 @@
     
            
         }
+        let user_data = {};
+        function initData() {
+            user_data =  JSON.parse(localStorage.getItem("user_data"));
+            document.querySelector("#text_name").innerText = user_data["name"];
+        }
+        initData();
     </script>
 </body>
 </html>

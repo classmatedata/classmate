@@ -15,7 +15,10 @@ const texts_json_en = {
     ".text_intro_title_cont1": "Tutoring",
     ".text_intro_title_cont2": "",
     ".btn_sign_in_with_edu": "Eye-Level Lesson ",
-    ".text_username_id": "User Id"
+
+    ".text_username_id": "User Id",
+    ".text_Hello": "Hello",
+    ".text_a_number_short_questions": "a number of short questions:"
 };
 const texts_json_he = {
     "#lang": "he",
@@ -33,7 +36,11 @@ const texts_json_he = {
     ".text_intro_title_cont1": "בלימודים",
     ".text_intro_title_cont2": "בחינם",
     ".btn_sign_in_with_edu": "לשיעור בגובה עיניים ",
-    ".text_username_id": "קוד משתמש"
+
+    ".text_username_id": "קוד משתמש",
+
+    ".text_Hello": "שלום",
+    ".text_a_number_short_questions": "כמה שאלות קצרות:"
 };
 const dictionaries = { "he": { dir: "rtl", "texts": texts_json_he }, "en": { dir: "ltr", "texts": texts_json_en } };
 function fill_texts(lang_file) {
@@ -43,7 +50,7 @@ function fill_texts(lang_file) {
             const elem = document.querySelector(quilifier);
             if (elem !== null) { elem.innerHTML = data; }
             else {
-                console.log("error find  from dictionary ", lang_file["lang"], " not found in html:", quilifier, " not found");
+                // console.log("error find  from dictionary ", lang_file["lang"], " not found in html:", quilifier, " not found");
             }
         }
         else {
