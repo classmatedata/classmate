@@ -35,15 +35,28 @@
     <div class="container">
         <div class="demo">
             <h1>demo teacher start page</h1>
-            <img src="img/req/demo_hello_msg.JPG" alt="">
-            <img src="img/req/demo_teacher_profile.JPG" alt="">
-            <img src="img/req/start_config_teacher_schedule.jpg" alt="">
+            <img src="img/req/start_qeustion_Card1-selection.JPG" alt="">
+            <img src="img/req/start_qeustion_Card2.JPG" alt="">
             <br>
-            <button onclick="location.href='./notification_for_lesson.html'" type="button">רשימת שיעורים שנקבעו</button>
-            <button onclick="location.href='./start_config.html'" type="button">עבור למסך הקודם</button>
+            <button   onclick="nextPage()" type="button">עבור למסך הבא</button>
+            <button onclick="location.href='./sign.html'" type="button">עבור למסך הקודם</button>
         </div>
 
     </div>
     <script src="index.js" ></script>
+    <script>
+        function nextPage() {
+          
+            const role = localStorage.getItem("data_config_role");
+            if(role == "teacher" ) {
+                location.href = './start_teacher.html';
+            }
+            else {
+                location.href = './start.html';
+            }
+    
+           
+        }
+    </script>
 </body>
 </html>

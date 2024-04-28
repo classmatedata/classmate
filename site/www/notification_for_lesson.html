@@ -5,17 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>كلاسمت ClassMate קלאסמיייט </title>
     <link rel="stylesheet" href="./css/colors.css">
+  
+    <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/general.css">
 </head>
 <body>
     <header>
-        <div class="logo"></div>
-        <navbar>
-            <nav></nav>
-            <nav></nav>
-            <nav></nav>
+        <navbar class="up-menu">
+           
+            <nav id="to-teacher-view"><span class="text_i_am_a_student small"></span>&nbsp;<a class="text_to-teacher-view"></a></nav>
+            <br>
+            <nav id="to-student-view" class="selected"><a class="text_to-student-view"></a>&nbsp;<span class="text_i_am_a_teacher small"></span></nav>
         </navbar>
         
+        <ul class="lang-container" id="navList_LangMenu" >
+            <li><a id="lang_he" class="lang_Hebrew selected">עברית</a></li>
+            <li><a id="lang_en" class="lang_English">English</a></li>
+            <li><a id="lang_ar" class="lang_Arab">ערבית</a></li>
+            <li><a id="lang_ru" class="lang_Russian">Russian</a></li> 
+            
+        </ul>
+        <div class="logo"><a href="index.html"><img src="./img/logo_smaller.png" alt=""></a></div>
+        <form action="" name="data_config" hidden>
+            <input id="role_type"  value="student">
+            <input id="lang" value="he" >
+            <button type="button" onclick="updateGUI();">update Gui</button>
+        </form>
     </header>
     <div class="container">
         <div class="demo">
@@ -23,13 +38,27 @@
             <img src="img/demo_notification.JPG" alt="">
             <br>
             <button onclick="location.href='./lesson.html'" type="button">התחל שיעור</button>
-            <button onclick="location.href='./find_teacher.html'" type="button">עבור למסך הקודם של התלמיד</button>
-            <button onclick="location.href='./start_teacher.html'" type="button">עבור למסך הקודם של המורה</button>
+            <button onclick="prevPage()" type="button">עבור למסך הקודם</button>
         </div>
 
     </div>
     <footer>
 
     </footer>
+    <script src="index.js"></script>
+    <script>
+        function prevPage() {
+          
+            const role = localStorage.getItem("data_config_role");
+            if(role == "teacher" ) {
+                location.href = './start_teacher.html';
+            }
+            else {
+                location.href = './start.html';
+            }
+    
+           
+        }
+    </script>
 </body>
 </html>

@@ -26,7 +26,8 @@
             <li><a id="lang_ru" class="lang_Russian">Russian</a></li> 
             
         </ul>
-        <div class="logo"><img src="./img/logo_smaller.png" alt=""></div>
+       
+        <div class="logo"><a href="index.html"><img src="./img/logo_smaller.png" alt=""></a></div>
         <form action="" name="data_config" hidden>
             <input id="role_type"  value="student">
             <input id="lang" value="he" >
@@ -43,7 +44,7 @@
                 <img src="./img/req/sign_in_edu_site.JPG" alt="edu gov site sign in">
             </picture>
             <p>מימוש של טופס מקושר לרישום דרך משרד החינוך</p>
-            <button   onclick="nextPage()" type="button">עבור למסך הבא</button>
+            <button   onclick="location.href='./start_config.html'"  type="button">עבור למסך הבא</button>
             <button   onclick="location.href='./index.html'" type="button">עבור למסך הקודם</button>
         </div>
 
@@ -53,19 +54,6 @@
     </footer>
 </div>
 <script src="index.js" ></script>
-<script>
-    function nextPage() {
-      
-        const role = localStorage.getItem("data_config_role");
-        if(role == "teacher" ) {
-            location.href = './start_teacher.html';
-        }
-        else {
-            location.href = './start.html';
-        }
 
-       
-    }
-</script>
 </body>
 </html>
