@@ -109,10 +109,6 @@ function to_student_view() {
     updateGUI();
 }
 
-function nextPage() {
-    location.href = './sign.html';
-}
-
 function updateGUI() {
     let lang = localStorage.getItem("data_config_lang");
     if (lang === null) {
@@ -152,5 +148,5 @@ document.querySelector('#lang_ru').addEventListener('click', translate_to_ru);
 document.querySelector('#to-teacher-view').addEventListener('click', to_teacher_view);
 document.querySelector('#to-student-view').addEventListener('click', to_student_view);
 
-document.querySelector('#next-btn').addEventListener('click', nextPage);
+
 

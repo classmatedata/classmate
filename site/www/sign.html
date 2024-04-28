@@ -6,6 +6,8 @@
     <title>>كلاسمت ClassMate קלאסמיייט </title>
     <link rel="stylesheet" href="./css/colors.css">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/general.css">
+
 </head>
 <body>
     <div class="container">
@@ -31,10 +33,39 @@
             <button type="button" onclick="updateGUI();">update Gui</button>
         </form>
     </header>
+    <main>
+        <div class="demo">
+            <h1>Sign </h1>
+          
+            <picture>
+                <source srcset="./img/req/sign_in_edu_mobile.JPG" media="(max-width: 600px)">
+                <source srcset="./img/req/sign_in_edu_site.JPG">
+                <img src="./img/req/sign_in_edu_site.JPG" alt="edu gov site sign in">
+            </picture>
+            <p>מימוש של טופס מקושר לרישום דרך משרד החינוך</p>
+            <button   onclick="nextPage()" type="button">עבור למסך הבא</button>
+            <button   onclick="location.href='./index.html'" type="button">עבור למסך הקודם</button>
+        </div>
+
+    </main>
     <footer>
-        <a href="sign_req.html" target="req">אפיון המסך</a>
+        
     </footer>
 </div>
 <script src="index.js" ></script>
+<script>
+    function nextPage() {
+      
+        const role = localStorage.getItem("data_config_role");
+        if(role == "teacher" ) {
+            location.href = './start_teacher.html';
+        }
+        else {
+            location.href = './start.html';
+        }
+
+       
+    }
+</script>
 </body>
 </html>
