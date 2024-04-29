@@ -21,6 +21,7 @@
     ".text_a_pleasure_to_meet_you": "",
 
     ".text_a_number_short_questions": "пару коротких вопросов:",
-    ".text_question_s_langs":"На каких языках вы предпочитаете учиться и преподавать?",
-    ".text_question_refer":"Как к тебе обращятся?"
+    ".text_question_s_langs":"На каких языках ты предпочитаешь учиться и преподавать?",
+    ".text_question_refer":"Как можно к тебе обращаться?",
+    ".text_what_are_you_learning_today":"Что будем учить сегодня "
 }

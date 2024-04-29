@@ -153,3 +153,8 @@ div label input {margin-right: 100px;}
     text-shadow: 0 0  6px rgba(0, 0, 0, 0.8);
     background-color: var(--bg-color-2);
   }
+
+  /* start.html */
+  #search_teacher_div > *,  #search_teacher_div  * {
+    font-size: 2rem;
+  }

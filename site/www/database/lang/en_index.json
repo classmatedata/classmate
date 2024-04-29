@@ -19,5 +19,7 @@
     ".text_a_pleasure_to_meet_you": " ",
     ".text_a_number_short_questions": "A number of short questions:",
     ".text_question_s_langs":"In what languages do you prefer to learn and teach?",
-    ".text_question_refer":"How to refer to your?"
+    ".text_question_refer":"How to refer to your?",
+
+    ".text_what_are_you_learning_today":"What are you learning today"
 }

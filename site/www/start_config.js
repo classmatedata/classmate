@@ -11,9 +11,9 @@ function nextPage() {
 
 
 }
-let user_data = {};
+
 function initData() {
-    user_data = JSON.parse(localStorage.getItem("user_data"));
+    let user_data = JSON.parse(localStorage.getItem("user_data"));
     document.querySelector("#text_name").innerText = user_data["name"];
 }
 

@@ -1,34 +1,54 @@
 <!DOCTYPE html>
-<html lang="he">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>كلاسمت ClassMate קלאסמיייט </title>
     <link rel="stylesheet" href="./css/colors.css">
+    <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/general.css">
 </head>
 <body>
+    <div class="container">
     <header>
-        <div class="logo"></div>
-        <navbar>
-            <nav></nav>
-            <nav></nav>
-            <nav></nav>
+        <navbar class="up-menu">
+           
+            <nav id="to-teacher-view"><span class="text_i_am_a_student small"></span>&nbsp;<a class="text_to-teacher-view"></a></nav>
+            <br>
+            <nav id="to-student-view" class="selected"><a class="text_to-student-view"></a>&nbsp;<span class="text_i_am_a_teacher small"></span></nav>
         </navbar>
         
-    </header>
-    <div class="container">
-        <div class="demo">
+        <ul class="lang-container" id="navList_LangMenu" >
+            <li><a id="lang_he" class="lang_Hebrew selected">עברית</a></li>
+            <li><a id="lang_en" class="lang_English">English</a></li>
+            <li><a id="lang_ar" class="lang_Arab">ערבית</a></li>
+            <li><a id="lang_ru" class="lang_Russian">Russian</a></li> 
             
-            <img src="img/demo_find_teacher.JPG" alt="">
-            <br>
+        </ul>
+        <div class="logo"><a href="index.html"><img src="./img/logo_smaller.png" alt=""></a></div>
+        <form action="" name="data_config" hidden>
+            <input id="role_type"  value="student">
+            <input id="lang" value="he" >
+            <button type="button" onclick="updateGUI();">update Gui</button>
+        </form>
+    </header>
+   <main class="demo">
+        <div id="search_teacher_div">  
+            <h1><span class="text_what_are_you_learning_today"></span>&nbsp;<span id="text_name"></span>?</h1>
+            <form class="find_details" >
+                <label for="course"><span class="text_course">מקצוע</span></label><input name="course" value=""><br>
+                <label for="subject"><span class="text_subject">נושא</span></label><input name="subject" value=""><br>
+                <label for="day"><span class="text_day">יום</span></label><input type="date" name="day" value=""><br>
+                <label for="time"><span class="text_time">שעה</span></label><input type="time" name="hour" value=""><br>
+            
             <button onclick="location.href='./find_teacher.html'" type="button">מצא לי מלמד</button>
-            <button onclick="location.href='./start_config.html'" type="button">עבור למסך הקודם</button>
+    
+        </form>
         </div>
-
-    </div>
-    <footer>
-
-    </footer>
+    <button onclick="location.href='./start_config.html'" type="button">עבור למסך הקודם</button>
+</main>
+    <script src="index.js" ></script>
+    <script src="start.js" ></script>
+</div>
 </body>
 </html>
