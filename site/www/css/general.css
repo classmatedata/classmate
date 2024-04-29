@@ -157,4 +157,20 @@ div label input {margin-right: 100px;}
   /* start.html */
   #search_teacher_div > *,  #search_teacher_div  * {
     font-size: 2rem;
+    color:var(--font-color);
+  }
+
+  #search_teacher_div label,#search_teacher_div label>*  {
+    color:var(--font-color-2);
+    background-color: var(--bg-color-2);
+    float:start;
+    text-align: start;
+  }
+
+  #find_teacher *{
+    border:1px green dashed !important;
+  }
+
+  #find_teacher .line {
+    width:100%;
   }

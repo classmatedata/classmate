@@ -45,8 +45,11 @@ function fill_texts(lang_file, dir) {
             if (elem !== null) {
                 elem.innerHTML = data;
                 elem.setAttribute("style", `direction:${dir};`);
-                elem.parentElement.setAttribute("style", `direction:${dir};`)
-                elem.parentElement.setAttribute("dir", dir)
+                elem.parentElement.setAttribute("style", `direction:${dir};`);
+                elem.parentElement.setAttribute("dir", dir);
+
+                elem.parentElement.parentElement.setAttribute("style", `direction:${dir};`);
+                elem.parentElement.parentElement.setAttribute("dir", dir);
 
             }
             else {

@@ -21,5 +21,12 @@
     ".text_question_s_langs":"In what languages do you prefer to learn and teach?",
     ".text_question_refer":"How to refer to your?",
 
-    ".text_what_are_you_learning_today":"What are you learning today"
+    ".text_what_are_you_learning_today":"What are you learning today",
+    ".text_course":"course",
+    ".text_subject":"subject",
+    ".text_day":"day",
+    ".text_time":"time",
+    
+    ".text_search_teacher":"search"
+
 }

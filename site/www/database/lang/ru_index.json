@@ -23,5 +23,10 @@
     ".text_a_number_short_questions": "пару коротких вопросов:",
     ".text_question_s_langs":"На каких языках ты предпочитаешь учиться и преподавать?",
     ".text_question_refer":"Как можно к тебе обращаться?",
-    ".text_what_are_you_learning_today":"Что будем учить сегодня "
+    ".text_what_are_you_learning_today":"Что будем учить сегодня ",
+    ".text_course":"предмет",
+    ".text_subject":"тема",
+    ".text_day":"день",
+    ".text_time":"время",
+    ".text_search_teacher":"поиск"
 }

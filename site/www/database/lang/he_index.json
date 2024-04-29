@@ -21,5 +21,10 @@
     ".text_a_number_short_questions": "כמה שאלות קצרות:",
     ".text_question_s_langs":"באילו שפות תרצו ללמוד וללמד?",
     ".text_question_refer":"איך לפנות אליך?",
-    ".text_what_are_you_learning_today":"מה לומדים היום,"
+    ".text_what_are_you_learning_today":"מה לומדים היום,",
+    ".text_course":"מקצוע",
+    ".text_subject":"נושא",
+    ".text_day":"יום",
+    ".text_time":"שעה",
+    ".text_search_teacher":"מצא לי מלמד!"
 }

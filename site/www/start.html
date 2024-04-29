@@ -35,13 +35,14 @@
    <main class="demo">
         <div id="search_teacher_div">  
             <h1><span class="text_what_are_you_learning_today"></span>&nbsp;<span id="text_name"></span>?</h1>
-            <form class="find_details" >
-                <label for="course"><span class="text_course">מקצוע</span></label><input name="course" value=""><br>
-                <label for="subject"><span class="text_subject">נושא</span></label><input name="subject" value=""><br>
-                <label for="day"><span class="text_day">יום</span></label><input type="date" name="day" value=""><br>
-                <label for="time"><span class="text_time">שעה</span></label><input type="time" name="hour" value=""><br>
+            <form class="#find_teacher" >
+                <div class="line"><label for="fnd_course"><span class="text_course">מקצוע</span></label><input id="fnd_course" name="course" value=""></div><br>
+                <div class="line"><label for="fnd_subject"><span class="text_subject">נושא</span></label><input  id="fnd_subject" name="subject" value=""></div><br>
+                <div class="line">
+                    <label for="fnd_day"><span class="text_day">יום</span></label><input type="date"  id="fnd_day" name="day" value="">
+                    <label for="fnd_hour"><span class="text_time">שעה</span></label><input type="time"  id="fnd_hour" name="hour" value=""></div><br>
             
-            <button onclick="location.href='./find_teacher.html'" type="button">מצא לי מלמד</button>
+            <button onclick="location.href='./find_teacher.html'" type="button"><span class="text_search_teacher"></span></button>
     
         </form>
         </div>
