@@ -155,6 +155,10 @@ div label input {margin-right: 100px;}
   }
 
   /* start.html */
+
+  #search_teacher_div {
+    display: block;
+  }
   #search_teacher_div > *,  #search_teacher_div  * {
     font-size: 2rem;
     color:var(--font-color);
@@ -163,14 +167,27 @@ div label input {margin-right: 100px;}
   #search_teacher_div label,#search_teacher_div label>*  {
     color:var(--font-color-2);
     background-color: var(--bg-color-2);
-    float:start;
-    text-align: start;
   }
 
-  #find_teacher *{
-    border:1px green dashed !important;
+  #search_teacher_div {
+    max-width: 500px;
+    margin: auto;
   }
-
-  #find_teacher .line {
+  
+  #search_teacher_div *{
+    border:1px green dashed;
+  }
+  #search_teacher_div .line.fx label{
+    /* display:block; */
+    /* width:100%; */
+    color: blue;
+  }
+  #search_teacher_div .line {
+    /* display:block; */
     width:100%;
+    /* text-align: start; */
+  }
+
+  #search_teacher_div .line.fx label {
+    width:100px;
   }
