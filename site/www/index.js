@@ -25,6 +25,7 @@ function loadDictionaries() {
         updateGUI();
     });
 }
+
 function fill_texts(lang_file) {
 
     for (let [quilifier, data] of Object.entries(lang_file)) {
