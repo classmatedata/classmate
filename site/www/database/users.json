@@ -2,7 +2,9 @@
     "123": {
         "name":"רוני",
         "lang":"he",
+        "gender":"male",
         "roles":["student"],
+        "s_lang":["he","en"],
         "last-login":"28-04-2024",
         "taken_lessons":{
             "1":{"datetime":"24-04-2024 17:00","course":"מתימטיקה","course_topic":"מעגלים", "teacher_id":"234", "feedback": {"stars":"5","about":"היה מצוין!!! תודה רבה"}},
@@ -19,6 +21,7 @@
     "234" : {
         "name": "Irina",
         "lang":"en",
+        "gender":"female",
         "roles":["student","teacher"],
         "s_lang":["he","ru"],
         "hours_volunteered":"20",
@@ -49,7 +52,9 @@
     "345": {
         "name":"דני",
         "lang":"he",
+        "gender":"male",
         "roles":["student"],
+        "s_lang":["he"],
         "last-login":"27-04-2024"
     }
 }

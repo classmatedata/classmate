@@ -16,7 +16,9 @@
     ".btn_sign_in_with_edu": "לשיעור בגובה עיניים ",
 
     ".text_username_id": "קוד משתמש",
-
     ".text_Hello": "שלום",
-    ".text_a_number_short_questions": "כמה שאלות קצרות:"
+    ".text_a_pleasure_to_meet_you": ", איזה כייף שבאת",
+    ".text_a_number_short_questions": "כמה שאלות קצרות:",
+    ".text_question_s_langs":"באילו שפות תרצו ללמוד וללמד?",
+    ".text_question_refer":"איך לפנות אליך?"
 }

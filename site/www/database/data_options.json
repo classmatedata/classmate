@@ -1,0 +1,16 @@
+{
+    "s_lang":{"he":"עברית","en":"English","ar":"عربيه","ru":"Русский","es":"Español","fr":"Français"},
+
+    "user_gender":{"male":"אתה/הוא","female":"את/היא","common":"אתם/הם"},
+
+    "txt_title": {
+        "en": "ClassMate",
+        "he": "קלאסמט",
+        "ar": "كلاسمت"
+    },
+    "txt_slogan": {
+        "en": "Students for students",
+        "he": "תלמידים למען תלמידים",
+        "ar": "الطلاب للطلاب"
+    }
+}

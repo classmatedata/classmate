@@ -35,18 +35,19 @@
     <div class="container">
        
         <div class="demo">
-            <h2><span class="text_Hello"></span>&nbsp<span id="text_name"></span><span>,</span></h2>
-            <p class="text_a_number_short_questions"></p>
+            <h2><span class="text_Hello"></span>&nbsp<span id="text_name"></span>
+            <span class="text_a_pleasure_to_meet_you">text_a_pleasure_to_meet_you</span><span>!</span></h2>
+            <p class="text_a_number_short_questions">text_a_number_short_questions</p>
             <div class="question">
                  <p class="text_question_s_langs">באילו שפות תרצו ללמוד וללמד?</p>
                  <ul id="config_question_s_langs"></ul>
             </div>
             <div class="question">
-                <p class="text_question_call">איך לפנות אליך?</p>
-                <ul id="config_question_calls"></ul>
+                <p class="text_question_refer">איך לפנות אליך?</p>
+                <ul id="config_question_gender"></ul>
            </div>
-            <img src="img/req/start_qeustion_Card1-selection.JPG" alt="">
-            <img src="img/req/start_qeustion_Card2.JPG" alt="">
+            <!-- <img src="img/req/start_qeustion_Card1-selection.JPG" alt="">
+            <img src="img/req/start_qeustion_Card2.JPG" alt=""> -->
             <br>
             <button   onclick="nextPage()" type="button">עבור למסך הבא</button>
             <button onclick="location.href='./sign_in.html'" type="button">עבור למסך הקודם</button>
@@ -54,25 +55,7 @@
 
     </div>
     <script src="index.js" ></script>
-    <script>
-        function nextPage() {
-          
-            const role = localStorage.getItem("data_config_role");
-            if(role == "teacher" ) {
-                location.href = './start_teacher.html';
-            }
-            else {
-                location.href = './start.html';
-            }
-    
-           
-        }
-        let user_data = {};
-        function initData() {
-            user_data =  JSON.parse(localStorage.getItem("user_data"));
-            document.querySelector("#text_name").innerText = user_data["name"];
-        }
-        initData();
-    </script>
+    <script src="start_config.js" ></script>
+   
 </body>
 </html>

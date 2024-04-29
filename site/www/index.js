@@ -4,7 +4,7 @@ function load_list(list_url, callback) {
         .then((json) => callback(json));
 }
 function loadDictionaries() {
-    let dictionaries = { "he": { dir: "rtl" }, "en": { dir: "ltr" } };
+    let dictionaries = { "he": { dir: "rtl" }, "en": { dir: "ltr" }, "ru": { dir: "ltr" } };
     localStorage.setItem("dictionaries", JSON.stringify(dictionaries));
 
     load_list('./database/lang/he_index.json', (json) => {
@@ -24,14 +24,31 @@ function loadDictionaries() {
         localStorage.setItem("dictionaries", JSON.stringify(stored_dictionaries));
         updateGUI();
     });
+
+    load_list('./database/lang/ru_index.json', (json) => {
+        //console.log(json);
+        let stored_dictionaries = JSON.parse(localStorage.getItem("dictionaries"));
+        stored_dictionaries["ru"]["texts"] = json;
+        localStorage.removeItem("dictionaries");
+        localStorage.setItem("dictionaries", JSON.stringify(stored_dictionaries));
+        updateGUI();
+    });
 }
 
-function fill_texts(lang_file) {
+function fill_texts(lang_file, dir) {
+    document.querySelector("html").setAttribute("lang", lang_file["#lang"]);
+    document.querySelector("body").setAttribute("dir", dir);
 
     for (let [quilifier, data] of Object.entries(lang_file)) {
         if (typeof (data) === "string") {
             const elem = document.querySelector(quilifier);
-            if (elem !== null) { elem.innerHTML = data; }
+            if (elem !== null) {
+                elem.innerHTML = data;
+                elem.setAttribute("style", `direction:${dir};`);
+                elem.parentElement.setAttribute("style", `direction:${dir};`)
+                elem.parentElement.setAttribute("dir", dir)
+
+            }
             else {
                 // console.log("error find  from dictionary ", lang_file["lang"], " not found in html:", quilifier, " not found");
             }
@@ -83,7 +100,10 @@ function translate_to_en() {
 
 function translate_to_ru() {
     console.log("RU lang dictionary is not defined for this page");
-
+    const lang = "ru";
+    localStorage.setItem("data_config_lang", lang);
+    document.querySelector("#lang").value = lang;
+    updateGUI();
 }
 
 
@@ -118,7 +138,7 @@ function updateGUI() {
     if (dictionaries[lang]['texts'] == undefined) {
         return;
     }
-    fill_texts(dictionaries[lang]['texts']);
+    fill_texts(dictionaries[lang]['texts'], dictionaries[lang]["dir"]);
 
     let gui_role = localStorage.getItem("data_config_role");
     if (gui_role === null) {

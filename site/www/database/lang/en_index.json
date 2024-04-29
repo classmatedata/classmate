@@ -15,6 +15,9 @@
     ".btn_sign_in_with_edu": "Eye-Level Lesson ",
 
     ".text_username_id": "User Id",
-    ".text_Hello": "Hello",
-    ".text_a_number_short_questions": "a number of short questions:"
+    ".text_Hello": "Welcome ",
+    ".text_a_pleasure_to_meet_you": " ",
+    ".text_a_number_short_questions": "A number of short questions:",
+    ".text_question_s_langs":"In what languages do you prefer to learn and teach?",
+    ".text_question_refer":"How to refer to your?"
 }
