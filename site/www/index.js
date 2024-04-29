@@ -1,48 +1,32 @@
-// import texts_json_he from './lang/he_index.json' with { type: 'json' };
-// import texts_json_en from './lang/en_index.json' with { type: 'json' };
-const texts_json_en = {
-    "#lang": "en",
-    ".lang_English": "English",
-    ".lang_Arab": "العربية",
-    ".lang_Russian": "Русский",
-    ".lang_Hebrew": "עברית",
-    ".text_i_am_a_teacher": "I am a teacher",
-    ".text_i_am_a_student": "I am a student",
-    ".text_to-teacher-view": "Switch to teaching",
-    ".text_to-student-view": "Switch to studying",
-    ".text_intro_title-0": "Free ",
-    ".text_intro_title": "Online",
-    ".text_intro_title_cont1": "Tutoring",
-    ".text_intro_title_cont2": "",
-    ".btn_sign_in_with_edu": "Eye-Level Lesson ",
+let users_json = {};
 
-    ".text_username_id": "User Id",
-    ".text_Hello": "Hello",
-    ".text_a_number_short_questions": "a number of short questions:"
-};
-const texts_json_he = {
-    "#lang": "he",
-    ".lang_English": "English",
+function load_list(list_url, callback) {
+    fetch(list_url)
+        .then((response) => response.json())
+        .then((json) => callback(json));
+}
+function loadDictionaries() {
+    let dictionaries = { "he": { dir: "rtl" }, "en": { dir: "ltr" } };
+    localStorage.setItem("dictionaries", JSON.stringify(dictionaries));
 
-    ".lang_Arab": "العربية",
-    ".lang_Russian": "Русский",
+    load_list('./database/lang/he_index.json', (json) => {
+        console.log(json);
+        let stored_dictionaries = JSON.parse(localStorage.getItem("dictionaries"));
+        stored_dictionaries["he"]["texts"] = json;
+        localStorage.removeItem("dictionaries");
+        localStorage.setItem("dictionaries", JSON.stringify(stored_dictionaries));
+        updateGUI();
+    });
 
-    ".text_i_am_a_teacher": "מלמד",
-    ".text_i_am_a_student": "לומד",
-    ".text_to-teacher-view": "עבור למצב מלמד",
-    ".text_to-student-view": "עבור למצב לומד",
-    ".text_intro_title-0": " ",
-    ".text_intro_title": "שיעורי עזר",
-    ".text_intro_title_cont1": "בלימודים",
-    ".text_intro_title_cont2": "בחינם",
-    ".btn_sign_in_with_edu": "לשיעור בגובה עיניים ",
-
-    ".text_username_id": "קוד משתמש",
-
-    ".text_Hello": "שלום",
-    ".text_a_number_short_questions": "כמה שאלות קצרות:"
-};
-const dictionaries = { "he": { dir: "rtl", "texts": texts_json_he }, "en": { dir: "ltr", "texts": texts_json_en } };
+    load_list('./database/lang/en_index.json', (json) => {
+        console.log(json);
+        let stored_dictionaries = JSON.parse(localStorage.getItem("dictionaries"));
+        stored_dictionaries["en"]["texts"] = json;
+        localStorage.removeItem("dictionaries");
+        localStorage.setItem("dictionaries", JSON.stringify(stored_dictionaries));
+        updateGUI();
+    });
+}
 function fill_texts(lang_file) {
 
     for (let [quilifier, data] of Object.entries(lang_file)) {
@@ -129,7 +113,12 @@ function updateGUI() {
         elem.classList.remove('selected');
     }
     document.querySelector(`#lang_${lang}`).classList.add('selected');
+
+    let dictionaries = JSON.parse(localStorage.getItem("dictionaries"));
     update_page_direction(dictionaries[lang]["dir"]);
+    if (dictionaries[lang]['texts'] == undefined) {
+        return;
+    }
     fill_texts(dictionaries[lang]['texts']);
 
     let gui_role = localStorage.getItem("data_config_role");
@@ -147,8 +136,8 @@ function updateGUI() {
 
 
 }
+loadDictionaries();
 
-updateGUI();
 document.querySelector('#lang_he').addEventListener('click', translate_to_he);
 document.querySelector('#lang_en').addEventListener('click', translate_to_en);
 document.querySelector('#lang_ar').addEventListener('click', translate_to_ar);

@@ -1,0 +1,20 @@
+{
+    "#lang": "en",
+    ".lang_English": "English",
+    ".lang_Arab": "العربية",
+    ".lang_Russian": "Русский",
+    ".lang_Hebrew": "עברית",
+    ".text_i_am_a_teacher": "I am a teacher",
+    ".text_i_am_a_student": "I am a student",
+    ".text_to-teacher-view": "Switch to teaching",
+    ".text_to-student-view": "Switch to studying",
+    ".text_intro_title-0": "Free ",
+    ".text_intro_title": "Online",
+    ".text_intro_title_cont1": "Tutoring",
+    ".text_intro_title_cont2": "",
+    ".btn_sign_in_with_edu": "Eye-Level Lesson ",
+
+    ".text_username_id": "User Id",
+    ".text_Hello": "Hello",
+    ".text_a_number_short_questions": "a number of short questions:"
+}
