@@ -120,7 +120,7 @@ button:hover {
     cursor: pointer;
 }
 main button {
- 
+    min-width: fit-content;
     background-color: var(--bg-color-2);
     color:var(--font-color-2);
     font-size: xx-large;
@@ -155,29 +155,6 @@ main div.center {
 }
 
 
-footer {padding-left: 2rem;
-    height: 7rem;
-    position: fixed;
-    bottom: 0;
-    width:100%;
-    display: flex;
-    justify-content: space-between;
-
-}
-
-.footerItem:last-child() {
-    
-    text-align: end;
-}
-footer button {
-   
-    padding: 0.5rem 1.5rem;
-    font-size: xxx-large;
-    font-weight: 900;
-}
-footer button:hover {
-    background-color: var(--bg-color-1-active);
-}
 
 @media screen and (max-width:500px) {
     h1 , h1  *{

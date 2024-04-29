@@ -9,16 +9,13 @@
  }
 .container {
     margin: auto;
-    
+    height: 100vh;
     width:100%;  
     background-color: var(--bg-color-1);
     color:var(--font-color-1);
     
  }
- main {
-   height: 100vh;
-   
- }
+
  button {
    width:10rem;
    height: 4rem;
@@ -79,13 +76,7 @@ div.scroll-container {
     padding: 10px;
   }
 
-  footer {
-   background-color: var(--bg-color-2);
-   height: 3rem;
-   position: fixed;
-   bottom: 0;
-   width: 100%;
- }
+
 
  .user_input * {
   font-size: larger;
@@ -179,15 +170,36 @@ div label input {margin-right: 100px;}
   }
   #search_teacher_div .line.fx label{
     /* display:block; */
-    /* width:100%; */
-    color: blue;
+    width:100px; 
+    margin: 0;
+    padding: 0;
   }
   #search_teacher_div .line {
     /* display:block; */
     width:100%;
+    margin: 0;
+    padding: 0;
     /* text-align: start; */
   }
 
-  #search_teacher_div .line.fx label {
-    width:100px;
+  #search_teacher_div .line.fx label span{
+    width:100%;
+    margin: 0;
+  }
+  #search_teacher_div button {
+    width: 100%;
+    margin: 0;
+  }
+  @media screen and (max-width:500px) {
+    #search_teacher_div {
+      width: 100%;
+    }
+
+    #search_teacher_div  input,  #search_teacher_div  label {
+      width:100%;
+    }
+    #search_teacher_div  label {
+      color:var(--font-color-2);
+      background-color: var(--bg-color-2);
+    }
   }
