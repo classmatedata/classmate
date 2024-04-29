@@ -1,5 +1,3 @@
-let users_json = {};
-
 function load_list(list_url, callback) {
     fetch(list_url)
         .then((response) => response.json())
@@ -10,7 +8,7 @@ function loadDictionaries() {
     localStorage.setItem("dictionaries", JSON.stringify(dictionaries));
 
     load_list('./database/lang/he_index.json', (json) => {
-        console.log(json);
+        //console.log(json);
         let stored_dictionaries = JSON.parse(localStorage.getItem("dictionaries"));
         stored_dictionaries["he"]["texts"] = json;
         localStorage.removeItem("dictionaries");
@@ -19,7 +17,7 @@ function loadDictionaries() {
     });
 
     load_list('./database/lang/en_index.json', (json) => {
-        console.log(json);
+        //console.log(json);
         let stored_dictionaries = JSON.parse(localStorage.getItem("dictionaries"));
         stored_dictionaries["en"]["texts"] = json;
         localStorage.removeItem("dictionaries");
