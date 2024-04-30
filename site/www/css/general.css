@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+
  }
  body {
     direction: rtl;
@@ -151,7 +152,7 @@ div label input {margin-right: 100px;}
     display: block;
   }
   #search_teacher_div > *,  #search_teacher_div  * {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color:var(--font-color);
   }
 
@@ -161,42 +162,112 @@ div label input {margin-right: 100px;}
   }
 
   #search_teacher_div {
-    max-width: 500px;
+    width: 550px;
     margin: auto;
+    padding: 10px;
   }
-  
+  #search_teacher_div h1 * ,
+  #search_teacher_div h1 
+  {
+    color: var(--font-color-1);
+    font-size: xx-large;
+    font-weight: bold;
+  }
+  #search_teacher_div>*,#search_teacher_div form  * {
+    margin-bottom: 10px;
+  }
   #search_teacher_div *{
-    border:1px green dashed;
-  }
-  #search_teacher_div .line.fx label{
-    /* display:block; */
-    width:100px; 
-    margin: 0;
-    padding: 0;
+   
+    text-align: center;
+    font-weight: normal;
   }
   #search_teacher_div .line {
-    /* display:block; */
-    width:100%;
-    margin: 0;
+    display: flex;
+    flex-direction: row;
+    margin: 5px auto;
     padding: 0;
-    /* text-align: start; */
+   
   }
+  
+  #search_teacher_div .line.fx  input{
+   
+   width: 450px;
+  }
+  #search_teacher_div .line div  label>span{
+ 
+   width: 100px;
+  }
+  #search_teacher_div   label  {
+    text-align: center;
+  }
+  #search_teacher_div .line.fx label{
+    display: flex;
+    flex-direction: column;
+    width:100px; 
 
-  #search_teacher_div .line.fx label span{
-    width:100%;
-    margin: 0;
   }
+  #search_teacher_div .line:not(.fx) div {
+    text-align: center ;
+    display: flex;
+    flex-direction: row;
+   
+  
+    
+  }
+  #search_teacher_div .line:not(.fx) div>label {
+    
+    display: flex;
+    flex-direction: row;
+    width:100px; 
+    
+  }
+ 
   #search_teacher_div button {
     width: 100%;
     margin: 0;
+    background-color: var(--bg-color-2);
+    
+    /* opacity: 0.6; */
   }
+  #search_teacher_div button > span {
+    color: var(--font-color-2);
+  }
+  #search_teacher_div button:hover {
+    /* opacity: 1; */
+    filter:brightness(120%)
+  }
+
   @media screen and (max-width:500px) {
     #search_teacher_div {
       width: 100%;
+      padding: 20px;
     }
-
-    #search_teacher_div  input,  #search_teacher_div  label {
-      width:100%;
+    #search_teacher_div .line,
+    #search_teacher_div .line:not(.fx) div {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    #search_teacher_div .line.fx  input,
+    #search_teacher_div .line div input{
+      padding: 0;
+      margin: auto;
+      width: 100%;
+     }
+     #search_teacher_div .line.fx label,
+     #search_teacher_div .line:not(.fx) div>label{
+      
+      width: 100%; 
+  
+    }
+    #search_teacher_div .line.fx label>*,
+    #search_teacher_div .line:not(.fx) div>label>*{
+      margin: auto;
+      width: 100%;
+      text-align: start;
     }
     #search_teacher_div  label {
       color:var(--font-color-2);
