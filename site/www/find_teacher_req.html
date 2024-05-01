@@ -9,15 +9,28 @@
 </head>
 <body>
     <div class="container">
-    <header>
-        <div class="logo"></div>
-        <navbar>
-            <nav></nav>
-            <nav></nav>
-            <nav></nav>
-        </navbar>
-        
-    </header>
+        <header>
+            <div class="logo"><a href="index.html"><img src="./img/logo_smaller_rtl.png" class="lang_rtl" alt=""><img src="./img/logo_smaller_ltr.png" class="lang_ltr" alt=""></a></div>
+            <navbar class="up-menu" id="up-menu">             
+                <nav  class="to-teacher-view"><a class="text_to-teacher-view small"></a></nav>      
+                <span class="text_i_am_a_student to-teacher-view" selected></span>
+                <span class="text_i_am_a_teacher to-student-view"></span>
+                <nav class="to-student-view" class="selected"><a class="text_to-student-view small"></a></span></nav>
+            </navbar>
+            
+            <ul class="lang-container" id="navList_LangMenu" >
+                <li><a id="lang_he" class="lang_Hebrew selected">עברית</a></li>
+                <li><a id="lang_en" class="lang_English">English</a></li>
+                <li><a id="lang_ar" class="lang_Arab">ערבית</a></li>
+                <li><a id="lang_ru" class="lang_Russian">Russian</a></li>               
+            </ul>
+            
+            <form action="" name="data_config" hidden>
+                <input id="role_type"  value="student">
+                <input id="lang" value="he" >
+                <button type="button" onclick="updateGUI();">update Gui</button>
+            </form>
+        </header>
    
         <div class="demo">
             <h1>find teacher </h1>

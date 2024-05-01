@@ -12,6 +12,7 @@
 <body>
     <div class="container">
         <header>
+            <div class="logo"><a href="index.html"><img src="./img/logo_smaller_rtl.png" class="lang_rtl" alt=""><img src="./img/logo_smaller_ltr.png" class="lang_ltr" alt=""></a></div>
             <navbar class="up-menu" id="up-menu">             
                 <nav  class="to-teacher-view"><a class="text_to-teacher-view small"></a></nav>      
                 <span class="text_i_am_a_student to-teacher-view" selected></span>
@@ -23,10 +24,9 @@
                 <li><a id="lang_he" class="lang_Hebrew selected">עברית</a></li>
                 <li><a id="lang_en" class="lang_English">English</a></li>
                 <li><a id="lang_ar" class="lang_Arab">ערבית</a></li>
-                <li><a id="lang_ru" class="lang_Russian">Russian</a></li> 
-                
+                <li><a id="lang_ru" class="lang_Russian">Russian</a></li>               
             </ul>
-            <div class="logo"><a href="index.html"><img src="./img/logo_smaller.png" alt=""></a></div>
+            
             <form action="" name="data_config" hidden>
                 <input id="role_type"  value="student">
                 <input id="lang" value="he" >
@@ -43,7 +43,10 @@
                 <div class="middle">
                 <h1 class="middle"><span class=" text_intro_title-0 green"></span><wbr>&nbsp;<span class="text_intro_title"></span></h1>
                 <h1><span class="text_intro_title_cont1"></span><wbr>&nbsp;<span class="text_intro_title_cont2 green">טקסק הירוק</span></h1>
-                <button id="next-btn"  onclick="location.href='./sign_in.html'" type="button" ><span class="btn_sign_in_with_edu"></span><i class="fa fa-arrow-left lang_rtl hidden" ></i><i class="fa fa-arrow-right lang_ltr hidden"></i></button>
+                <button id="next-btn"  onclick="location.href='./sign_in.html'" type="button" ><span class="btn_sign_in_with_edu"></span>
+                    <i class="fa fa-arrow-left lang_rtl hidden" ></i>
+                    <i class="fa fa-arrow-right lang_ltr hidden"></i>
+                </button>
             </div>
             </div>
             <div class="show_bg">
