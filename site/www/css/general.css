@@ -173,7 +173,7 @@ div label input {margin-right: 100px;}
     font-size: xx-large;
     font-weight: bold;
   }
-  #search_teacher_div>*,#search_teacher_div form  * {
+  #search_teacher_div ,#search_teacher_div form  {
     margin-bottom: 10px;
   }
   #search_teacher_div *{
@@ -194,8 +194,7 @@ div label input {margin-right: 100px;}
    width: 450px;
   }
   #search_teacher_div .line div  label>span{
- 
-   width: 100px;
+    width: 100px;
   }
   #search_teacher_div   label  {
     text-align: center;

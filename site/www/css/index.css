@@ -38,16 +38,21 @@ ul.lang-container {
 header .lang-container {
     color: var(--font-color-0);
 }
+
+
 header .up-menu .selected * {
     font-weight: bold;  
-    
+    color: white;
+    text-align: center;
+   
 }
 #up-menu nav.selected {
     border:2px solid  var(--bg-color-2);
     border-radius: 2rem;
     margin: 0;
     background-color: var(--bg-color-2);
-    color: white;/* var(--font-color-2);*/
+    /* color: white; */
+    /* var(--font-color-2);*/
 }
 .up-menu span {
     padding: 10px;
@@ -62,10 +67,13 @@ header .up-menu  {
     font-size: x-large;
     font-weight: normal;
     /* color: var(--font-color-0); */
-    gap:2rem;
+    /* gap:2rem; */
     border:2px solid  var(--bg-color-2);
     border-radius: 2rem;
+   flex-wrap: nowrap;
+  
 }
+
 .small {
     font-size: small;
 }
