@@ -155,11 +155,11 @@ function updateGUI() {
         localStorage.setItem("data_config_role", gui_role);
     }
     if (gui_role === "student") {
-        document.querySelector("#to-teacher-view").classList.add('selected');
-        document.querySelector("#to-student-view").classList.remove('selected');
+        document.querySelectorAll(".to-teacher-view").forEach((item) => { item.classList.add('selected') });
+        document.querySelectorAll(".to-student-view").forEach((item) => { item.classList.remove('selected') });
     } else {
-        document.querySelector("#to-teacher-view").classList.remove('selected');
-        document.querySelector("#to-student-view").classList.add('selected');
+        document.querySelectorAll(".to-teacher-view").forEach((item) => { item.classList.remove('selected') });
+        document.querySelectorAll(".to-student-view").forEach((item) => { item.classList.add('selected') });
     }
 
 
@@ -171,8 +171,9 @@ document.querySelector('#lang_en').addEventListener('click', translate_to_en);
 document.querySelector('#lang_ar').addEventListener('click', translate_to_ar);
 document.querySelector('#lang_ru').addEventListener('click', translate_to_ru);
 
-document.querySelector('#to-teacher-view').addEventListener('click', to_teacher_view);
-document.querySelector('#to-student-view').addEventListener('click', to_student_view);
-
+document.querySelector('nav.to-teacher-view').addEventListener('click', to_teacher_view);
+document.querySelector('nav.to-student-view').addEventListener('click', to_student_view);
+document.querySelector('span.to-teacher-view').addEventListener('click', to_teacher_view);
+document.querySelector('span.to-student-view').addEventListener('click', to_student_view);
 
 

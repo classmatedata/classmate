@@ -12,12 +12,13 @@
 <body>
     <div class="container">
     <header>
-        <navbar class="up-menu">
-           
-            <nav id="to-teacher-view"><span class="text_i_am_a_student small"></span>&nbsp;<a class="text_to-teacher-view"></a></nav>
-            <br>
-            <nav id="to-student-view" class="selected"><a class="text_to-student-view"></a>&nbsp;<span class="text_i_am_a_teacher small"></span></nav>
+        <navbar class="up-menu" id="up-menu">             
+            <nav  class="to-teacher-view"><a class="text_to-teacher-view small"></a></nav>      
+            <span class="text_i_am_a_student to-teacher-view" selected></span>
+            <span class="text_i_am_a_teacher to-student-view"></span>
+            <nav class="to-student-view" class="selected"><a class="text_to-student-view small"></a></span></nav>
         </navbar>
+        
         
         <ul class="lang-container" id="navList_LangMenu" >
             <li><a id="lang_he" class="lang_Hebrew selected">עברית</a></li>
