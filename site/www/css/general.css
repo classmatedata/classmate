@@ -272,4 +272,60 @@ div label input {margin-right: 100px;}
       color:var(--font-color-2);
       background-color: var(--bg-color-2);
     }
+
+  
+   
   }
+ div.found_more_options {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+ }
+  div.found_option{
+    min-width: 360px;
+    max-width: 400px;
+    border:2px solid var(--bg-color-2);
+    margin:auto;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    box-shadow: 11px 13px 36px 1px var(--bg-color-shadow);
+    -webkit-box-shadow: 11px 13px 36px 1px var(--bg-color-shadow);
+    -moz-box-shadow: 11px 13px 36px 1px var(--bg-color-shadow);
+ }
+ /* div.found_option * {
+  border:1px dashed var(--bg-color-2);
+ } */
+ div.found_option img {
+  /* border:2px solid var(--bg-color-2); */
+  border-radius: 50%;
+  margin-top: 20px;
+  width:120px;
+ }
+ div.found_option .teacher_photo {
+    display: inline;
+    float:inline-start;
+    padding-inline: 10px;
+ }
+ div.found_option .teacher_details {
+    display: inline;
+    margin-inline-start: 10px;
+ }
+main  p  a.link
+{
+  cursor: pointer;
+  display: block;
+  padding:20px;
+  width:200px;
+  margin: auto;
+  border-radius: 20px;
+  border:2px solid var(--bg-color-0);
+  box-shadow: 11px 13px 36px 1px var(--bg-color-shadow);
+  -webkit-box-shadow: 11px 13px 36px 1px var(--bg-color-shadow);
+  -moz-box-shadow: 11px 13px 36px 1px var(--bg-color-shadow);
+ }
+
+ main  p  a.link:hover {
+  box-shadow: none;
+  border:2px solid var(--bg-color-2);
+
+ }
