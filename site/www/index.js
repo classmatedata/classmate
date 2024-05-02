@@ -3,35 +3,31 @@ function load_list(list_url, callback) {
         .then((response) => response.json())
         .then((json) => callback(json));
 }
+function updateTextsInLocalStorage(json, lang) {
+    let stored_dictionaries = JSON.parse(localStorage.getItem("dictionaries"));
+    stored_dictionaries[lang]["texts"] = json;
+    localStorage.removeItem("dictionaries");
+    localStorage.setItem("dictionaries", JSON.stringify(stored_dictionaries));
+    updateGUI();
+}
+
 function loadDictionaries() {
     let dictionaries = { "he": { dir: "rtl" }, "en": { dir: "ltr" }, "ru": { dir: "ltr" } };
     localStorage.setItem("dictionaries", JSON.stringify(dictionaries));
 
     load_list('./database/lang/he_index.json', (json) => {
         //console.log(json);
-        let stored_dictionaries = JSON.parse(localStorage.getItem("dictionaries"));
-        stored_dictionaries["he"]["texts"] = json;
-        localStorage.removeItem("dictionaries");
-        localStorage.setItem("dictionaries", JSON.stringify(stored_dictionaries));
-        updateGUI();
+        updateTextsInLocalStorage(json, "he");
     });
 
     load_list('./database/lang/en_index.json', (json) => {
         //console.log(json);
-        let stored_dictionaries = JSON.parse(localStorage.getItem("dictionaries"));
-        stored_dictionaries["en"]["texts"] = json;
-        localStorage.removeItem("dictionaries");
-        localStorage.setItem("dictionaries", JSON.stringify(stored_dictionaries));
-        updateGUI();
+        updateTextsInLocalStorage(json, "en");
     });
 
     load_list('./database/lang/ru_index.json', (json) => {
         //console.log(json);
-        let stored_dictionaries = JSON.parse(localStorage.getItem("dictionaries"));
-        stored_dictionaries["ru"]["texts"] = json;
-        localStorage.removeItem("dictionaries");
-        localStorage.setItem("dictionaries", JSON.stringify(stored_dictionaries));
-        updateGUI();
+        updateTextsInLocalStorage(json, "ru");
     });
 }
 
@@ -46,8 +42,6 @@ function fill_texts(lang_file, dir) {
                 elem.innerHTML = data;
                 elem.setAttribute("style", `direction:${dir};`);
                 elem.setAttribute("dir", dir);
-
-
 
                 elem.parentElement.setAttribute("style", `direction:${dir};`);
                 elem.parentElement.setAttribute("dir", dir);
