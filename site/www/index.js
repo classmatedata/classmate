@@ -12,7 +12,7 @@ function updateTextsInLocalStorage(json, lang) {
 }
 
 function loadDictionaries() {
-    let dictionaries = { "he": { dir: "rtl" }, "en": { dir: "ltr" }, "ru": { dir: "ltr" } };
+    let dictionaries = { "he": { dir: "rtl" }, "en": { dir: "ltr" }, "ru": { dir: "ltr" }, "ar": { dir: "rtl" } };
     localStorage.setItem("dictionaries", JSON.stringify(dictionaries));
 
     load_list('./database/lang/he_index.json', (json) => {
@@ -28,6 +28,10 @@ function loadDictionaries() {
     load_list('./database/lang/ru_index.json', (json) => {
         //console.log(json);
         updateTextsInLocalStorage(json, "ru");
+    });
+    load_list('./database/lang/ar_index.json', (json) => {
+        //console.log(json);
+        updateTextsInLocalStorage(json, "ar");
     });
 }
 
@@ -90,9 +94,13 @@ function translate_to_he() {
     updateGUI();
 }
 function translate_to_ar() {
-    console.log("AR lang dictionary is not defined for this page");
-
+    // console.log("AR lang dictionary is not defined for this page");
+    const lang = "ar";
+    localStorage.setItem("data_config_lang", lang);
+    document.querySelector("#lang").value = lang;
+    updateGUI();
 }
+
 
 function translate_to_en() {
     const lang = "en";
@@ -102,7 +110,7 @@ function translate_to_en() {
 }
 
 function translate_to_ru() {
-    console.log("RU lang dictionary is not defined for this page");
+    // console.log("RU lang dictionary is not defined for this page");
     const lang = "ru";
     localStorage.setItem("data_config_lang", lang);
     document.querySelector("#lang").value = lang;
