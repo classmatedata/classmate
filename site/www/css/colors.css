@@ -8,7 +8,7 @@
 F5F3EA - קרם רקע
 313131 - שחור טקסט
     */
-   --bg-color-1: #f5f3ea;
+   --bg-color-1: rgb(245, 243, 234);
    --bg-color-1-disabled: #8db696;
    --bg-color-1-active: rgb(255, 255, 255);
    --bg-color-2:  rgb(63,176,114);
