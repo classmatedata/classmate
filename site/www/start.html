@@ -38,11 +38,25 @@
         <div id="search_teacher_div">  
             <h1><span class="text_what_are_you_learning_today"></span>&nbsp;<span id="text_name"></span>?</h1>
             <form class="find_teacher_form" >
-                <div class="line fx"><label for="fnd_course"><span class="text_course">מקצוע</span></label><input id="fnd_course" name="course" value=""></div>
-                <div class="line fx"><label for="fnd_subject"><span class="text_subject">נושא</span></label><input  id="fnd_subject" name="subject" value=""></div>
+                <div class="line fx">
+                    <label for="fnd_course"><span class="text_course">מקצוע</span></label>
+                    <input id="fnd_course" list="dl_courses" name="course" value="">
+                    <datalist id="dl_courses"></datalist>
+                </div>
+                <div class="line fx">
+                    <label for="fnd_subject"><span class="text_subject">נושא</span></label>
+                    <input  id="fnd_subject" list="dl_topics" name="subject" value="">
+                    <datalist id="dl_topics"></datalist>
+                </div>
                 <div class="line">
-                   <div class="nowrap"> <label for="fnd_day"><span class="text_day">יום</span></label><input type="date"  id="fnd_day" name="day" value=""></div>
-                   <div class="nowrap"> <label for="fnd_hour"><span class="text_time">שעה</span></label><input type="time"  id="fnd_hour" name="hour" value=""></div>
+                   <div class="nowrap"> 
+                    <label for="fnd_day"><span class="text_day">יום</span></label>
+                    <input type="date"  id="fnd_day" name="day" value="">
+                </div>
+                   <div class="nowrap"> 
+                    <label for="fnd_hour"><span class="text_time">שעה</span></label>
+                    <input type="time"  id="fnd_hour" name="hour" value="">
+                </div>
                 </div>
             
             <button onclick="location.href='./find_teacher.html'" type="button"><span class="text_search_teacher"></span></button>
