@@ -189,7 +189,8 @@ div label input {margin-right: 100px;}
    
   }
   
-  #search_teacher_div .line.fx  input{
+  #search_teacher_div .line.fx  input,
+  #search_teacher_div .line.fx  select{
    
    width: 450px;
   }

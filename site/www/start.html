@@ -40,13 +40,15 @@
             <form class="find_teacher_form" >
                 <div class="line fx">
                     <label for="fnd_course"><span class="text_course">מקצוע</span></label>
-                    <input id="fnd_course" list="dl_courses" name="course" value="">
-                    <datalist id="dl_courses"></datalist>
+                    <select id="fnd_course"  name="course" value="" oninput="loadTopicsSearchOptions();">
+                    <!-- <datalist id="dl_courses"></datalist> -->
+                    </select>
                 </div>
                 <div class="line fx">
                     <label for="fnd_subject"><span class="text_subject">נושא</span></label>
-                    <input  id="fnd_subject" list="dl_topics" name="subject" value="">
-                    <datalist id="dl_topics"></datalist>
+                    <select id="fnd_subject"  name="subject" value="" ></select>
+                    <!-- <input  id="fnd_subject" list="dl_topics" name="subject" value=""> -->
+                    <!-- <datalist id="dl_topics"></datalist> -->
                 </div>
                 <div class="line">
                    <div class="nowrap"> 
