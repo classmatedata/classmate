@@ -9,9 +9,11 @@ function loadCoursesSearchOptions() {
     for (let str of Object.keys(data_options)) {
         str_html += `<option value="${str}">${data_options[str]["name"]}</option>`;;
     }
-    document.querySelector("#fnd_course").innerHTML = str_html;
+    document.querySelector("#dl_courses").innerHTML = str_html;
+
 }
 function loadTopicsSearchOptions() {
+    document.querySelector("#fnd_subject").removeAttribute("disabled");
     let data_options = JSON.parse(localStorage.getItem("data_courses"));
     let course = document.querySelector("#fnd_course").value;
 
@@ -19,7 +21,7 @@ function loadTopicsSearchOptions() {
     for (let [_, str] of Object.entries(data_options[course]["topics"])) {
         str_html += `<option value="${str}">${str}</option>`;;
     }
-    document.querySelector("#fnd_subject").innerHTML = str_html;
+    document.querySelector("#dl_subject").innerHTML = str_html;
 }
 
 function defaultHour(date) {
