@@ -27,6 +27,12 @@
     ".text_day":"day",
     ".text_time":"time",
     
+
+    ".text_volonteer_sum-hours":"total hours",
+    ".text_volonteer_hours-done":" hours done",
+    ".text_volonteer_hours-reminder":"reminded hours",
+
+    ".text_scheduled_lessons":"Scheduled lessons:",
     ".text_search_teacher":"search",
     ".text_courses_i_teach": "Courses I teach",
     ".text_can_teach_hours": "Can teach hours:",

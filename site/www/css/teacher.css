@@ -1,9 +1,44 @@
+
+.teacher_info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+
+}
+
+.courses_and_schedule_div {
+  width:100%;
+  margin: 0;
+  padding: 1rem;
+}
+.status_hours_div {
+  display: flex;
+  justify-content: space-between;
+  max-width:100%;
+  padding: 0;
+  margin: auto;
+}
+.status_data_list li {
+  margin-bottom: 10px;
+}
+
 .teacher_info * h2>span,
 .teacher_info * h2
 {
   font-size: 1.5em;
   display: block;
 }
+.list_scheduled_lessons {
+  margin: 10px;
+}
+.list_scheduled_lessons {
+  padding: 20px;
+}
+.list_scheduled_lessons ul {
+  list-style-type: none;
+}
+
 .info_courses_list {
   display: flex;
   justify-content: space-evenly;
@@ -17,11 +52,11 @@
 .info_course_card summary {
   font-weight: bold;
 }
+.schedule_can_teach,
 .schedule_can_teach table {
-    min-width: 300px;
-    width:100%;
+  margin: 0;
+    width: 100%;
 }
- 
 
 .cat{
   border: 1px solid var(--bg-color-2);
@@ -73,7 +108,7 @@ th.hours span::after {
   }
   span::before {
     display: inline;
-    content: attr(data-time)':00';
+    content: attr(data-time);
   }
   .cat span {
     color: var(--font-color);
@@ -88,3 +123,4 @@ th.hours span::after {
   }
 
 }
+

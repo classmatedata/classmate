@@ -28,6 +28,12 @@
     ".text_time":"שעה",
     ".text_search_teacher":"מצא לי מלמד!",
 
+    ".text_volonteer_sum-hours":"מספר שעות התנדבות:",
+    ".text_volonteer_hours-done":"שעות התנדבות שנשארו לי:",
+    ".text_volonteer_hours-reminder":"שעות התנדבות שהשגתי:",
+
+    ".text_scheduled_lessons":"שיעורים שנקבעו:",
+    
     ".text_courses_i_teach": "מקצעות שאני מלמד",
     ".text_can_teach_hours": "שעות שיכול ללמד:",
     ".text_hours":"שעות",
