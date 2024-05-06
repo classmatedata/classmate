@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/general.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/rating.css">
+    <link rel="stylesheet" href="./css/feedback.css">
 </head>
 <body>  <div class="container">
     <header>
@@ -33,21 +34,47 @@
         </form>
     </header>
   <main>
-        <div class="demo">
-            <h1>feedback</h1>
-            <div class="star-rating">
-                <input type="radio" id="5-stars" name="rating" value="5" />
-                <label for="5-stars" class="star">&#9733;</label>
-                <input type="radio" id="4-stars" name="rating" value="4" />
-                <label for="4-stars" class="star">&#9733;</label>
-                <input type="radio" id="3-stars" name="rating" value="3" />
-                <label for="3-stars" class="star">&#9733;</label>
-                <input type="radio" id="2-stars" name="rating" value="2" />
-                <label for="2-stars" class="star">&#9733;</label>
-                <input type="radio" id="1-star" name="rating" value="1" />
-                <label for="1-star" class="star">&#9733;</label>
+       <div class="feedback">
+            <h1>משוב</h1>
+            <div class="question">
+                <span class="text">⁠דרג את רמת מקצועיות המלמד בשיעור</span>
+                <span class="star-rating">
+                    <input type="radio" id="q1_5-stars" name="q1_rating" value="5" />
+                    <label for="q1_5-stars" class="star">&#9733;</label>
+                    <input type="radio" id="q1_4-stars" name="q1_rating" value="4" />
+                    <label for="q1_4-stars" class="star">&#9733;</label>
+                    <input type="radio" id="q1_3-stars" name="q1_rating" value="3" />
+                    <label for="q1_3-stars" class="star">&#9733;</label>
+                    <input type="radio" id="q1_2-stars" name="q1_rating" value="2" />
+                    <label for="q1_2-stars" class="star">&#9733;</label>
+                    <input type="radio" id="q1_1-star" name="q1_rating" value="1" />
+                    <label for="q1_1-star" class="star">&#9733;</label>
+                </span>
             </div>
-            <br>
+            <div class="question">
+                <span class="text">⁠דרג את רמת מקצועיות המלמד בשיעור</span>
+                <span class="star-rating">
+                    <input type="radio" id="q2_5-stars" name="q2_rating" value="5" />
+                    <label for="q2_5-stars" class="star">&#9733;</label>
+                    <input type="radio" id="q2_4-stars" name="q2_rating" value="4" />
+                    <label for="q2_4-stars" class="star">&#9733;</label>
+                    <input type="radio" id="q2_3-stars" name="q2_rating" value="3" />
+                    <label for="q2_3-stars" class="star">&#9733;</label>
+                    <input type="radio" id="q2_2-stars" name="q2_rating" value="2" />
+                    <label for="q2_2-stars" class="star">&#9733;</label>
+                    <input type="radio" id="q2_1-star" name="q2_rating" value="1" />
+                    <label for="q2_1-star" class="star">&#9733;</label>
+                </span>
+            </div>
+            <div class="question">
+                <span class="text">האם אתה חושב שתצטרך שיעור נוסף לאחר שיעור זה?</span>
+                <div class="answerYesNo">
+                    
+                    <span >לא</span>
+                    <input type="range" max="1" id="choice" name="choice" value="0" class="slider">
+                    <span >כן</span>
+                </div>
+        </div>
             <button onclick="location.href='./start.html'" type="button"> להתחלה</button>
             <button onclick="location.href='./lesson.html'" type="button">עבור למסך הקודם</button>
         </div>

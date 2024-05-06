@@ -6,7 +6,7 @@
     border:solid 1px #ccc;
     display:flex;
     flex-direction: row;
-    font-size:3em;
+    font-size:2em;
     justify-content:space-around;
     padding:0 .2em;
     text-align:center;
@@ -25,13 +25,13 @@
   
   .star-rating :checked ~ label {
    
-    color:rgb(249, 213, 6);
+    color:rgb(249, 176, 6);
 
   }
   
   .star-rating label:hover,
   .star-rating label:hover ~ label {
-    color:rgb(255, 234, 0);
+    color:rgb(249, 192, 6);
   }
   
   
