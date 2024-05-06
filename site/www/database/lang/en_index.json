@@ -28,7 +28,8 @@
     ".text_time":"time",
     
     ".text_search_teacher":"search",
-
+    ".text_courses_i_teach": "Courses I teach",
+    ".text_can_teach_hours": "Can teach hours:",
     ".text_hours":"hours",
     ".text_Sun":"Sun",
     ".text_Mon":"Mon",

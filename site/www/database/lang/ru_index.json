@@ -30,6 +30,7 @@
     ".text_time":"время",
     ".text_search_teacher":"поиск",
 
+    ".text_can_teach_hours": "Расписание:",
     ".text_hours":"время",
     ".text_Sun":"вс.",
     ".text_Mon":"пн.",

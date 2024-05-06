@@ -1,3 +1,22 @@
+.teacher_info * h2>span,
+.teacher_info * h2
+{
+  font-size: 1.5em;
+  display: block;
+}
+.info_courses_list {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-bottom: 2em;
+
+}
+.info_course_card {
+  width: max-content;
+}
+.info_course_card summary {
+  font-weight: bold;
+}
 .schedule_can_teach table {
     min-width: 300px;
     width:100%;
@@ -30,16 +49,42 @@
 .cat input:checked + span {
   background-color: var(--bg-color-2);
 }
-
+.schedule_can_teach th {
+  font-weight: bold;
+}
 .schedule_can_teach tbody th, .hours
  {
   width: 80px;
+ 
 }
 .schedule_can_teach td {
   width: 30px;
+
 }
 
-span::after {
-  display: block;
-  content: attr(data-time);
+th.hours span::after {
+  display: inline;
+  content: attr(data-time); 
+}
+
+@media  screen and (max-width:500px) {
+  th.hours{
+    display: none;
+  }
+  span::before {
+    display: inline;
+    content: attr(data-time)':00';
+  }
+  .cat span {
+    color: var(--font-color);
+  }
+}
+@media  screen and (max-width:340px) {
+
+  span::before {
+    display: inline;
+    content: attr(data-time);
+    font-size: smaller;
+  }
+
 }

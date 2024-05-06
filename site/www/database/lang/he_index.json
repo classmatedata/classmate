@@ -28,6 +28,8 @@
     ".text_time":"שעה",
     ".text_search_teacher":"מצא לי מלמד!",
 
+    ".text_courses_i_teach": "מקצעות שאני מלמד",
+    ".text_can_teach_hours": "שעות שיכול ללמד:",
     ".text_hours":"שעות",
     ".text_Sun":"א",
     ".text_Mon":"ב",
