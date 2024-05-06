@@ -1,0 +1,37 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
+/* component */
+
+.star-rating {
+    border:solid 1px #ccc;
+    display:flex;
+    flex-direction: row;
+    font-size:3em;
+    justify-content:space-around;
+    padding:0 .2em;
+    text-align:center;
+    width:6em;
+    margin: auto;
+  }
+  
+  .star-rating input {
+    display:none;
+  }
+  
+  .star-rating label {
+    color:#817e7e;
+    cursor:pointer;
+  }
+  
+  .star-rating :checked ~ label {
+   
+    color:rgb(249, 213, 6);
+
+  }
+  
+  .star-rating label:hover,
+  .star-rating label:hover ~ label {
+    color:rgb(255, 234, 0);
+  }
+  
+  
