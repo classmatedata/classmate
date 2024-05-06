@@ -28,5 +28,14 @@
     ".text_subject":"тема",
     ".text_day":"день",
     ".text_time":"время",
-    ".text_search_teacher":"поиск"
+    ".text_search_teacher":"поиск",
+
+    ".text_hours":"время",
+    ".text_Sun":"вс.",
+    ".text_Mon":"пн.",
+    ".text_Tue":"вт.",
+    ".text_Wed":"ср.",
+    ".text_Thu":"чт.",
+    ".text_Fri":"пт.",
+    ".text_Sat":"сб."
 }

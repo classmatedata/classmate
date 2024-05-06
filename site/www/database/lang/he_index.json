@@ -26,5 +26,14 @@
     ".text_subject":"נושא",
     ".text_day":"יום",
     ".text_time":"שעה",
-    ".text_search_teacher":"מצא לי מלמד!"
+    ".text_search_teacher":"מצא לי מלמד!",
+
+    ".text_hours":"שעות",
+    ".text_Sun":"א",
+    ".text_Mon":"ב",
+    ".text_Tue":"ג",
+    ".text_Wed":"ד",
+    ".text_Thu":"ה",
+    ".text_Fri":"ו",
+    ".text_Sat":"ש"
 }

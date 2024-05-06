@@ -1,0 +1,45 @@
+.schedule_can_teach table {
+    min-width: 300px;
+    width:100%;
+}
+ 
+
+.cat{
+  border: 1px solid var(--bg-color-2);
+  overflow: hidden;
+}
+.cat  label:hover {
+  cursor: pointer;
+}
+
+.cat label span {
+  text-align: center;
+  display: block;
+  line-height: 2.3em;
+  margin: 0;
+  width:100%; 
+  color: var(--font-color);
+}
+
+.cat label input {
+  position: absolute;
+  display: none;
+}
+
+    /* This will declare how a selected input will look giving generic properties */
+.cat input:checked + span {
+  background-color: var(--bg-color-2);
+}
+
+.schedule_can_teach tbody th, .hours
+ {
+  width: 80px;
+}
+.schedule_can_teach td {
+  width: 30px;
+}
+
+span::after {
+  display: block;
+  content: attr(data-time);
+}
