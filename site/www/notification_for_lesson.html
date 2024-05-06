@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container">
-    <header>
+ 
         <header>
             <div class="logo"><a href="index.html"><img src="./img/logo_smaller_rtl.png" class="lang_rtl" alt=""><img src="./img/logo_smaller_ltr.png" class="lang_ltr" alt=""></a></div>
             <navbar class="up-menu" id="up-menu">             
@@ -34,14 +34,18 @@
                 <button type="button" onclick="updateGUI();">update Gui</button>
             </form>
         </header>
-   
-        <div class="demo">
-            <h1>notification before lesson</h1>
-            <img src="img/demo_notification.JPG" alt="">
+        <main>
+            <h1>List of notifications</h1>
+            <h2>for <span>username</span></h2>
+            <table>
+                <tr><th>notification type</th><th>notification time</th><th>teacher</th><th>student</th><th>lesson start time</th><th>lesson duration</th><th>course</th><th>subject</th><th>more info</th></table>
+            </table>
+        
+        
             <br>
             <button onclick="location.href='./lesson.html'" type="button">התחל שיעור</button>
             <button onclick="prevPage()" type="button">עבור למסך הקודם</button>
-        </div>
+        </main>
 
     </div>
 

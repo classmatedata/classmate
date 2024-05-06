@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>كلاسمت ClassMate קלאסמיייט </title>
     <link rel="stylesheet" href="./css/colors.css">
+  
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/general.css">
-    <link rel="stylesheet" href="./css/pie_graph.css">
 </head>
 <body>
-   
     <div class="container">
+ 
         <header>
             <div class="logo"><a href="index.html"><img src="./img/logo_smaller_rtl.png" class="lang_rtl" alt=""><img src="./img/logo_smaller_ltr.png" class="lang_ltr" alt=""></a></div>
             <navbar class="up-menu" id="up-menu">             
@@ -34,28 +34,37 @@
                 <button type="button" onclick="updateGUI();">update Gui</button>
             </form>
         </header>
-       
+        <main>
+            <h1>List of notifications</h1>
+            <h2>for <span>username</span></h2>
+            <table>
+                <tr><th>notification type</th><th>notification time</th><th>teacher</th><th>student</th><th>lesson start time</th><th>lesson duration</th><th>course</th><th>subject</th><th>more info</th></table>
+            </table>
+        </main>
         <div class="demo">
-            <h1>Status</h1>
-            <div class="teacher_info">
-            
-                <div class="status_hours_div">          
-                    <div class="pie animate" style="--p:33;--c:lightgreen"> 20/60</div>
-                    <div class="status_data_list" data-sum-hours="60" data-hours-reminder="40" data-hours-done="20">
-                        <ul>
-                            <li><span class="text_volonteer_sum-hours"></span><span>60</span></li>
-                            <li><span class="text_volonteer_hours-done"></span><span>20</span></li>
-                            <li><span class="text_volonteer_hours-reminder"></span><span>40</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        
-            <button onclick="location.href='./start.html'" type="button"> להתחלה</button>
-            <button onclick="location.href='./index.html'" type="button">עבור למסך הקודם</button>
+            <h1>notification before lesson</h1>
+            <img src="img/demo_notification.JPG" alt="">
+            <br>
+            <button onclick="location.href='./lesson.html'" type="button">התחל שיעור</button>
+            <button onclick="prevPage()" type="button">עבור למסך הקודם</button>
         </div>
 
     </div>
+
     <script src="index.js"></script>
+    <script>
+        function prevPage() {
+          
+            const role = localStorage.getItem("data_config_role");
+            if(role == "teacher" ) {
+                location.href = './start_teacher.html';
+            }
+            else {
+                location.href = './start.html';
+            }
+    
+           
+        }
+    </script>
 </body>
 </html>
