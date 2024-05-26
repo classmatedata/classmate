@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="he">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>classmate database - courses</title>
+    <link rel="stylesheet" href="../css/colors.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="./css/database.css" />
+  </head>
+  <body dir="rtl">
+    <div class="container">
+      <main class="demo">
+        <h1>רשימת קורסים</h1>
+        <div
+          class="load_data courses_list_div"
+          data-src="courses.json"
+          data-template="course_with_topics_list"
+        ></div>
+      </main>
+    </div>
+    <script src="load_data.js"></script>
+  </body>
+</html>

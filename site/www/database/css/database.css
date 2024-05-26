@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+.courses_list_div {
+  display: flex;
+  justify-content: start;
+  text-align: start;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.info_course_card {
+  padding: 1rem;
+  min-width: 15rem;
+  border: 3px solid var(--bg-color-2);
+  border-radius: 1rem;
+}
+.info_course_card h2 {
+  text-decoration: underline;
+}
+main {
+  padding: 1rem;
+}
