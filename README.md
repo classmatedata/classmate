@@ -1,3 +1,7 @@
-the application : 
+the application :
 
-https://web-class.netlify.app/
+https://classmate-il.netlify.app/
+
+the database viewer:
+
+https://classmate-il.netlify.app/database/index.html
