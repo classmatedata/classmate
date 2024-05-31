@@ -1,11 +1,16 @@
 function load_json(list_url, callback) {
     fetch(list_url)
         .then((response) => response.json())
-        .then((text) => callback(text));
+        .then((json) => {
+            if (json["status"] == "OK") {
+                return callback(json["message"]);
+            }
+            return callback(json);
+        });
 }
 function create_html(json, template_name) {
     let html = "";
-
+    console.log(json);
     if (template_name === 'course_with_topics_list') {
 
         for (let [i, v] of Object.entries(json)) {
@@ -16,9 +21,10 @@ function create_html(json, template_name) {
             html += "</h2> ";
 
             console.log(v["topics"], v["topics"].length);
-            for (let i = 0; i < v["topics"].length; i++) {
-                html += `<p>${v["topics"][i]}<p>`;
+            for (let [j, t] of Object.entries(v["topics"])) {
+                html += `<p>${t}<p>`;
             }
+
             html += "";
             html += `</div></div>`;
         }

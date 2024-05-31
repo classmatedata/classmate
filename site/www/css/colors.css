@@ -1,40 +1,35 @@
-
-
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 :root {
-    /*
-    46BD85 - éøå÷ ÷ìàñîééè
-F5F3EA - ÷øí ø÷ò
-313131 - ùçåø è÷ñè
+  /*
+    46BD85 - ×™×¨×•×§ ×§×œ××¡××™×™×˜
+F5F3EA - ×§×¨× ×¨×§×¢
+313131 -Â ×©×—×•×¨Â ×˜×§×¡×˜
     */
-   --bg-color-1: rgb(245, 243, 234);
-   --bg-color-1-disabled: #8db696;
-   --bg-color-1-active: rgb(255, 255, 255);
-   --bg-color-2:  rgb(63,176,114);
-   --bg-color-3:  #bdf3d5;
-   --bg-color-4:  #e4f6ec;
-   --bg-color-shadow:  rgba(15, 40, 26, 0.61); 
+  --bg-color-1: rgb(245, 243, 234);
+  --bg-color-1-disabled: #8db696;
+  --bg-color-1-active: rgb(255, 255, 255);
+  --bg-color-2: rgb(63, 176, 114);
+  --bg-color-3: #bdf3d5;
+  --bg-color-4: #e4f6ec;
+  --bg-color-shadow: rgba(15, 40, 26, 0.61);
 
-   --font-color:#313131;
-   --font-color-0:#313131;
-   --font-color-0-active:rgb(0, 0, 0);
-   --font-color-1:rgb(70,189,133);
-   --font-color-1a:rgb(44,120,78);
-   --font-color-2: white;
-   --font-color-3: rgb(17, 244, 119);
-
-
-   
+  --font-color: #313131;
+  --font-color-0: #313131;
+  --font-color-0-active: rgb(0, 0, 0);
+  --font-color-1: rgb(70, 189, 133);
+  --font-color-1a: rgb(44, 120, 78);
+  --font-color-2: white;
+  --font-color-3: rgb(17, 244, 119);
 }
 * {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-   direction: rtl;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  direction: rtl;
 
-   font-family: "Rubik", sans-serif;
-   font-optical-sizing: auto;
-   font-weight: 300;
-   font-style: normal;
-}  
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
