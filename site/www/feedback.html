@@ -1,85 +1,77 @@
 <!DOCTYPE html>
 <html lang="he">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كلاسمت ClassMate קלאסמיייט </title>
-    <link rel="stylesheet" href="./css/colors.css">
-    <link rel="stylesheet" href="./css/general.css">
-    <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/rating.css">
-    <link rel="stylesheet" href="./css/feedback.css">
-</head>
-<body>  <div class="container">
-    <header>
-        <div class="logo"><a href="index.html"><img src="./img/logo_smaller_rtl.png" class="lang_rtl" alt=""><img src="./img/logo_smaller_ltr.png" class="lang_ltr" alt=""></a></div>
-        <navbar class="up-menu" id="up-menu">             
-            <nav  class="to-teacher-view"><a class="text_to-teacher-view small"></a></nav>      
-            <span class="text_i_am_a_student to-teacher-view" selected></span>
-            <span class="text_i_am_a_teacher to-student-view"></span>
-            <nav class="to-student-view" class="selected"><a class="text_to-student-view small"></a></span></nav>
-        </navbar>
-        
-        <ul class="lang-container" id="navList_LangMenu" >
-            <li><a id="lang_he" class="lang_Hebrew selected">עברית</a></li>
-            <li><a id="lang_en" class="lang_English">English</a></li>
-            <li><a id="lang_ar" class="lang_Arab">ערבית</a></li>
-            <li><a id="lang_ru" class="lang_Russian">Russian</a></li>               
-        </ul>
-        
-        <form action="" name="data_config" hidden>
-            <input id="role_type"  value="student">
-            <input id="lang" value="he" >
-            <button type="button" onclick="updateGUI();">update Gui</button>
-        </form>
-    </header>
-  <main>
-       <div class="feedback">
-            <h2>משוב</h2>
-            <div class="question">
-                <span class="text">⁠דרג את רמת מקצועיות המלמד בשיעור</span>
-                <span class="star-rating">
-                    <input type="radio" id="q1_5-stars" name="q1_rating" value="5" />
-                    <label for="q1_5-stars" class="star">&#9733;</label>
-                    <input type="radio" id="q1_4-stars" name="q1_rating" value="4" />
-                    <label for="q1_4-stars" class="star">&#9733;</label>
-                    <input type="radio" id="q1_3-stars" name="q1_rating" value="3" />
-                    <label for="q1_3-stars" class="star">&#9733;</label>
-                    <input type="radio" id="q1_2-stars" name="q1_rating" value="2" />
-                    <label for="q1_2-stars" class="star">&#9733;</label>
-                    <input type="radio" id="q1_1-star" name="q1_rating" value="1" />
-                    <label for="q1_1-star" class="star">&#9733;</label>
-                </span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>كلاسمت ClassMate קלאסמיייט</title>
+    <link rel="stylesheet" href="./css/colors.css" />
+    <link rel="stylesheet" href="./css/general.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/rating.css" />
+    <link rel="stylesheet" href="./css/feedback.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header></header>
+      <main>
+        <div class="feedback">
+          <h2>משוב</h2>
+          <div class="question">
+            <span class="text">⁠דרג את רמת מקצועיות המלמד בשיעור</span>
+            <span class="star-rating">
+              <input type="radio" id="q1_5-stars" name="q1_rating" value="5" />
+              <label for="q1_5-stars" class="star">&#9733;</label>
+              <input type="radio" id="q1_4-stars" name="q1_rating" value="4" />
+              <label for="q1_4-stars" class="star">&#9733;</label>
+              <input type="radio" id="q1_3-stars" name="q1_rating" value="3" />
+              <label for="q1_3-stars" class="star">&#9733;</label>
+              <input type="radio" id="q1_2-stars" name="q1_rating" value="2" />
+              <label for="q1_2-stars" class="star">&#9733;</label>
+              <input type="radio" id="q1_1-star" name="q1_rating" value="1" />
+              <label for="q1_1-star" class="star">&#9733;</label>
+            </span>
+          </div>
+          <div class="question">
+            <span class="text">⁠דרג את איכות שליטתו של המלמד בחומר הנלמד</span>
+            <span class="star-rating">
+              <input type="radio" id="q2_5-stars" name="q2_rating" value="5" />
+              <label for="q2_5-stars" class="star">&#9733;</label>
+              <input type="radio" id="q2_4-stars" name="q2_rating" value="4" />
+              <label for="q2_4-stars" class="star">&#9733;</label>
+              <input type="radio" id="q2_3-stars" name="q2_rating" value="3" />
+              <label for="q2_3-stars" class="star">&#9733;</label>
+              <input type="radio" id="q2_2-stars" name="q2_rating" value="2" />
+              <label for="q2_2-stars" class="star">&#9733;</label>
+              <input type="radio" id="q2_1-star" name="q2_rating" value="1" />
+              <label for="q2_1-star" class="star">&#9733;</label>
+            </span>
+          </div>
+          <div class="question">
+            <span class="text"
+              >האם אתה חושב שתצטרך שיעור נוסף לאחר שיעור זה?</span
+            >
+            <div class="answerYesNo">
+              <span>לא</span>
+              <input
+                type="range"
+                max="1"
+                id="choice"
+                name="choice"
+                value="0"
+                class="slider"
+              />
+              <span>כן</span>
             </div>
-            <div class="question">
-                <span class="text">⁠דרג את איכות שליטתו של המלמד בחומר הנלמד</span>
-                <span class="star-rating">
-                    <input type="radio" id="q2_5-stars" name="q2_rating" value="5" />
-                    <label for="q2_5-stars" class="star">&#9733;</label>
-                    <input type="radio" id="q2_4-stars" name="q2_rating" value="4" />
-                    <label for="q2_4-stars" class="star">&#9733;</label>
-                    <input type="radio" id="q2_3-stars" name="q2_rating" value="3" />
-                    <label for="q2_3-stars" class="star">&#9733;</label>
-                    <input type="radio" id="q2_2-stars" name="q2_rating" value="2" />
-                    <label for="q2_2-stars" class="star">&#9733;</label>
-                    <input type="radio" id="q2_1-star" name="q2_rating" value="1" />
-                    <label for="q2_1-star" class="star">&#9733;</label>
-                </span>
-            </div>
-            <div class="question">
-                <span class="text">האם אתה חושב שתצטרך שיעור נוסף לאחר שיעור זה?</span>
-                <div class="answerYesNo">
-                    
-                    <span >לא</span>
-                    <input type="range" max="1" id="choice" name="choice" value="0" class="slider">
-                    <span >כן</span>
-                </div>
+          </div>
+          <button onclick="location.href='./start.html'" type="button">
+            להתחלה
+          </button>
+          <button onclick="location.href='./lesson.html'" type="button">
+            עבור למסך הקודם
+          </button>
         </div>
-            <button onclick="location.href='./start.html'" type="button"> להתחלה</button>
-            <button onclick="location.href='./lesson.html'" type="button">עבור למסך הקודם</button>
-        </div>
-    </main>
+      </main>
     </div>
     <script src="index.js"></script>
-</body>
+  </body>
 </html>

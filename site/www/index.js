@@ -1,3 +1,9 @@
+function load_html(url, callback) {
+    fetch(url)
+        .then((response) => response.text())
+        .then((html) => callback(html));
+}
+
 function load_list(list_url, callback) {
     fetch(list_url)
         .then((response) => response.json())
@@ -160,16 +166,29 @@ function updateGUI() {
 
 
 }
-loadDictionaries();
 
-document.querySelector('#lang_he').addEventListener('click', translate_to_he);
-document.querySelector('#lang_en').addEventListener('click', translate_to_en);
-document.querySelector('#lang_ar').addEventListener('click', translate_to_ar);
-document.querySelector('#lang_ru').addEventListener('click', translate_to_ru);
+function loadHeader() {
 
-document.querySelector('nav.to-teacher-view').addEventListener('click', to_teacher_view);
-document.querySelector('nav.to-student-view').addEventListener('click', to_student_view);
-document.querySelector('span.to-teacher-view').addEventListener('click', to_teacher_view);
-document.querySelector('span.to-student-view').addEventListener('click', to_student_view);
+    load_html('header.html', (html) => {
+
+        document.querySelector('header').innerHTML = html;
+
+        document.querySelector('#lang_he').addEventListener('click', translate_to_he);
+        document.querySelector('#lang_en').addEventListener('click', translate_to_en);
+        document.querySelector('#lang_ar').addEventListener('click', translate_to_ar);
+        document.querySelector('#lang_ru').addEventListener('click', translate_to_ru);
+
+        document.querySelector('nav.to-teacher-view').addEventListener('click', to_teacher_view);
+        document.querySelector('nav.to-student-view').addEventListener('click', to_student_view);
+        document.querySelector('span.to-teacher-view').addEventListener('click', to_teacher_view);
+        document.querySelector('span.to-student-view').addEventListener('click', to_student_view);
+        loadDictionaries();
+
+    });
+
+}
+
+loadHeader();
+
 
 

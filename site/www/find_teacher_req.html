@@ -1,53 +1,38 @@
 <!DOCTYPE html>
 <html lang="he">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كلاسمت ClassMate קלאסמיייט </title>
-    <link rel="stylesheet" href="./css/colors.css">
-    <link rel="stylesheet" href="./css/general.css">
-    <link rel="stylesheet" href="./css/index.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>كلاسمت ClassMate קלאסמיייט</title>
+    <link rel="stylesheet" href="./css/colors.css" />
+    <link rel="stylesheet" href="./css/general.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <div class="logo"><a href="index.html"><img src="./img/logo_smaller_rtl.png" class="lang_rtl" alt=""><img src="./img/logo_smaller_ltr.png" class="lang_ltr" alt=""></a></div>
-            <navbar class="up-menu" id="up-menu">             
-                <nav  class="to-teacher-view"><a class="text_to-teacher-view small"></a></nav>      
-                <span class="text_i_am_a_student to-teacher-view" selected></span>
-                <span class="text_i_am_a_teacher to-student-view"></span>
-                <nav class="to-student-view" class="selected"><a class="text_to-student-view small"></a></span></nav>
-            </navbar>
-            
-            <ul class="lang-container" id="navList_LangMenu" >
-                <li><a id="lang_he" class="lang_Hebrew selected">עברית</a></li>
-                <li><a id="lang_en" class="lang_English">English</a></li>
-                <li><a id="lang_ar" class="lang_Arab">ערבית</a></li>
-                <li><a id="lang_ru" class="lang_Russian">Russian</a></li>               
-            </ul>
-            
-            <form action="" name="data_config" hidden>
-                <input id="role_type"  value="student">
-                <input id="lang" value="he" >
-                <button type="button" onclick="updateGUI();">update Gui</button>
-            </form>
-        </header>
-   
-        <div class="demo">
-            <h1>find teacher </h1>
-           
-                <img src="img/req/demo_find_teacher_propose.JPG" alt="">
-                <img src="img/req/req_found_match.jpg" alt="">
-                <img src="img/req/req_find_teacher.jpg" alt="">
-                <img src="img/req/demo_find_teacher_propose_queries.JPG" alt="">
-                
-            <hr>
-            <button onclick="location.href='./notification_for_lesson.html'" type="button" ><span>קבע שיעור</span></button>
-            <button onclick="location.href='./start_config.html'" type="button" ><span>עבור למסך הקודם</span></button>
-        </div>
+      <header></header>
 
+      <div class="demo">
+        <h1>find teacher</h1>
+
+        <img src="img/req/demo_find_teacher_propose.JPG" alt="" />
+        <img src="img/req/req_found_match.jpg" alt="" />
+        <img src="img/req/req_find_teacher.jpg" alt="" />
+        <img src="img/req/demo_find_teacher_propose_queries.JPG" alt="" />
+
+        <hr />
+        <button
+          onclick="location.href='./notification_for_lesson.html'"
+          type="button"
+        >
+          <span>קבע שיעור</span>
+        </button>
+        <button onclick="location.href='./start_config.html'" type="button">
+          <span>עבור למסך הקודם</span>
+        </button>
+      </div>
     </div>
-    <script src="index.js" ></script>
-    <script src="start.js" ></script>
-</body>
+    <script src="index.js"></script>
+    <script src="start.js"></script>
+  </body>
 </html>

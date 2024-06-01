@@ -40,7 +40,7 @@ function defaultHour(date) {
 }
 function initSearchCourseData() {
 
-    load_list('./database/courses.json', (data_courses) => {
+    load_list('https://ring.co.il/classmatedata/courses', (data_courses) => {
         //console.log(data_options);
         localStorage.removeItem("data_courses");
         localStorage.setItem("data_courses", JSON.stringify(data_courses));
