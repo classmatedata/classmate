@@ -13,12 +13,7 @@ function load_list(list_url, callback) {
             return callback(json);
         });
 }
-// function load_list(list_url, callback) {
 
-//     fetch(list_url)
-//         .then((response) => response.json())
-//         .then((json) => callback(json));
-// }
 function updateTextsInLocalStorage(json, lang) {
     let stored_dictionaries = JSON.parse(localStorage.getItem("dictionaries"));
     stored_dictionaries[lang]["texts"] = json;

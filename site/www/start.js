@@ -7,7 +7,7 @@ function loadCoursesSearchOptions() {
 
     let str_html = "<option  disabled selected>לבחור קורס</option>";
     for (let str of Object.keys(data_options)) {
-        str_html += `<option value="${str}">${data_options[str]["name"]}</option>`;;
+        str_html += `<option value-id="${str}" value="${data_options[str]["name"]}">${data_options[str]["name"]}</option>`;;
     }
     document.querySelector("#dl_courses").innerHTML = str_html;
 
