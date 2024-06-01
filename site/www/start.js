@@ -18,8 +18,8 @@ function loadTopicsSearchOptions() {
     let course = document.querySelector("#fnd_course").value;
 
     let str_html = "<option  disabled selected>לבחור נושא</option>";
-    for (let [_, str] of Object.entries(data_options[course]["topics"])) {
-        str_html += `<option value="${str}">${str}</option>`;;
+    for (let [key, str] of Object.entries(data_options[course]["topics"])) {
+        str_html += `<option value-id="${key}" value="${str}">${str}</option>`;;
     }
     document.querySelector("#dl_subject").innerHTML = str_html;
 }
