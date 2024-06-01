@@ -3,12 +3,22 @@ function load_html(url, callback) {
         .then((response) => response.text())
         .then((html) => callback(html));
 }
-
 function load_list(list_url, callback) {
     fetch(list_url)
         .then((response) => response.json())
-        .then((json) => callback(json));
+        .then((json) => {
+            if (json["status"] == "OK") {
+                return callback(json["message"]);
+            }
+            return callback(json);
+        });
 }
+// function load_list(list_url, callback) {
+
+//     fetch(list_url)
+//         .then((response) => response.json())
+//         .then((json) => callback(json));
+// }
 function updateTextsInLocalStorage(json, lang) {
     let stored_dictionaries = JSON.parse(localStorage.getItem("dictionaries"));
     stored_dictionaries[lang]["texts"] = json;
