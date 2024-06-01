@@ -34,34 +34,18 @@ header .lang-container {
 }
 
 header .up-menu .selected * {
-  font-weight: bold;
-  color: white;
   text-align: center;
 }
-#up-menu nav.selected {
-  border: 2px solid var(--bg-color-2);
-  border-radius: 2rem;
-  margin: 0;
-  background-color: var(--bg-color-2);
-  /* color: white; */
-  /* var(--font-color-2);*/
-}
-.up-menu span {
-  padding: 10px;
-}
+
 .up-menu nav:not(.selected) {
   display: none;
 }
-.up-menu span:not(.selected) {
-  display: none;
-}
+
 header .up-menu {
   font-size: x-large;
   font-weight: normal;
-  /* color: var(--font-color-0); */
-  /* gap:2rem; */
-  border: 2px solid var(--bg-color-2);
-  border-radius: 2rem;
+  /* border: 2px solid var(--bg-color-2); */
+  /* border-radius: 2rem; */
   flex-wrap: nowrap;
 }
 
@@ -71,7 +55,8 @@ header .up-menu {
 
 header a {
   text-decoration: none;
-  color: var(--font-color-0);
+  color: var(--font-color-1a);
+  cursor: pointer;
 }
 .hidden {
   visibility: hidden;
@@ -79,7 +64,8 @@ header a {
 header a.selected {
   font-weight: bold;
 }
-header a:hover {
+header a:hover,
+a:hover {
   color: var(--font-color-0-active);
   text-decoration: underline;
   cursor: pointer;

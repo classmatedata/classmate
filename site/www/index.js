@@ -11,7 +11,8 @@ function load_list(list_url, callback) {
                 return callback(json["message"]);
             }
             return callback(json);
-        });
+        })
+        .catch(error => console.log(error));
 }
 
 function updateTextsInLocalStorage(json, lang) {
@@ -185,8 +186,7 @@ function loadHeader() {
 
         document.querySelector('nav.to-teacher-view').addEventListener('click', to_teacher_view);
         document.querySelector('nav.to-student-view').addEventListener('click', to_student_view);
-        document.querySelector('span.to-teacher-view').addEventListener('click', to_teacher_view);
-        document.querySelector('span.to-student-view').addEventListener('click', to_student_view);
+
         loadDictionaries();
 
     });

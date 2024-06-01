@@ -13,15 +13,22 @@ function loadCoursesSearchOptions() {
 
 }
 function loadTopicsSearchOptions() {
-    document.querySelector("#fnd_subject").removeAttribute("disabled");
+
     let data_options = JSON.parse(localStorage.getItem("data_courses"));
     let course = document.querySelector("#fnd_course").value;
-
-    let str_html = "<option  disabled selected>לבחור נושא</option>";
-    for (let [key, str] of Object.entries(data_options[course]["topics"])) {
-        str_html += `<option value-id="${key}" value="${str}">${str}</option>`;;
+    let datalist_courses = document.getElementById('dl_courses');
+    let selectedOption = Array.from(datalist_courses.options).find(function (option) {
+        return option.value === course;
+    });
+    if (selectedOption) {
+        const courseId = selectedOption.getAttribute("value-id");
+        document.querySelector("#fnd_subject").removeAttribute("disabled");
+        let str_html = "<option  disabled selected>לבחור נושא</option>";
+        for (let [key, str] of Object.entries(data_options[courseId]["topics"])) {
+            str_html += `<option value-id="${key}" value="${str}">${str}</option>`;;
+        }
+        document.querySelector("#dl_subject").innerHTML = str_html;
     }
-    document.querySelector("#dl_subject").innerHTML = str_html;
 }
 
 function defaultHour(date) {
