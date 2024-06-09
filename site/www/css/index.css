@@ -104,7 +104,8 @@ h2 * {
   font-size: 3rem;
 }
 
-button {
+button,
+.button {
   width: fit-content;
   border-radius: 1rem;
   border: 1px solid var(--font-color-0);

@@ -15,7 +15,17 @@
   ".text_intro_title_cont2": "Без оплаты",
   ".btn_sign_in_with_edu": "Начинаем  ",
 
+  ".text_login": "Login",
+  ".text_email": "Email",
+  ".text_Password": "Password",
+  ".text_ForgotPasswordQ": "Forgot password?",
+  ".text_Dont_have_an_accountQ": "Don't have an account?",
+  ".text_logIn_with_google": "Login with Google",
+  ".text_Signup": "Signup",
+  ".text_AlreadyHaveAnAccountQ": "Already have an account?",
+  ".text_signIn_with_email": "Sign in with Email",
   ".text_signIn_with_google": "Sign in with Google",
+
   ".text_username_id": "User Id",
   ".text_Hello": "Добро пожаловать,",
   ".text_a_pleasure_to_meet_you": "",

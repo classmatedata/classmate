@@ -49,25 +49,33 @@ function fill_texts(lang_file, dir) {
 
     for (let [quilifier, data] of Object.entries(lang_file)) {
         if (typeof (data) === "string") {
-            const elem = document.querySelector(quilifier);
-            if (elem !== null) {
-                elem.innerHTML = data;
-                elem.setAttribute("style", `direction:${dir};`);
-                elem.setAttribute("dir", dir);
+            const elems = document.querySelectorAll(quilifier);
+            for (let i = 0; i < elems.length; i++) {
+                const elem = elems[i];
+                if (elem !== null) {
+                    if ((elem.type === "email") || (elem.type === "password")) {
+                        elem.placeholder = data;
+                    } else {
+                        elem.innerHTML = data;
+                    }
+                    elem.setAttribute("style", `direction:${dir};`);
+                    elem.setAttribute("dir", dir);
 
-                elem.parentElement.setAttribute("style", `direction:${dir};`);
-                elem.parentElement.setAttribute("dir", dir);
+                    elem.parentElement.setAttribute("style", `direction:${dir};`);
+                    elem.parentElement.setAttribute("dir", dir);
 
-                elem.parentElement.parentElement.setAttribute("style", `direction:${dir};`);
-                elem.parentElement.parentElement.setAttribute("dir", dir);
-                elem.parentElement.parentElement.parentElement.setAttribute("style", `direction:${dir};`);
-                elem.parentElement.parentElement.parentElement.setAttribute("dir", dir);
-
-            }
-            else {
-                // console.log("error find  from dictionary ", lang_file["lang"], " not found in html:", quilifier, " not found");
+                    elem.parentElement.parentElement.setAttribute("style", `direction:${dir};`);
+                    elem.parentElement.parentElement.setAttribute("dir", dir);
+                    elem.parentElement.parentElement.parentElement.setAttribute("style", `direction:${dir};`);
+                    elem.parentElement.parentElement.parentElement.setAttribute("dir", dir);
+                }
+                else {
+                    // console.log("error find  from dictionary ", lang_file["lang"], " not found in html:", quilifier, " not found");
+                }
             }
         }
+
+
         else {
             console.log("error found in dictionary ", lang_file["lang"], " with ", quilifier, " non string value");
         }
@@ -94,6 +102,7 @@ function update_page_direction(dir) {
             elem.classList.add('hidden');
         }
     }
+
 }
 function translate_to_he() {
     const lang = "he";

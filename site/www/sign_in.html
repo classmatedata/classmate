@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="./css/index.css" />
     <link rel="stylesheet" href="./css/general.css" />
     <link rel="stylesheet" href="./css/signIn.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+    />
   </head>
   <body>
     <div class="container">
@@ -17,35 +21,42 @@
         <section class="forms">
           <div class="form login">
             <div class="form-content">
-              <h1>Login</h1>
+              <h1 class="text_login">Login</h1>
               <form action="#">
                 <div class="field input-field">
-                  <input type="email" placeholder="Email" class="input" />
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    class="input text_email"
+                  />
                 </div>
 
                 <div class="field input-field">
                   <input
                     type="password"
                     placeholder="Password"
-                    class="password"
+                    class="password text_Password"
                   />
                   <i class="bx bx-hide eye-icon"></i>
                 </div>
 
                 <div class="form-link">
-                  <a href="#" class="forgot-pass">Forgot password?</a>
+                  <a href="#" class="forgot-pass">
+                    <span class="text_ForgotPasswordQ"> Forgot password? </span>
+                  </a>
                 </div>
 
                 <div class="field button-field">
-                  <button>Login</button>
+                  <button class="text_login">Login</button>
                 </div>
               </form>
 
               <div class="form-link">
-                <span
-                  >Don't have an account?
-                  <a href="#" class="link signup-link">Signup</a></span
-                >
+                
+                <span class="text_Dont_have_an_accountQ">
+                    Don't have an account?</span>
+                <a href="#" class="link signup-link"><span class="text_Signup">Signup</span></a>
+                </span>
               </div>
             </div>
 
@@ -54,7 +65,7 @@
             <div class="media-options">
               <a href="#" class="field google">
                 <img src="./img/google.png" alt="" class="google-img" />
-                <span>Login with Google</span>
+                <span class="text_logIn_with_google">Login with Google</span>
               </a>
             </div>
           </div>
@@ -63,39 +74,39 @@
 
           <div class="form signup">
             <div class="form-content">
-              <h1>Signup</h1>
+              <h1 class="text_Signup">Signup</h1>
               <form action="#">
                 <div class="field input-field">
-                  <input type="email" placeholder="Email" class="input" />
+                  <input type="email" placeholder="Email" class="input text_email" />
                 </div>
 
-                <div class="field input-field">
+                <div class="field input-field clearfix">
                   <input
                     type="password"
                     placeholder="Create password"
-                    class="password"
+                    class="password text_Password"
                   />
+                  <i class="bx bx-hide eye-icon"></i>
                 </div>
 
-                <div class="field input-field">
+                <div class="field input-field clearfix">
                   <input
                     type="password"
                     placeholder="Confirm password"
-                    class="password"
+                    class="password text_ConfirmPassword"
                   />
                   <i class="bx bx-hide eye-icon"></i>
                 </div>
 
                 <div class="field button-field">
-                  <button>Signup</button>
+                  <button class="text_Signup">Signup</button>
                 </div>
               </form>
 
               <div class="form-link">
-                <span
-                  >Already have an account?
-                  <a href="#" class="link login-link">Login</a></span
-                >
+                <span class="text_AlreadyHaveAnAccountQ">Already have an account?</span>
+                  <a href="#" class="link login-link "><span class="text_login">Login</span></a>
+             
               </div>
             </div>
 
@@ -104,14 +115,15 @@
             <div class="media-options">
               <a href="#" class="field google">
                 <img src="./img/google.png" alt="" class="google-img" />
-                <span>Login with Google</span>
+                <span class="text_signIn_with_google">Sign in with Google</span>
               </a>
             </div>
           </div>
         </section>
       </main>
     </div>
-    <script src="index.js"></script>
+
     <script src="js/signin.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>

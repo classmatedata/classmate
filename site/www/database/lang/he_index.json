@@ -15,7 +15,18 @@
   ".text_intro_title_cont2": "בחינם",
   ".btn_sign_in_with_edu": "לשיעור בגובה עיניים ",
 
+  ".text_login": "כניסה",
+  ".text_email": "דוא\"ל",
+  ".text_Password": "ססמא",
+  ".text_ConfirmPassword": "אימות ססמא",
+  ".text_ForgotPasswordQ": "שכחתי סיסמה?",
+  ".text_Dont_have_an_accountQ": "אין לי חשבון?",
+  ".text_logIn_with_google": " כניסה עם חשבון גוגל",
+  ".text_Signup": "רישום",
+  ".text_AlreadyHaveAnAccountQ": "יש לי כבר חשבון?",
+  ".text_signIn_with_email": "רישום עם Email",
   ".text_signIn_with_google": "להירשם עם גוגל",
+
   ".text_username_id": "קוד משתמש",
   ".text_Hello": "שלום",
   ".text_a_pleasure_to_meet_you": ", איזה כייף שבאת",
