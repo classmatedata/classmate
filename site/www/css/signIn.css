@@ -110,8 +110,13 @@ form {
   margin: 36px 0;
   background-color: var(--bg-color-shadow);
 }
-.line::before {
+.line:dir(ltr)::before {
   content: "Or";
+}
+.line:dir(rtl)::before {
+  content: "או";
+}
+.line::before {
   position: absolute;
   top: 50%;
   left: 50%;
