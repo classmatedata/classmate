@@ -45,7 +45,8 @@ form {
   border-radius: 6px;
 }
 .field input,
-.field button {
+.field button,
+button.field {
   height: 100%;
   width: 100%;
   border: none;

@@ -182,8 +182,8 @@ function updateGUI() {
 
 }
 
-function loadHeader() {
-
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM fully loaded and parsed');
     load_html('header.html', (html) => {
 
         document.querySelector('header').innerHTML = html;
@@ -200,9 +200,9 @@ function loadHeader() {
 
     });
 
-}
+});
 
-loadHeader();
+
 
 
 
