@@ -5,7 +5,7 @@ import express from 'express';
 dotenv.config();
 let app = express();
 
-app.use(express.static('www'));
+app.use(express.static('public'));
 //=================================================
 const server = app.listen(process.env.SERVER_PORT, process.env.HOST, function () {
     var host = server.address().address
