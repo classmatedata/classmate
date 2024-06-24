@@ -1,3 +1,4 @@
 site/node_modules/
 .vscode/settings.json
 site/.env
+site/public/js/.env

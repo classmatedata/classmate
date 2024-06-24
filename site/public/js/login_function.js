@@ -1,15 +1,17 @@
 import { GoogleAuthProvider, signInWithPopup, getAuth, onAuthStateChanged } from "firebase/auth";
 
 import { initializeApp, } from "firebase/app";
+import dotenv from 'dotenv'
+dotenv.config();
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDae5HMj2qTPmgg_j9ZTSXM_7ptLTyTqi0",
-    authDomain: "classmate-data-0.firebaseapp.com",
-    projectId: "classmate-data-0",
-    storageBucket: "classmate-data-0.appspot.com",
-    messagingSenderId: "938353159462",
-    appId: "1:938353159462:web:b6a62bd6c5585b989425e7",
-    measurementId: "G-D4H6QVBTKD"
+    apiKey: process.env.FIREBASE_API_KEY,
+    authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.FIREBASE_APP_ID,
+    measurementId: process.env.FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
