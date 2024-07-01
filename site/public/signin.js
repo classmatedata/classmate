@@ -68,11 +68,16 @@ function logInUser() {
             console.log(x.message);
             console.log(`new user ${user}: ${JSON.stringify(x.userCredential)}`);
             console.log(`logged in user ${JSON.stringify(user)}`);
+            localStorage.setItem("user_id", user.uid);
+            localStorage.setItem(
+                "user_data",
+                JSON.stringify(user)
+            );
             document.querySelector('#dispalyIsLoggedInDiv').innerHTML = `loggedIn - ${JSON.stringify(user.email)}`;
             //hide login form
             document.querySelector('#loginForm').classList.toggle("hdn");
             document.querySelector('#logOutButton').classList.toggle("hdn");
-
+            document.querySelector('#btn_next_page').classList.toggle("hdn");
             document.querySelector('#logInEmailInput').value = "";
             document.querySelector('#logInPasswordInput').value = "";
         })
@@ -99,10 +104,12 @@ function logOutUser() {
             // ...
             console.log(x.message);
             document.querySelector('#dispalyIsLoggedInDiv').innerHTML = ` not loggedIn`;
-
+            localStorage.removeItem("user_id");
+            localStorage.removeItem("user_data");
             //display login form
             document.querySelector('#loginForm').classList.toggle("hdn");
             document.querySelector('#logOutButton').classList.toggle("hdn");
+            document.querySelector('#btn_next_page').classList.toggle("hdn");
 
         }).catch((err) => {
             console.log(`error sign out ${err}`);
