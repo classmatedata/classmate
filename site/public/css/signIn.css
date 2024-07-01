@@ -6,7 +6,9 @@
 * {
   font-family: "Poppins", sans-serif;
 }
-
+.hdn {
+  display: none;
+}
 .form {
   margin: auto;
   max-width: 430px;

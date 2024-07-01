@@ -13,26 +13,29 @@
       href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
     />
   </head>
-  <body>
+  
+  <body >
     <div class="container">
       <header></header>
 
       <main>
-        <section class="forms">
+        <section>
+          <h2 id="dispalyIsLoggedInDiv"></h2>
+          <div>
+            <input id="logOutButton" class="hdn" type="button" value="Log out" />
+          </div>
+        </section>
+        <section class="forms" id="loginForm">
           <div class="form login">
             <div class="form-content">
               <h1 class="text_login">Login</h1>
               <form action="#">
                 <div class="field input-field">
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    class="input text_email"
-                  />
+                  <input id="logInEmailInput" type="email" placeholder="Email" class="input text_email" />
                 </div>
 
                 <div class="field input-field">
-                  <input
+                  <input id="logInPasswordInput"
                     type="password"
                     placeholder="Password"
                     class="password text_Password"
@@ -41,13 +44,13 @@
                 </div>
 
                 <div class="form-link">
-                  <a href="#" class="forgot-pass">
+                  <a href="#" id="forgotPasswordLink" class="forgot-pass">
                     <span class="text_ForgotPasswordQ"> Forgot password? </span>
                   </a>
                 </div>
 
                 <div class="field button-field">
-                  <button class="text_login">Login</button>
+                  <button id="logInButton" class="text_login">Login</button>
                 </div>
               </form>
 
@@ -60,14 +63,7 @@
               </div>
             </div>
 
-            <div class="line"></div>
-
-            <div class="media-options">
-              <button class="field google" id="loginWithGoogle">
-                <img src="./img/google.png" alt="" class="google-img" />
-                <span class="text_logIn_with_google">Login with Google</span>
-              </button>
-            </div>
+           
           </div>
 
           <!-- Signup Form -->
@@ -77,11 +73,11 @@
               <h1 class="text_Signup">Signup</h1>
               <form action="#">
                 <div class="field input-field">
-                  <input type="email" placeholder="Email" class="input text_email" />
+                  <input  id="signUpEmail" type="email" placeholder="Email" class="input text_email" />
                 </div>
 
                 <div class="field input-field clearfix">
-                  <input
+                  <input  id="signUpPassword"
                     type="password"
                     placeholder="Create password"
                     class="password text_Password"
@@ -90,7 +86,7 @@
                 </div>
 
                 <div class="field input-field clearfix">
-                  <input
+                  <input  id="signUpConfirmPassword"
                     type="password"
                     placeholder="Confirm password"
                     class="password text_ConfirmPassword"
@@ -99,7 +95,7 @@
                 </div>
 
                 <div class="field button-field">
-                  <button class="text_Signup">Signup</button>
+                  <button id="signUpButton" class="text_Signup">Signup</button>
                 </div>
               </form>
 
@@ -110,21 +106,15 @@
               </div>
             </div>
 
-            <div class="line"></div>
-
-            <div class="media-options">
-              <a href="#" class="field google">
-                <img src="./img/google.png" alt="" class="google-img" />
-                <span class="text_signIn_with_google">Sign in with Google</span>
-              </a>
-            </div>
+           
           </div>
         </section>
       </main>
     </div>
-    <script type="module" src="../src/login_function.js"></script>
-    <script src="../src/signin.js" ></script>
+    <script src="signin.js"></script>
     <script src="index.js"></script>
-    <script src="bundle.js"></script>
+  
+    
+   
   </body>
 </html>
