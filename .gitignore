@@ -1,5 +1,4 @@
-site/node_modules/
+node_modules/
 .vscode/settings.json
-*/.env
-*/*/.env
-site/firebaseService.json
+.env
+firebaseService.json
