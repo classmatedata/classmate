@@ -2,7 +2,7 @@ const express = require('express');
 const router = require("./src/app_routers");
 const cookieParser = require('cookie-parser');
 require("dotenv").config();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.SERVER_PORT || 10000;
 const HOST = process.env.HOST || 'localhost';
 
 
