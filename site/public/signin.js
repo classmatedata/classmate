@@ -19,7 +19,7 @@ function registerNewUser() {
 
     let data = { email: email_val, password: password_val };
 
-    fetch('/api/register', {
+    fetch('/api/f/register', {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         mode: 'cors',//'cors', // no-cors, *cors, same-origin
         cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -49,7 +49,7 @@ function logInUser() {
     let password_val = document.querySelector('#logInPasswordInput').value;
     console.log('log in email:', email_val, ", password:", password_val);
     let data = { email: email_val, password: password_val };
-    fetch('/api/login', {
+    fetch('/api/f/login', {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         mode: 'cors',//'cors', // no-cors, *cors, same-origin
         cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -88,7 +88,7 @@ function logInUser() {
         });
 };
 function logOutUser() {
-    fetch('/api/logout', {
+    fetch('/api/f/logout', {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         mode: 'cors',//'cors', // no-cors, *cors, same-origin
         cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -121,7 +121,7 @@ function resetPasswordMail() {
     console.log('log in email:', email_val);
     let data = { email: email_val };
 
-    fetch('/api/reset-password', {
+    fetch('/api/f/reset-password', {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         mode: 'cors',//'cors', // no-cors, *cors, same-origin
         cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
