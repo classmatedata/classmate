@@ -1,6 +1,10 @@
 const pool = require('../db');
 const queries = require('./queries');
+const test = (req, res) => {
 
+    res.status(200).send("test data controller.");
+
+}
 const getCourses = (req, res) => {
     pool.query(queries.getCourses, (error, results) => {
         if (error) throw error;
@@ -68,6 +72,7 @@ const getCourses = (req, res) => {
 // }
 
 module.exports = {
+    test,
     getCourses,
     //     getStudents,
     //     getStudentById,
