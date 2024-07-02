@@ -1,7 +1,7 @@
 const createCourseTable = `CREATE TABLE  courses  (
-   courseId   SERIAL PRIMARY KEY INT  NOT NULL,
-   courseName varchar(30) DEFAULT NULL,
-   courseLang varchar(2) NOT NULL DEFAULT 'he'
+   courseId   SERIAL PRIMARY KEY ,
+   courseName varchar(30) ,
+   courseLang varchar(2) 
 )`;
 
 const addDataToCourseTable = `
