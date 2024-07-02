@@ -2,6 +2,7 @@ const { Router } = require('express');
 const verifyToken = require('../app_middleware.js');
 const controller = require('./controller.js');
 const router = Router();
+router.get("/initDB", controller.initDatabase);
 router.get("/test", verifyToken, controller.test);
 router.get("/courses", verifyToken, controller.getCourses);
 // router.post("/courses", controller.addCourse);
