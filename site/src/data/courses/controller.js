@@ -1,38 +1,46 @@
 const pool = require('../db');
 const queries = require('./queries');
-const queries_init = require('./queries_create_database');
 
-const initDatabase = (req, res) => {
-    let results_records = [];
-    pool.query(queries_init.createCourseTable, (error, results) => {
-        if (error) throw error;
-        results_records.push({ status: 'OK', query: queries_init.createCourseTable, res: results });
-    })
-    pool.query(queries_init.addDataToCourseTable, (error, results) => {
-        if (error) throw error;
-        results_records.push({ status: 'OK', query: queries_init.addDataToCourseTable, res: results });
-    })
-    res.status(200).json(results_records);
-}
-const test = (req, res) => {
 
-    res.status(200).send("test data controller.");
 
-}
 const getCourses = (req, res) => {
+
     pool.query(queries.getCourses, (error, results) => {
         if (error) throw error;
         res.status(200).json(results.rows);
     })
 }
-// const getStudentById = (req, res) => {
-//     const id = parseInt(req.params.id);
+const getCourseById = (req, res) => {
 
-//     pool.query(queries.getStudentById, [id], (error, results) => {
+    const id = parseInt(req.params.courseId);
+    if (id != NaN) {
+        pool.query(queries.getCourseById, [id], (error, results) => {
+            if (error) throw error;
+            res.status(200).json(results.rows);
+        })
+    } else {
+        throw ("no courseid given");
+    }
+}
+
+const getCourseTopicsByCourseId = (req, res) => {
+    const id = parseInt(req.params.courseId);
+
+    pool.query(queries.getCourseTopicsByCourseId, [id], (error, results) => {
+        if (error) throw error;
+        res.status(200).json(results.rows);
+    })
+}
+
+// const getCoursesAndTopics = (req, res) => {
+//     console.log("getCoursesAndTopics");
+//     pool.query(queries.getCoursesAndTopics, (error, results) => {
 //         if (error) throw error;
+//         console.log(results);
 //         res.status(200).json(results.rows);
 //     })
 // }
+
 
 // const addStudent = (req, res) => {
 //     const { name, email, age, dob } = req.body;
@@ -86,9 +94,10 @@ const getCourses = (req, res) => {
 // }
 
 module.exports = {
-    initDatabase,
-    test,
+
     getCourses,
+    getCourseById,
+    getCourseTopicsByCourseId,
     //     getStudents,
     //     getStudentById,
     //     addStudent,

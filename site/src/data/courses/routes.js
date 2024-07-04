@@ -1,10 +1,16 @@
 const { Router } = require('express');
-const verifyToken = require('../app_middleware.js');
-const controller = require('./controller.js');
-const router = Router();
-router.get("/initDB", controller.initDatabase);
-router.get("/test", verifyToken, controller.test);
-router.get("/courses", verifyToken, controller.getCourses);
+const verifyToken = require('../../app/middleware.js');
+const controllerCourses = require('./controller.js');
+const routerCourses = Router();
+
+
+routerCourses.get("/", verifyToken, controllerCourses.getCourses);
+// router.get("/courseTopics/:courseId", verifyToken, controller.getCourseTopicsByCourse);
+routerCourses.get("/:courseId", verifyToken, controllerCourses.getCourseById);
+routerCourses.get("/:courseId/topics", verifyToken, controllerCourses.getCourseTopicsByCourseId);
+
+//router.get("/coursesAndTopics", controller.getCoursesAndTopics);
+
 // router.post("/courses", controller.addCourse);
 
 // router.get("/courses/:courseId", controller.getCourseById);
@@ -18,4 +24,4 @@ router.get("/courses", verifyToken, controller.getCourses);
 // router.put("/courses/:courseId/topics/:topicId", controller.updateTopic);
 // router.delete("/courses/:id/topics/:topicId", controller.removeTopic);
 
-module.exports = router;
+module.exports = routerCourses;
