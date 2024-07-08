@@ -1,0 +1,26 @@
+GET https://classmate-ixxu.onrender.com/api/init/test
+
+POST  https://classmate-ixxu.onrender.com/api/auth/login  
+body->raw->JSON:  {"email":"dveira@gmail.com", "password":"123456"}
+
+
+GET https://classmate-ixxu.onrender.com/api/courses
+GET https://classmate-ixxu.onrender.com/api/courses/1
+GET https://classmate-ixxu.onrender.com/api/courses/1/topics
+
+POST https://classmate-ixxu.onrender.com/api/courses  {"coursename": "פיזיקה", "lang":"he"}
+GET https://classmate-ixxu.onrender.com/api/courses/3 
+
+POST https://classmate-ixxu.onrender.com/api/courses/
+{
+        "coursename": "מערכות ותכן איפון",
+        "lang": "he"
+}
+{"coursename": "Chemistry", "lang":"en"}
+
+
+PUT https://classmate-ixxu.onrender.com/api/courses/5
+    { "coursename": "Design Sistems",  "lang": "en" }
+    { "coursename": "כימיה", "lang":"he"}
+
+DELETE https://classmate-ixxu.onrender.com/api/courses/1

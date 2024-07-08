@@ -1,4 +1,4 @@
-class ClassMateDataController {
+class testController {
     getCourses(req, res) {
         const teacherCourses = {
             "1": "Course 1",
@@ -9,4 +9,4 @@ class ClassMateDataController {
     }
 }
 
-module.exports = new ClassMateDataController();
+module.exports = new testController();

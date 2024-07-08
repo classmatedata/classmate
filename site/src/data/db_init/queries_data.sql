@@ -41,7 +41,7 @@ END;
 $$ LANGUAGE plpgsql;
 -- SELECT * FROM getCourses();
 
-DROP FUNCTION getCoursesWithTopics
+-- DROP FUNCTION getCoursesWithTopics;
 CREATE OR REPLACE FUNCTION getCoursesWithTopics( 
 )
 RETURNS TABLE (courseid INT, coursename varchar(100),  lang character(2),  topicid INT, topicname varchar(100))
@@ -106,7 +106,21 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+
+
 -- SELECT * FROM getCourseTopicIdByName( 3, 'אנרגיה','he'); 
+
+
+CREATE SEQUENCE IF NOT EXISTS public.texts_textid_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.texts_textid_seq
+    OWNER TO postgres;
+
 
 DROP PROCEDURE addcourse(character varying,character) ;
 CREATE OR REPLACE PROCEDURE addCourse(

@@ -4,7 +4,6 @@ const controllerDBinit = require('./controller.js');
 const routerDBinit = Router();
 
 routerDBinit.get("/", controllerDBinit.test);
-routerDBinit.get("/initDB", verifyToken, controllerDBinit.initDatabase);
 routerDBinit.get("/test", controllerDBinit.test);
 routerDBinit.get("/testv", verifyToken, controllerDBinit.test);
 module.exports = routerDBinit;
