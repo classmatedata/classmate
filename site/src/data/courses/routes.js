@@ -4,10 +4,17 @@ const controllerCourses = require('./controller.js');
 const routerCourses = Router();
 
 
+
 routerCourses.get("/", verifyToken, controllerCourses.getCourses);
-// router.get("/courseTopics/:courseId", verifyToken, controller.getCourseTopicsByCourse);
+routerCourses.post("/", verifyToken, controllerCourses.addCourse);
+
+// routerCourses.get("/json", verifyToken, controllerCourses.getCoursesJson);
 routerCourses.get("/:courseId", verifyToken, controllerCourses.getCourseById);
+routerCourses.put("/:courseId", verifyToken, controllerCourses.updateCourse);
+routerCourses.delete("/:courseId", verifyToken, controllerCourses.removeCourse);
+
 routerCourses.get("/:courseId/topics", verifyToken, controllerCourses.getCourseTopicsByCourseId);
+
 
 //router.get("/coursesAndTopics", controller.getCoursesAndTopics);
 

@@ -1,9 +1,8 @@
 const pool = require('../db');
-const queries = require('./queries');
-const queries_init = require('../db_init/queries');
-
+const queries_init = require('./queries');
+// const queries_init_data = require('./queries_data');
 const test = (req, res) => {
-    res.status(200).send("test data controller.");
+    res.status(200).send("test done");
 }
 
 const initDatabase = (req, res) => {
@@ -20,10 +19,10 @@ const initDatabase = (req, res) => {
     //     if (error) throw error;
     //     results_records.push({ status: 'OK', query: queries_init.createCourseTable, res: results });
     // })
-    pool.query(queries_init.addDataToCourseTopicsTable, (error, results) => {
-        if (error) throw error;
-        results_records.push({ status: 'OK', query: queries_init.addDataToCourseTable, res: results });
-    })
+    // pool.query(queries_init_data.addDataToCourseTopicsTable, (error, results) => {
+    //     if (error) throw error;
+
+    // })
     res.status(200).json(results_records);
 }
 

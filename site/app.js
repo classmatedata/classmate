@@ -15,7 +15,7 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(express.static('public'));
 
-app.use('/api/f', routerAuth);
+app.use('/api/auth', routerAuth);
 app.use('/api/courses', routerCourses);
 app.use('/api/init', routerDBinit);
 
