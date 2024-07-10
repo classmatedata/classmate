@@ -3,7 +3,11 @@ INSERT INTO lang(langCode, langName, langDir) VALUES
     ('en', 'English', 'ltr'), 
     ('ru', 'Русский', 'ltr'),
     ('ar', 'العربية', 'rtl') ;
-
+ {
+        "langcode": "am",
+        "langname": "አማርኛ",
+        "langdir": "ltr"
+    }
 
 INSERT INTO textbylang ( langCode, textid, htmltext) VALUES
 ('he', 1, 'בעיות תנועה'),

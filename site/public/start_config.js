@@ -31,15 +31,15 @@ function load_list(list_url, callback) {
 function initQuestionsDataOptions() {
 
 
-    load_list('./lang', (data) => {
-        //console.log(data_options);
+    load_list('./api/lang', (data) => {
+        console.log(data);
         localStorage.removeItem("data_options_lang");
         localStorage.setItem("data_options_lang", JSON.stringify(data));
         fillLangs();
     });
 
-    load_list('./api/lang', (data) => {
-        //console.log(data_options);
+    load_list('./api/gender', (data) => {
+        console.log(data);
         localStorage.removeItem("data_options_gender");
         localStorage.setItem("data_options_gender", JSON.stringify(data));
         fillGender();

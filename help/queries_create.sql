@@ -29,18 +29,16 @@ CREATE TABLE IF NOT EXISTS public.lang
 
 
 -- Table: public.texts
-CREATE OR REPLACE FUNCTION nextTextID()
-RETURNS  BIGINT
-AS $$
-	DECLARE
-    max_value BIGINT;
-BEGIN
-   
-	SELECT GREATEST(MAX(textbylang.textid), MAX(texts.textid))+1 INTO max_value
-	FROM textbylang,texts ;
-	RETURN max_value;
-END;
-$$ LANGUAGE plpgsql;
+
+CREATE SEQUENCE IF NOT EXISTS public.texts_textid_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.texts_textid_seq
+    OWNER TO postgres;
 
 
 DROP TABLE IF EXISTS public.texts;
@@ -51,8 +49,6 @@ CREATE TABLE IF NOT EXISTS public.texts
     htmlidentifiercode character varying(40) COLLATE pg_catalog."default" ,
     CONSTRAINT texts_pkey PRIMARY KEY (textid)
 )
-
-
 
 
 

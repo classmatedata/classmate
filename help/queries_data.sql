@@ -111,18 +111,8 @@ $$ LANGUAGE plpgsql;
 -- SELECT * FROM getCourseTopicIdByName( 3, 'אנרגיה','he'); 
 
 
-CREATE SEQUENCE IF NOT EXISTS public.texts_textid_seq
-    INCREMENT 1
-    START 1
-    MINVALUE 1
-    MAXVALUE 9223372036854775807
-    CACHE 1;
 
-ALTER SEQUENCE public.texts_textid_seq
-    OWNER TO postgres;
-
-
-DROP PROCEDURE addcourse(character varying,character) ;
+DROP PROCEDURE addcourse;
 CREATE OR REPLACE PROCEDURE addCourse(
 	IN course_name varchar(100), 
 	IN lang char(2),
@@ -259,3 +249,145 @@ BEGIN
   WHERE courseid = course_id;
 END ;
 $$ ;
+
+
+-------------------------
+-- GENDER table and lextByLang
+
+-- `SELECT * FROM getGenders()`;
+-- `SELECT * FROM getGendersByLang( $1);`;
+
+DROP PROCEDURE addgender;
+CREATE OR REPLACE PROCEDURE addGender(
+  IN gender_code character(1),
+	IN gender_name varchar(100), 
+	IN lang character(2)
+)
+LANGUAGE plpgsql
+AS $$
+DECLARE
+    -- Declare a variable to hold the found_text_id
+    text_id BIGINT;
+BEGIN
+
+  IF NOT EXISTS (
+      SELECT 1
+      FROM classmategendercode
+      WHERE gendercode = gender_code
+  ) THEN
+	
+  text_id := nextval('texts_textid_seq'::regclass);
+
+  INSERT INTO textbylang(langcode, htmltext, textid)  
+	  VALUES (lang, gender_name, text_id);
+
+  INSERT INTO classmategendercode(gendercode, textid)
+	  VALUES (gender_code, text_id);
+
+  ELSE
+	CALL updateGender(gender_code, gender_name, lang);
+ END IF;
+
+END ;
+$$ ;
+
+
+
+
+
+
+CREATE OR REPLACE PROCEDURE updateGender(
+  IN gender_code character(1),
+	IN gender_name varchar(100), 
+	IN lang character(2)
+)
+LANGUAGE plpgsql
+AS $$
+DECLARE
+    -- Declare a variable to hold the found_text_id
+    found_text_id BIGINT;
+    
+BEGIN
+
+  SELECT textid INTO found_text_id
+  FROM classmategendercode 
+  WHERE gendercode = gender_code ;
+
+-- If gender code not found, raise an exception
+IF found_text_id IS NULL THEN
+  RAISE EXCEPTION 'Gender % not found', gender_code;
+END IF;
+
+    -- Check if the gender name already exists for the given language
+  IF NOT EXISTS (
+      SELECT 1
+      FROM textbylang
+      WHERE textid = found_text_id AND langcode = lang
+  ) THEN
+      -- If not exists, insert a new record
+      RAISE NOTICE 'Gender % with lang % is new', gender_code, lang;
+      INSERT INTO textbylang(langcode, htmltext, textid)
+      VALUES (lang, gender_name, found_text_id);
+  ELSE
+      -- If exists, update the existing record
+      UPDATE textbylang
+      SET htmltext = gender_name
+      WHERE textid = found_text_id AND langcode = lang;
+      RAISE NOTICE 'Gender % with lang % updated', gender_code, lang;
+  END IF;
+
+END ;
+$$ ;
+
+-- DROP FUNCTION IF EXISTS public.getgenders();
+
+CREATE OR REPLACE FUNCTION public.getgenders(
+	)
+    RETURNS TABLE(gendercode character, lang character, gendername character varying) 
+    LANGUAGE 'plpgsql'
+    COST 100
+    VOLATILE PARALLEL UNSAFE
+    ROWS 1000
+
+AS $BODY$
+BEGIN
+  RETURN QUERY SELECT classmategendercode.gendercode , textbylang.langcode as lang, htmltext as gendername
+   FROM classmategendercode JOIN textbylang on classmategendercode.textid = textbylang.textid;
+END;
+$BODY$;
+
+ALTER FUNCTION public.getgenders()
+    OWNER TO postgres;
+
+SELECT * FROM getGenders();
+
+
+SELECT gendercode , textbylang.langcode as lang, htmltext as gendername,  textbylang.textid
+   FROM classmategendercode JOIN textbylang on classmategendercode.textid = textbylang.textid;
+
+
+
+SELECT * FROM getGenders();
+
+
+
+SELECT * FROM getGenders();
+
+
+SELECT gendercode , textbylang.langcode as lang, htmltext as gendername,  classmategendercode.textid
+   FROM classmategendercode JOIN textbylang on classmategendercode.textid = textbylang.textid;
+
+DELETE FROM classmategendercode
+SELECT * FROM classmategendercode;
+CALL addGender('M', 'Male', 'en');
+CALL addGender('F', 'Female', 'en'); 
+CALL addGender('C', 'Common', 'en');
+CALL updateGender('F', 'את/היא', 'he');
+CALL updateGender('M', 'אתה/הוא', 'he');
+CALL updateGender('C', 'אתם/הם', 'he');
+
+  SELECT classmategendercode.textid
+  FROM classmategendercode 
+  WHERE classmategendercode.gendercode = 'C' ;
+
+SELECT * FROM classmategendercode;
