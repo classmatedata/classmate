@@ -3,8 +3,6 @@ const queries = require('./queries');
 
 const getLangs = async (req, res) => {
     try {
-        console.log(`pool: ${pool}`);
-        console.log(`get getLangs: ${queries.getLangs}`);
         const client = await pool.connect();
         const result = await client.query(queries.getLangs);
         client.release();
