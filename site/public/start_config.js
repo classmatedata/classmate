@@ -28,55 +28,41 @@ function load_list(list_url, callback) {
         })
         .then((json) => callback(json));
 }
-function initQuestionsDataOptions() {
-
-
-    load_list('./api/lang', (data) => {
-        console.log(data);
-        localStorage.removeItem("data_options_lang");
-        localStorage.setItem("data_options_lang", JSON.stringify(data));
-        fillLangs();
-    });
-
-    load_list('./api/gender', (data) => {
-        console.log(data);
-        localStorage.removeItem("data_options_gender");
-        localStorage.setItem("data_options_gender", JSON.stringify(data));
-        fillGender();
-    });
-}
 
 function fillLangs() {
-    let data_options_lang = JSON.parse(localStorage.getItem("data_options_lang"));
 
-    //fill lang query options
-    let str_html = "";
-    for (let [k, v] of Object.entries(data_options_lang)) {
-        str_html += `<div class="cat">
+    load_list('./api/lang', (data) => {
+        //fill lang query options
+        let str_html = "";
+        for (let [k, v] of Object.entries(data)) {
+            str_html += `<div class="cat">
            <label>
-              <input type="checkbox" name="s_lang" value="${k}"><span>${v}</span>
+              <input type="checkbox" name="s_lang" value="${v.langcode}"><span>${v.langname}</span>
            </label>
         </div>`;
-    }
-    document.querySelector("#config_question_s_langs").innerHTML = str_html;
+        }
+        document.querySelector("#config_question_s_langs").innerHTML = str_html;
+    });
 }
 
 function fillGender() {
     //fill gender query options
-    let data_options_gender = JSON.parse(localStorage.getItem("data_options_gender"));
-    str_html = "";
-    for (let [k, v] of Object.entries(data_options_gender)) {
-        str_html += `<div class="cat">
+    load_list('./api/gender/he', (data) => {
+        str_html = "";
+        for (let [k, v] of Object.entries(data)) {
+            str_html += `<div class="cat">
            <label>
-              <input type="radio" name="gender" value="${k}"><span>${v}</span>
+              <input type="radio" name="gender" value="${v.gendercode}"><span>${v.gendername}</span>
            </label>
         </div>`;
-    }
-    document.querySelector("#config_question_gender").innerHTML = str_html;
+        }
+        document.querySelector("#config_question_gender").innerHTML = str_html;
+    });
 }
 
 
 initData();
-initQuestionsDataOptions();
+fillLangs();
+fillGender();
 
 

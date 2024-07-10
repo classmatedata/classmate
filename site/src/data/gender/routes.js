@@ -4,6 +4,6 @@ const controllerLang = require('./controller.js');
 const routerLang = Router();
 
 routerLang.get("/", verifyToken, controllerLang.getGenders);
-routerLang.get("/:lang", verifyToken, controllerLang.getGenderByLang);
+routerLang.get("/:lang", verifyToken, controllerLang.getGendersByLang);
 
 module.exports = routerLang;

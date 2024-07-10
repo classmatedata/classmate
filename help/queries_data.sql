@@ -359,6 +359,20 @@ $BODY$;
 ALTER FUNCTION public.getgenders()
     OWNER TO postgres;
 
+
+CREATE OR REPLACE FUNCTION getGendersByLang(
+	IN lang_code character(2)
+)
+RETURNS TABLE (gendercode character(1), lang character(2), gendername varchar(100))
+AS $$
+BEGIN
+  RETURN QUERY SELECT classmategendercode.gendercode , textbylang.langcode as lang, htmltext as gendername
+   FROM classmategendercode JOIN textbylang on classmategendercode.textid = textbylang.textid
+	WHERE textbylang.langcode = lang_code;
+END;
+$$ LANGUAGE plpgsql;
+
+
 SELECT * FROM getGenders();
 
 
@@ -372,7 +386,7 @@ SELECT * FROM getGenders();
 
 
 SELECT * FROM getGenders();
-
+SELECT * FROM getGendersByLang('he');
 
 SELECT gendercode , textbylang.langcode as lang, htmltext as gendername,  classmategendercode.textid
    FROM classmategendercode JOIN textbylang on classmategendercode.textid = textbylang.textid;
