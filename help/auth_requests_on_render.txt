@@ -6,9 +6,16 @@ POST https://classmate-ixxu.onrender.com/api/lang/
    {"langcode":"ru","langname":"Русский", "langdir":"ltr"} 
    {"langcode":"ar","langname":"العربية", "langdir":"rtl"} 
    {"langcode":"en","langname":"English", "langdir":"ltr"} 
-   {"langcode":"fr","langname":"French", "langdir":"rtl"} 
- {"langcode":"ff","langname":"French", "langdir":"rtl"} 
+   {"langcode":"fr","langname":"Français", "langdir":"rtl"} 
 
+ {
+        "langcode": "am",
+        "langname": "አማርኛ",
+        "langdir": "ltr"
+    }
+       {"langcode":"es","langname":"Español", "langdir":"rtl"} 
+
+    
 
 routerCourses.update("/:lang", verifyToken, controllerLang.updateLang);
 PUT https://classmate-ixxu.onrender.com/api/lang/fr
