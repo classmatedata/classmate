@@ -393,15 +393,96 @@ SELECT gendercode , textbylang.langcode as lang, htmltext as gendername,  classm
 
 DELETE FROM classmategendercode
 SELECT * FROM classmategendercode;
-CALL addGender('M', 'Male', 'en');
-CALL addGender('F', 'Female', 'en'); 
-CALL addGender('C', 'Common', 'en');
-CALL updateGender('F', 'את/היא', 'he');
-CALL updateGender('M', 'אתה/הוא', 'he');
-CALL updateGender('C', 'אתם/הם', 'he');
+
 
   SELECT classmategendercode.textid
   FROM classmategendercode 
   WHERE classmategendercode.gendercode = 'C' ;
 
 SELECT * FROM classmategendercode;
+
+
+------------------------------------------------
+-- classmate users tables
+
+select * FROM classmate;
+
+
+CREATE OR REPLACE FUNCTION getUsers()
+RETURNS TABLE (
+    userid bigint ,
+    email character varying(255) ,
+    languicode character(2),
+    firstname character varying(20) ,
+    lastname character varying(20),
+    classmategendercode character(1) ,
+    firebase_uid character varying(16)
+)
+AS $$
+BEGIN
+  RETURN QUERY 
+	SELECT  
+      classmate.userid, 
+	  classmate.email, 
+	  classmate.languicode,  
+	  classmate.firstname,  
+	  classmate.lastname,
+      classmate.classmategendercode,  
+	  classmate.firebase_uid  
+  FROM classmate;
+END;
+$$ LANGUAGE plpgsql;
+
+
+
+-- SELECT * FROM getUsers();
+
+
+CREATE OR REPLACE FUNCTION getUserById(
+   IN userid bigint 
+)
+RETURNS TABLE (
+    userid bigint ,
+    email character varying(255) ,
+    languicode character(2),
+    firstname character varying(20) ,
+    lastname character varying(20),
+    classmategendercode character(1) ,
+    firebase_uid character varying(16)
+)
+AS $$
+BEGIN
+  RETURN QUERY 
+	SELECT  
+    t.userid, 
+	  t.email, 
+	  t.languicode,  
+	  t.firstname,  
+	  t.lastname,
+    t.classmategendercode,  
+	  t.firebase_uid  
+  FROM getUsers() as t WHERE t.userid = userid;
+END;
+$$ LANGUAGE plpgsql;
+
+
+
+INSERT INTO public.classmate(
+    email, languicode, firstname, lastname, classmategendercode)
+VALUES
+    ('tal@example.com', 'en', 'Ira', 'Tal', 'F'),
+    ('ohad@example.com', 'he', 'אהד', 'מתוק', 'M'),
+    ('john@example.com', 'en', 'John', 'Doe', 'M'),
+    ('jane@example.com', 'en', 'Jane', 'Doe', 'F'),
+    ('avi@example.com', 'he', 'אבי', 'לוי', 'M'),
+    ('rachel@example.com', 'he', 'רחל', 'כהן', 'F'),
+    ('michael@example.com', 'en', 'Michael', 'Smith', 'M'),
+    ('sarah@example.com', 'en', 'Sarah', 'Johnson', 'F'),
+    ('dan@example.com', 'he', 'דן', 'יוסף', 'M'),
+    ('yael@example.com', 'he', 'יעל', 'נחמני', 'F'),
+    ('david@example.com', 'en', 'David', 'Brown', 'M'),
+    ('lisa@example.com', 'en', 'Lisa', 'Williams', 'F'),
+    ('ben@example.com', 'he', 'בן', 'מזרחי', 'M'),
+    ('miriam@example.com', 'he', 'מרים', 'כהן', 'F'),
+    ('emma@example.com', 'en', 'Emma', 'Davis', 'F'),
+    ('chris@example.com', 'en', 'Chris', 'Martinez', 'M');

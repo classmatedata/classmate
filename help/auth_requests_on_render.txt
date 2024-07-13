@@ -7,13 +7,8 @@ POST https://classmate-ixxu.onrender.com/api/lang/
    {"langcode":"ar","langname":"العربية", "langdir":"rtl"} 
    {"langcode":"en","langname":"English", "langdir":"ltr"} 
    {"langcode":"fr","langname":"Français", "langdir":"rtl"} 
-
- {
-        "langcode": "am",
-        "langname": "አማርኛ",
-        "langdir": "ltr"
-    }
-       {"langcode":"es","langname":"Español", "langdir":"rtl"} 
+   {"langcode": "am","langname": "አማርኛ", "langdir": "ltr"}
+   {"langcode":"es","langname":"Español", "langdir":"rtl"} 
 
     
 

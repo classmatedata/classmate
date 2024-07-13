@@ -16,6 +16,8 @@
   ".btn_sign_in_with_edu": "לשיעור בגובה עיניים ",
 
   ".text_login": "כניסה",
+  ".text_firstname": "שם פרטי",
+  ".text_lastname": "שם משפחה",
   ".text_email": "דוא\"ל",
   ".text_Password": "ססמא",
   ".text_ConfirmPassword": "אימות ססמא",
@@ -26,6 +28,12 @@
   ".text_AlreadyHaveAnAccountQ": "יש לי כבר חשבון?",
   ".text_signIn_with_email": "רישום עם Email",
   ".text_signIn_with_google": "להירשם עם גוגל",
+  ".text_ResetPasswordLinkWasSendToEmail": "נשלח מייל לאיפוס הססמא ל",
+  ".text_signUpFirstName_info": "please check a first name",
+  ".text_signUpLastName_info": "please check a last name",
+  ".text_signUpEmail_info": "please check an Email",
+  ".text_signUpPassword_info": "לפחות 4 תוים",
+  ".text_signUpConfirmPassword_info": "ססמאות אינן זהות",
 
   ".text_username_id": "קוד משתמש",
   ".text_Hello": "שלום",

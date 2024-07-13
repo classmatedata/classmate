@@ -9,6 +9,12 @@
 .hdn {
   display: none;
 }
+.alert {
+  color: red;
+}
+.info {
+  color: blue;
+}
 .form {
   margin: auto;
   max-width: 430px;

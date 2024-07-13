@@ -53,7 +53,7 @@ function fill_texts(lang_file, dir) {
             for (let i = 0; i < elems.length; i++) {
                 const elem = elems[i];
                 if (elem !== null) {
-                    if ((elem.type === "email") || (elem.type === "password")) {
+                    if ((elem.tagName == "INPUT") || (elem.type === "email") || (elem.type === "password")) {
                         elem.placeholder = data;
                     } else {
                         elem.innerHTML = data;

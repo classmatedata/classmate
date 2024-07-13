@@ -4,6 +4,7 @@ const routerCourses = require("./src/data/courses/routes");
 const routerLang = require("./src/data/lang/routes");
 const routerGender = require("./src/data/gender/routes");
 const routerTest = require("./src/data/test/routes");
+const routerUsers = require("./src/data/users/routes");
 const cookieParser = require('cookie-parser');
 require("dotenv").config();
 const PORT = process.env.SERVER_PORT || 10000;
@@ -15,10 +16,11 @@ const app = express();
 
 app.use(express.json())
 app.use(cookieParser())
-app.use(express.static('public'));
+app.use(express.static(process.env.SITE_TO_DISPLAY));
+//app.use(express.static('public'));
 
 app.use('/api/auth', routerAuth);
-
+app.use('/api/users', routerUsers);
 app.use('/api/courses', routerCourses);
 app.use('/api/lang', routerLang);
 app.use('/api/gender', routerGender);

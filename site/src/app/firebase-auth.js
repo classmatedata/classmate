@@ -10,18 +10,19 @@ const auth = getAuth();
 
 class FirebaseAuthController {
     registerUser(req, res) {
-        const { email, password } = req.body;
+        const { email, password, firstname, lastname } = req.body;
         if (!email || !password) {
             return res.status(422).json({
                 email: "Email is required",
                 password: "Password is required",
             });
         }
-        createUserWithEmailAndPassword(auth, email, password)
+        createUserWithEmailAndPassword(auth, email, password, firstname, lastname)
             .then((userCredential) => {
+                console.log(userCredential.user.uid);
                 sendEmailVerification(auth.currentUser)
                     .then(() => {
-                        res.status(201).json({ message: "Verification email sent! User created successfully!" });
+                        res.status(201).json({ message: "Verification email sent! User created successfully!", userCredential });
                     })
                     .catch((error) => {
                         console.error(error);

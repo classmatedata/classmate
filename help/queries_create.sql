@@ -89,23 +89,22 @@ DROP TABLE IF EXISTS public.classmate;
 
 CREATE TABLE IF NOT EXISTS public.classmate
 (
-    userid bigserial  NOT NULL ,
-    phone character varying(20) COLLATE pg_catalog."default" NOT NULL,
+    userid bigserial NOT NULL ,
+    email character varying(255) COLLATE pg_catalog."default" NOT NULL,
     languicode character(2) COLLATE pg_catalog."default" NOT NULL,
     firstname character varying(20) COLLATE pg_catalog."default" NOT NULL,
     lastname character varying(20) COLLATE pg_catalog."default" NOT NULL,
     classmategendercode character(1) COLLATE pg_catalog."default",
+    firebase_uid character varying(16) COLLATE pg_catalog."default",
     CONSTRAINT classmate_pkey PRIMARY KEY (userid),
     CONSTRAINT classmate_gendercode_fkey FOREIGN KEY (classmategendercode)
-        REFERENCES public.classmategendercode (gendercode) MATCH SIMPLE
+        REFERENCES classmategendercode (gendercode) MATCH SIMPLE
         ON UPDATE NO ACTION
-        ON DELETE NO ACTION
-        NOT VALID,
+        ON DELETE NO ACTION,
     CONSTRAINT classmateuser_languicode_fkey FOREIGN KEY (languicode)
         REFERENCES public.lang (langcode) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
-        NOT VALID
 )
 
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>كلاسمت ClassMate קלאסמיייט</title>
+    <title>كلاسمت ClassMate קלאסמיייט </title>
     <link rel="stylesheet" href="./css/colors.css" />
     <link rel="stylesheet" href="./css/index.css" />
     <link rel="stylesheet" href="./css/general.css" />
@@ -14,7 +14,7 @@
     />
   </head>
   
-  <body >
+  <body>
     <div class="container">
       <header></header>
 
@@ -23,14 +23,7 @@
           <h2 id="dispalyIsLoggedInDiv"></h2>
           <div>
             <input id="logOutButton" class="hdn" type="button" value="Log out" />
-            <button
-            id="btn_next_page"
-            class="hdn"
-            onclick="location.href='./start_config.html'"
-            type="button"
-          >
-            עבור למסך הבא
-          </button>
+           
           </div>
         </section>
         <section class="forms" id="loginForm">
@@ -40,6 +33,7 @@
               <form action="#">
                 <div class="field input-field">
                   <input id="logInEmailInput" type="email" placeholder="Email" class="input text_email" />
+                  <div id="logInEmailInput_info" class="info hdn">info</div>
                 </div>
 
                 <div class="field input-field">
@@ -49,17 +43,22 @@
                     class="password text_Password"
                   />
                   <i class="bx bx-hide eye-icon"></i>
+                  <div id="logInPasswordInput_info" class="info hdn">info</div>
                 </div>
 
                 <div class="form-link">
                   <a href="#" id="forgotPasswordLink" class="forgot-pass">
                     <span class="text_ForgotPasswordQ"> Forgot password? </span>
+                    
                   </a>
+                  
                 </div>
-
+                <span id="forgotPasswordLink_info" class="info hdn text_ResetPasswordLinkWasSendToEmail"></span>
+                <span id="forgotPasswordLink_info_email" class="info hdn "></span>
                 <div class="field button-field">
                   <button id="logInButton" class="text_login">Login</button>
                 </div>
+                <div id="logInForm_info" class="alert hdn"></div>
               </form>
 
               <div class="form-link">
@@ -81,30 +80,40 @@
               <h1 class="text_Signup">Signup</h1>
               <form action="#">
                 <div class="field input-field">
-                  <input  id="signUpEmail" type="email" placeholder="Email" class="input text_email" />
+                  <input  id="signUpFirstName" type="text" placeholder="First Name" class="input text_firstname signInInput" />
+                  <div id="signUpFirstName_info" class="alert text_signUpFirstName_info hdn"></div>
+                </div>
+                <div class="field input-field">
+                  <input  id="signUpLastName" type="text" placeholder="Last Name" class="input text_lastname signInInput" />
+                  <div id="signUpLastName_info" class="alert  text_signUpLastName_info hdn"></div>
+                </div>
+                <div class="field input-field">
+                  <input  id="signUpEmail" type="email" placeholder="Email" class="input text_email signInInput" />
+                  <div id="signUpEmail_info" class="alert text_signUpEmail_info hdn"></div>
                 </div>
 
                 <div class="field input-field clearfix">
                   <input  id="signUpPassword"
                     type="password"
                     placeholder="Create password"
-                    class="password text_Password"
+                    class="password text_Password signInInput"
                   />
                   <i class="bx bx-hide eye-icon"></i>
+                  <div id="signUpPassword_info" class="alert text_signUpPassword_info hdn"></div>
                 </div>
 
                 <div class="field input-field clearfix">
-                  <input  id="signUpConfirmPassword"
-                    type="password"
-                    placeholder="Confirm password"
-                    class="password text_ConfirmPassword"
+                  <input  id="signUpConfirmPassword" type="password" placeholder="Confirm password" 
+                    class="password text_ConfirmPassword signInInput"
                   />
                   <i class="bx bx-hide eye-icon"></i>
+                  <div id="signUpConfirmPassword_info" class="alert text_signUpConfirmPassword_info hdn"></div>
                 </div>
 
                 <div class="field button-field">
                   <button id="signUpButton" class="text_Signup">Signup</button>
                 </div>
+                <div id="signUpForm_info" class="alert hdn"></div>
               </form>
 
               <div class="form-link">

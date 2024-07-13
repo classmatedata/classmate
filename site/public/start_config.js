@@ -13,8 +13,31 @@ function nextPage() {
 }
 
 function initData() {
-    let user_data = JSON.parse(localStorage.getItem("user_data"));
-    document.querySelector("#text_name").innerText = user_data["name"];
+    let uid = localStorage.getItem("user_uid");
+    if (!uid) {
+        console.error("User ID not found in local storage");
+        return;
+    }
+
+    fetch(`/api/users/uid/${uid}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch user data');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);
+            localStorage.setItem("user_db_data", JSON.stringify(data));
+            document.querySelector("#text_name").innerText = data.firstname;
+            localStorage.setItem("user_id", data.userid);
+            localStorage.setItem("user_name", data.username);
+        })
+        .catch(error => {
+            console.error("Error fetching user data:", error);
+        });
+
+
 }
 
 

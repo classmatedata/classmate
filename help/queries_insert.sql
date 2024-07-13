@@ -1,13 +1,17 @@
+CALL addGender('M', 'Male', 'en');
+CALL addGender('F', 'Female', 'en'); 
+CALL addGender('C', 'Common', 'en');
+CALL updateGender('F', 'את/היא', 'he');
+CALL updateGender('M', 'אתה/הוא', 'he');
+CALL updateGender('C', 'אתם/הם', 'he');
+
 INSERT INTO lang(langCode, langName, langDir) VALUES
     ('he', 'עברית', 'rtl'), 
     ('en', 'English', 'ltr'), 
     ('ru', 'Русский', 'ltr'),
     ('ar', 'العربية', 'rtl') ;
- {
-        "langcode": "am",
-        "langname": "አማርኛ",
-        "langdir": "ltr"
-    }
+    
+ {"langcode": "am", "langname": "አማርኛ", "langdir": "ltr"  }
 
 INSERT INTO textbylang ( langCode, textid, htmltext) VALUES
 ('he', 1, 'בעיות תנועה'),
