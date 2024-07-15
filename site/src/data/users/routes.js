@@ -1,7 +1,9 @@
 const { Router } = require('express');
-const verifyToken = require('../../app/middleware.js');
+const verifyToken = require('../../auth/middleware.js');
 const ctr = require('./controller.js');
 const rtr = Router();
+const { checkSchema } = require("express-validator");
+const validateUserData = require("./validation.js");
 
 rtr.get("/", ctr.getUsers);
 rtr.get("/:userid", verifyToken, ctr.getUserById);
@@ -9,7 +11,16 @@ rtr.get("/email/:email", verifyToken, ctr.getUserByEmail);
 rtr.get("/uid/:uid", verifyToken, ctr.getUserByFirebaseUid);
 
 // create or append a new 
-rtr.post("/", verifyToken, ctr.addUser);
+//rtr.post("/", verifyToken, ctr.addUser);
+
+// using schema-based validation from express-validator
+rtr.post(
+    "/",
+    verifyToken,
+    checkSchema(validateUserData.userAddDataValidate),
+    ctr.addUser
+);
+
 // rtr.post("/:userid", verifyToken, ctr.updateUser);
 // rtr.post("/teacher/", verifyToken, ctr.updateTeacher);
 // rtr.post("/admin/", verifyToken, ctr.updateAdmin);

@@ -1,6 +1,7 @@
 const pool = require('../db');
 const queries = require('./queries');
 
+
 const getUsers = async (req, res) => {
     try {
 
@@ -93,17 +94,29 @@ const addUser = async (req, res) => {
         res.status(500).send('Server error');
     }
 }
+const addCourseToUser = async (req, res) => {
+    try {
+        const { userid, courseid } = req.body;
+        const client = await pool.connect();
+        const results = await client.query(queries.addUserCourse, [userid, courseid]);
+        client.release();
+        res.status(200).json(results.rows);
+    }
+
+
+
+    
 module.exports = {
-    getUsers,
-    getUserById,
-    getUserByEmail,
-    getUserByFirebaseUid,
+        getUsers,
+        getUserById,
+        getUserByEmail,
+        getUserByFirebaseUid,
 
-    addUser,
+        addUser,
 
-    // updateTeacher,
-    // updateAdmin,
-    // updateUser,
-    // addUserSpokenLang,
-    // updateUserGUILang,
-}
+        // updateTeacher,
+        // updateAdmin,
+        // updateUser,
+        // addUserSpokenLang,
+        // updateUserGUILang,
+    }

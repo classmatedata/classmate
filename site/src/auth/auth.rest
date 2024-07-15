@@ -1,0 +1,19 @@
+
+
+POST  https://localhost:10000/api/auth/login  
+Content-Type: application/json
+{
+    "email":"dveira@gmail.com", 
+    "password":"123456"
+}
+
+
+POST  https://localhost:10000/api/auth/register  
+Content-Type: application/json
+{
+    "email":"q1@example.com", 
+    "password":"123456",
+    "firstname":"Fany",
+    "lastname":"Dann"
+    
+}

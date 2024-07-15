@@ -1,0 +1,23 @@
+### get users
+GET http://localhost:10000/api/users/
+
+### Test get user by id
+GET http://localhost:10000/api/users/18
+
+
+### Test get user by email
+GET GET http://localhost:10000/api/users/email/dveira@gmail.com
+
+### Test get user by uid
+GET GET http://localhost:10000/api/users/uid/aaa
+
+### Test add user
+POST http://localhost:10000/api/users
+Content-Type: application/json
+{
+    "email":"e1@eamplr.com", 
+    "languicode":"he",
+    "firstname":"Chris",
+    "lastname":"Martinez",
+    "uid":"aaa"
+};
