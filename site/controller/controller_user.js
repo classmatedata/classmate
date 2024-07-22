@@ -1,5 +1,5 @@
-const pool = require('../db');
-const queries = require('./queries');
+const pool = require('../config/config_db');
+const queries = require('../db/queries_user');
 
 
 const getUsers = async (req, res) => {
@@ -94,29 +94,70 @@ const addUser = async (req, res) => {
         res.status(500).send('Server error');
     }
 }
-const addCourseToUser = async (req, res) => {
+
+const getTeachers = async (req, res) => {
+    try {
+
+        const client = await pool.connect();
+        const result = await client.query(queries.getTeachers);
+        client.release();
+        res.json(result.rows);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Server error');
+    }
+
+}
+
+const addTeacher = async (req, res) => {
+    try {
+        console.log("add teacher");
+        const { userid, hoursToVolonteer } = req.body;
+        console.log("add teacher", userid, hoursToVolonteer);
+        const client = await pool.connect();
+
+        const result = await client.query(queries.addOrUpdateTeacher, [userid, hoursToVolonteer]);
+        client.release();
+        res.json(result.rows);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Server error');
+    }
+
+}
+
+const addTeacherToCourse = async (req, res) => {
     try {
         const { userid, courseid } = req.body;
         const client = await pool.connect();
-        const results = await client.query(queries.addUserCourse, [userid, courseid]);
+        const results = await client.query(queries.addTeacherTocourse, [userid, courseid]);
         client.release();
         res.status(200).json(results.rows);
     }
-
-
-
-    
-module.exports = {
-        getUsers,
-        getUserById,
-        getUserByEmail,
-        getUserByFirebaseUid,
-
-        addUser,
-
-        // updateTeacher,
-        // updateAdmin,
-        // updateUser,
-        // addUserSpokenLang,
-        // updateUserGUILang,
+    catch (error) {
+        console.error('Error adding course to user:', error);
+        res.status(500).json({ error: 'An error occurred while adding the course to the user.' });
     }
+
+}
+
+
+
+module.exports = {
+    getUsers,
+    getUserById,
+    getUserByEmail,
+    getUserByFirebaseUid,
+
+    addUser,
+
+    getTeachers,
+    addTeacher,
+    addTeacherToCourse,
+
+    // updateTeacher,
+    // updateAdmin,
+    // updateUser,
+    // addUserSpokenLang,
+    // updateUserGUILang,
+}

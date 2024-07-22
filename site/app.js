@@ -1,14 +1,16 @@
 const express = require('express');
-const routerAuth = require("./src/app/routes");
-const routerCourses = require("./src/data/courses/routes");
-const routerLang = require("./src/data/lang/routes");
-const routerGender = require("./src/data/gender/routes");
-const routerTest = require("./src/data/test/routes");
-const routerUsers = require("./src/data/users/routes");
+const routerAuth = require("./routes/routes_auth");
+const routerCourses = require("./routes/routes_course");
+const routerLang = require("./routes/routes_lang");
+const routerGender = require("./routes/routes_gender");
+//const routerTest = require("./routes/routes");
+const routerUsers = require("./routes/routes_user");
+
 const cookieParser = require('cookie-parser');
 require("dotenv").config();
 const PORT = process.env.SERVER_PORT || 10000;
 const HOST = process.env.HOST || 'localhost';
+
 
 
 
@@ -21,10 +23,10 @@ app.use(express.static(process.env.SITE_TO_DISPLAY));
 
 app.use('/api/auth', routerAuth);
 app.use('/api/users', routerUsers);
-app.use('/api/courses', routerCourses);
+app.use('/api/course', routerCourses);
 app.use('/api/lang', routerLang);
 app.use('/api/gender', routerGender);
-app.use('/api/test', routerTest);
+//app.use('/api/test', routerTest);
 
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT} run http://${HOST}:${PORT}`);

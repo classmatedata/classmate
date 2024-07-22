@@ -486,3 +486,35 @@ VALUES
     ('miriam@example.com', 'he', 'מרים', 'כהן', 'F'),
     ('emma@example.com', 'en', 'Emma', 'Davis', 'F'),
     ('chris@example.com', 'en', 'Chris', 'Martinez', 'M');
+
+
+CREATE OR REPLACE PROCEDURE addOrUpdateTeacher(
+  IN user_id BIGINT, 
+	IN hours int
+)
+LANGUAGE plpgsql
+AS $$
+DECLARE
+    -- Declare a variable to hold the found_user_id
+    found_user_id BIGINT;
+BEGIN
+-- Check if the user_id exists in the classmateteacher table
+  SELECT userid INTO found_user_id
+  FROM classmateteacher 
+  WHERE userid = user_id ;
+
+   -- If the user_id does not exist, insert a new record
+  IF found_user_id IS NULL THEN
+    RAISE NOTICE 'Adding new teacher with user_id: %', user_id;
+    INSERT INTO classmateteacher (userid, hourstovolunteer) 
+    VALUES (user_id, hours);
+  ELSE
+    -- If the user_id exists, update the hours
+    RAISE NOTICE 'Updating hours for existing teacher with user_id: %', user_id;
+    UPDATE classmateteacher
+    SET hourstovolunteer = hours
+    WHERE userid = user_id;
+  END IF;
+  
+END ;
+$$ ;

@@ -1,6 +1,6 @@
 const { Router } = require('express');
-const verifyToken = require('../../app/middleware.js');
-const controllerLang = require('./controller.js');
+const verifyToken = require('../middleware/middleware_auth');
+const controllerLang = require('../controller/controller_lang');
 const routerLang = Router();
 
 routerLang.get("/", verifyToken, controllerLang.getLangs);

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>admin user</title>
+  </head>
+  <body>
+    <a href="./">go to main admin page</a>
+    <h1>classmate user data page</h1>
+    <h2>Users</h2>
+    <input type="button" onclick="viewAllUsers()" value="list all users" />
+    <div id="viewUsersDiv"></div>
+
+    <h2>Teachers</h2>
+    <input
+      type="button"
+      onclick="viewAllTeachers()"
+      value="list all teachers"
+    />
+    <div id="viewTeachersDiv"></div>
+    <h2>Add teacher</h2>
+    <div id="teacherDiv">
+      <input type="text" id="inputTeacherId" value="" placeholder="userid" />
+      <input
+        type="text"
+        id="inputHoursVolonteer"
+        value="60"
+        placeholder="# hours to volonteer"
+      />
+      <input type="button" value="Add teacher" onclick="addOrUpdateTeacher()" />
+      <div id="teacherDivInfo"></div>
+    </div>
+    <script src="js/view.js" type="text/javascript"></script>
+    <script src="js/user.js" type="text/javascript"></script>
+  </body>
+</html>

@@ -1,4 +1,4 @@
-const { admin } = require("./config_firebase");
+const { admin } = require("../config/config_firebase");
 
 
 

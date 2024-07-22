@@ -19,5 +19,19 @@ Content-Type: application/json
     "languicode":"he",
     "firstname":"Chris",
     "lastname":"Martinez",
-    "uid":"aaa"
+    "uid":"null"
+};
+
+### Test teachers
+GET http://localhost:10000/api/users/teacher
+###
+GET http://127.0.0.1:10000/api/users/teacher
+Content-Type: application/json
+
+### Test teachers
+PUT http://localhost:10000/api/users/teacher
+Content-Type: application/json
+{
+    "userid":"17", 
+    "hoursToVolonteer":"60",
 };

@@ -1,5 +1,5 @@
-const pool = require('../db');
-const queries = require('./queries');
+const pool = require('../config/config_db');
+const queries = require('../db/queries_lang');
 
 const getLangs = async (req, res) => {
     try {

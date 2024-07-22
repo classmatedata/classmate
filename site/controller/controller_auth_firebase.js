@@ -5,7 +5,7 @@ const {
     signOut,
     sendEmailVerification,
     sendPasswordResetEmail
-} = require('./config_firebase');
+} = require('../config/config_firebase');
 const auth = getAuth();
 
 class FirebaseAuthController {

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 
-const firebaseAuthController = require('./firebase-auth.js');
+const firebaseAuthController = require('../controller/controller_auth_firebase');
 
 
 

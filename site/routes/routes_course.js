@@ -1,12 +1,14 @@
 const { Router } = require('express');
-const verifyToken = require('../../app/middleware.js');
-const controllerCourses = require('./controller.js');
+const verifyToken = require('../middleware/middleware_auth');
+const controllerCourses = require('../controller/controller_course');
 const routerCourses = Router();
 
 
+routerCourses.get("/", controllerCourses.getCourses);
+routerCourses.post("/", controllerCourses.addCourse);
 
-routerCourses.get("/", verifyToken, controllerCourses.getCourses);
-routerCourses.post("/", verifyToken, controllerCourses.addCourse);
+// routerCourses.get("/", verifyToken, controllerCourses.getCourses);
+// routerCourses.post("/", verifyToken, controllerCourses.addCourse);
 
 // routerCourses.get("/json", verifyToken, controllerCourses.getCoursesJson);
 routerCourses.get("/:courseId", verifyToken, controllerCourses.getCourseById);
