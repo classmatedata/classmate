@@ -1,0 +1,24 @@
+
+GET http://127.0.0.1:10000/api/lang/
+
+###
+POST http://127.0.0.1:10000/api/lang/ 
+#   {"langcode":"he","langname":"עברית", "langdir":"rtl"} 
+#   {"langcode":"ru","langname":"???????", "langdir":"ltr"} 
+#   {"langcode":"ar","langname":"???????", "langdir":"rtl"} 
+#   {"langcode":"en","langname":"English", "langdir":"ltr"} 
+#   {"langcode":"fr","langname":"French", "langdir":"rtl"} 
+ {"langcode":"ff","langname":"French", "langdir":"rtl"} 
+
+###
+#rtr.update("/:lang", verifyToken, controllerLang.updateLang);
+PUT http://127.0.0.1:10000/api/lang/fr
+{"langname":"fran?aise", "langdir":"ltr"} 
+
+###
+PATCH http://127.0.0.1:10000/api/lang/fr 
+{"langname":"Fran?aise"} 
+
+###
+#rtr.delete("/:lang", verifyToken, controllerLang.deleteLang);
+DELETE http://127.0.0.1:10000/api/lang/ff

@@ -1,16 +1,18 @@
 const { Router } = require('express');
-const verifyToken = require('../middleware/middleware_auth');
-const controllerLang = require('../controller/controller_lang');
-const routerLang = Router();
+//const verifyToken = require('../middleware/middleware_auth');
+const ctr = require('../controller/controller_lang');
+const rtr = Router();
 
-routerLang.get("/", verifyToken, controllerLang.getLangs);
-routerLang.post("/", verifyToken, controllerLang.addLang);
+rtr.get("/", ctr.getLangs);
+rtr.get("/:lang", ctr.getLang);
 
-routerLang.put("/:lang", verifyToken, controllerLang.updateLang);
-routerLang.patch("/:lang", verifyToken, controllerLang.updateLangName);
+rtr.post("/", ctr.addLang);
 
-routerLang.patch("/:lang/dir", verifyToken, controllerLang.updateLangDir);
+rtr.put("/:lang", ctr.updateLang);
+rtr.patch("/:lang", ctr.updateLangName);
 
-routerLang.delete("/:lang", verifyToken, controllerLang.deleteLang);
+rtr.patch("/:lang/dir", ctr.updateLangDir);
 
-module.exports = routerLang;
+rtr.delete("/:lang", ctr.deleteLang);
+
+module.exports = rtr;

@@ -25,23 +25,3 @@ PUT http://127.0.0.1:10000/api/courses/5
 
 DELETE http://127.0.0.1:10000/api/courses/1
 
-
-GET http://127.0.0.1:10000/api/lang/
-POST http://127.0.0.1:10000/api/lang/ 
-   {"langcode":"he","langname":"עברית", "langdir":"rtl"} 
-   {"langcode":"ru","langname":"Русский", "langdir":"ltr"} 
-   {"langcode":"ar","langname":"العربية", "langdir":"rtl"} 
-   {"langcode":"en","langname":"English", "langdir":"ltr"} 
-   {"langcode":"fr","langname":"French", "langdir":"rtl"} 
- {"langcode":"ff","langname":"French", "langdir":"rtl"} 
-
-
-routerCourses.update("/:lang", verifyToken, controllerLang.updateLang);
-PUT http://127.0.0.1:10000/api/lang/fr
-{"langname":"française", "langdir":"ltr"} 
-
-PATCH http://127.0.0.1:10000/api/lang/fr 
-{"langname":"Française"} 
-
-routerCourses.delete("/:lang", verifyToken, controllerLang.deleteLang);
-DELETE http://127.0.0.1:10000/api/lang/ff

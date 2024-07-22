@@ -5,17 +5,8 @@ function viewAllUsers() {
         .then((myData) => { return myData.json() })
         .then((myDataAsObj) => {
             console.log(myDataAsObj);
-            let theData = myDataAsObj
-            let theHTMLStr = "<table>";
-            theHTMLStr += viewDataTitle(theData[0]);
-            for (let i = 0; i < theData.length; i++) {
-                theHTMLStr += viewData(theData[i]);
+            viewInTable(myDataAsObj, '#viewUsersDiv');
 
-            }
-            theHTMLStr += `</table>`;
-
-            document.querySelector('#viewUsersDiv').innerHTML =
-                theHTMLStr;
         })
 }
 
@@ -25,19 +16,8 @@ function viewAllTeachers() {
         .then((myData) => { return myData.json() })
         .then((myDataAsObj) => {
             console.log(myDataAsObj);
-            let theData = myDataAsObj;
-            let theHTMLStr = "<p>no teachers yet</p>";
-            if (theData.length > 0) {
-                theHTMLStr = "<table>";
-                theHTMLStr += viewDataTitle(theData[0]);
-                for (let i = 0; i < theData.length; i++) {
-                    theHTMLStr += viewData(theData[i]);
+            viewInTable(myDataAsObj, '#viewTeachersDiv');
 
-                }
-                theHTMLStr += `</table>`;
-            }
-            document.querySelector('#viewTeachersDiv').innerHTML =
-                theHTMLStr;
         })
 }
 
@@ -53,19 +33,6 @@ function addOrUpdateTeacher() {
     })
         .then((myData) => { return myData.json() })
         .then((myDataAsObj) => {
-            console.log(myDataAsObj);
-            let theData = myDataAsObj;
-            let theHTMLStr = "<p>no teachers yet</p>";
-            if (theData.length > 0) {
-                theHTMLStr = "<table>";
-                theHTMLStr += viewDataTitle(theData[0]);
-                for (let i = 0; i < theData.length; i++) {
-                    theHTMLStr += viewData(theData[i]);
-
-                }
-                theHTMLStr += `</table>`;
-            }
-            document.querySelector('#teacherDivInfo').innerHTML =
-                theHTMLStr;
+            viewInTable(myDataAsObj, '#teacherDivInfo');
         })
 }

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>admin lang</title>
+    <link rel="stylesheet" href="view.css" />
+  </head>
+  <body>
+    <a href="./">go to main admin page</a>
+    <h1>classmate language data page</h1>
+    <div class="card">
+      <h2>Languages</h2>
+      <input type="button" onclick="viewAlllang()" value="list all languages" />
+      <div id="viewLangDiv"></div>
+    </div>
+    <div class="card">
+      <h2>view lang</h2>
+
+      <div class="inputItem">
+        <label for="inputLangCode">lang code</label>
+        <input
+          type="text"
+          id="inputLangCode"
+          value=""
+          placeholder="lang code"
+        />
+      </div>
+      <input type="button" onclick="viewLang()" value="find lang" />
+      <div id="viewLangByCodeDiv"></div>
+    </div>
+
+    <div class="card">
+      <h2>add lang</h2>
+
+      <div class="inputItem">
+        <label for="inputAddLangCode">code</label>
+        <input type="text" id="inputAddLangCode" value="" placeholder="code" />
+      </div>
+      <div class="inputItem">
+        <label for="inputAddLangName">Name</label>
+        <input type="text" id="inputAddLangName" value="" placeholder="name" />
+      </div>
+      <div class="inputItem">
+        <label for="inputAddLangDir">html direction</label>
+        <input
+          type="text"
+          id="inputAddLangDir"
+          value=""
+          placeholder="rtl or ltr"
+        />
+      </div>
+      <input type="button" onclick="addLang()" value="add lang" />
+      <div id="addLangInfoDiv"></div>
+    </div>
+
+    <script src="js/view.js" type="text/javascript"></script>
+    <script src="js/lang.js" type="text/javascript"></script>
+  </body>
+</html>

@@ -13,6 +13,23 @@ const getLangs = async (req, res) => {
     }
 
 }
+
+
+const getLang = async (req, res) => {
+    try {
+
+        const lang = req.params.lang;
+        console.log(`get lang datata for ${lang}`);
+        const client = await pool.connect();
+        const result = await client.query(queries.getLang, [lang]);
+        client.release();
+        res.json(result.rows);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Server error');
+    }
+
+}
 const checkLangExistsFn = async (lang) => {
     let client;
     try {
@@ -143,6 +160,7 @@ const deleteLang = async (req, res) => {
 
 module.exports = {
     getLangs,
+    getLang,
     addLang,
     updateLang,
     updateLangName,

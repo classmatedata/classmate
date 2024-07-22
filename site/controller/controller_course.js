@@ -4,8 +4,6 @@ const queries = require('../db/queries_course');
 
 const getCourses = async (req, res) => {
     try {
-        console.log(`pool: ${pool}`);
-        console.log(`get courses: ${queries.getCourses}`);
         const client = await pool.connect();
         const result = await client.query(queries.getCourses);
         client.release();
