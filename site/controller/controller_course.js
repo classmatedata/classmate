@@ -1,5 +1,5 @@
 const pool = require('../config/config_db');
-const queries = require('../db/queries_course');
+const queries = require('../queries/queries_course');
 
 
 const getCourses = async (req, res) => {

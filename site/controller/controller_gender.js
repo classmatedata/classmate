@@ -1,5 +1,5 @@
 const pool = require('../config/config_db');
-const queries = require('../db/queries_gender');
+const queries = require('../queries/queries_gender');
 
 const getGenders = async (req, res) => {
     try {

@@ -1,5 +1,5 @@
 const pool = require('../config/config_db');
-const queries = require('../db/queries_user');
+const queries = require('../queries/queries_user');
 
 
 const getUsers = async (req, res) => {

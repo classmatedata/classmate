@@ -1,5 +1,5 @@
 const pool = require('../config/config_db');
-const queries = require('../db/queries_lang');
+const queries = require('../queries/queries_lang');
 
 const getLangs = async (req, res) => {
     try {
@@ -21,7 +21,7 @@ const getLang = async (req, res) => {
         const lang = req.params.lang;
         console.log(`get lang datata for ${lang}`);
         const client = await pool.connect();
-        const result = await client.query(queries.getLang, [lang]);
+        const result = await client.query(queries.getLangByCode, [lang]);
         client.release();
         res.json(result.rows);
     } catch (err) {
@@ -30,11 +30,12 @@ const getLang = async (req, res) => {
     }
 
 }
-const checkLangExistsFn = async (lang) => {
+const checkLangExistsFn = async (langcode) => {
     let client;
     try {
         client = await pool.connect();
-        const results = await client.query(queries.getLangByCode, [lang]);
+        
+        const results = await client.query(queries.getLangByCode, [langcode]);
 
         if (results.rows.length) {
             return true;
@@ -52,7 +53,7 @@ const addLang = async (req, res) => {
     let client;
     try {
         const { langcode, langname, langdir } = req.body;
-        console.log(queries.addLang, langcode, langname, langdir);
+        
         client = await pool.connect();
         let isExist = await checkLangExistsFn(langcode);
         if (isExist) {
@@ -125,7 +126,7 @@ const updateLangDir = async (req, res) => {
             return res.status(200).json({ 'status': 'no lang in DB exists' });
         } else {
             client = await pool.connect();
-            await client.query(queries.updateLangRir, [lang, langdir]);
+            await client.query(queries.updateLangDir, [lang, langdir]);
             return res.status(200).json({ 'status': 'lang dir updated' });
         }
     } catch (error) {

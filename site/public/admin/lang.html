@@ -14,24 +14,10 @@
       <input type="button" onclick="viewAlllang()" value="list all languages" />
       <div id="viewLangDiv"></div>
     </div>
-    <div class="card">
-      <h2>view lang</h2>
-
-      <div class="inputItem">
-        <label for="inputLangCode">lang code</label>
-        <input
-          type="text"
-          id="inputLangCode"
-          value=""
-          placeholder="lang code"
-        />
-      </div>
-      <input type="button" onclick="viewLang()" value="find lang" />
-      <div id="viewLangByCodeDiv"></div>
-    </div>
+   
 
     <div class="card">
-      <h2>add lang</h2>
+      <h2>Add lang</h2>
 
       <div class="inputItem">
         <label for="inputAddLangCode">code</label>
@@ -52,6 +38,36 @@
       </div>
       <input type="button" onclick="addLang()" value="add lang" />
       <div id="addLangInfoDiv"></div>
+    </div>
+
+
+    
+    <div class="card">
+      <h2>Update lang</h2>
+
+      <div class="inputItem">
+        <label for="inputUpdateLangCode">code</label>
+        <input type="text" id="inputUpdateLangCode" value="" placeholder="code" />
+      </div>
+      <div class="inputItem">
+        <label for="inputUpdateLangName">Name</label>
+        <input type="text" id="inputUpdateLangName" value="" placeholder="name" />
+      </div>
+      <div class="inputItem">
+        <label for="inputUpdateLangDir">html direction</label>
+        <input
+          type="text"
+          id="inputUpdateLangDir"
+          value=""
+          placeholder="rtl or ltr"
+        />
+      </div>
+      <div id="updateLangInfoDiv"></div>
+      <input type="button" onclick="viewLang()" value="show lang data" />
+      <input type="button" onclick="updateLangName()" value="update lang Name" />
+      <input type="button" onclick="updateLangDir()" value="update lang Dir" />
+      <input type="button" onclick="deleteLang()" value="delete lang" />
+     
     </div>
 
     <script src="js/view.js" type="text/javascript"></script>
