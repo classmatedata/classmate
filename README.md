@@ -10,10 +10,6 @@
 
   https://classmate2-il.netlify.app/start.html
 
-- Database viewer:
-
-  https://classmate-il.netlify.app/database/index.html
-
 - admin server viewer
 
   https://classmate2-il.netlify.app/admin/
